@@ -276,6 +276,11 @@ async def get_config():
             "single_audit_sol": 0.025,
             "day_pass_usd": 12.00,
             "day_pass_sol": 0.08
+        },
+        "contact": {
+            "phone": "+971508379080",
+            "whatsapp": "https://wa.me/971508379080",
+            "email": "davidhabana98@gmail.com"
         }
     }
 
