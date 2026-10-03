@@ -7,7 +7,7 @@ html_code = """<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AETHER RADAR — Autonomous B2B Forensic Intelligence & Micro-Billing Terminal</title>
-  <meta name="description" content="Reverse-engineer any business in 4 seconds. Calculate exact revenue leaks, mobile conversion friction, and unlock high-ticket deal pitches.">
+  <meta name="description" content="Measure any business website and model the revenue it may be leaking. Estimates are labeled; measurements are real.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,21 +88,13 @@ html_code = """<!DOCTYPE html>
         <span class="text-white font-semibold tracking-wider">AETHER ENGINE V1.0</span>
       </div>
       <span class="hidden md:inline text-slate-600">|</span>
-      <span class="hidden md:inline">INFERENCE: <span class="text-cyan-400">GROQ 120B LPU (~180ms)</span></span>
+      <span class="hidden md:inline">INFERENCE: <span class="text-cyan-400">GROQ 120B</span></span>
       <span class="hidden lg:inline text-slate-600">|</span>
       <span class="hidden lg:inline">SETTLEMENT: <span class="text-emerald-400">SOLANA & BASE USDC</span></span>
     </div>
 
     <div class="flex items-center gap-4">
-      <div class="flex items-center gap-2 bg-white/[0.04] px-2.5 py-1 rounded-md border border-white/5">
-        <i class="fab fa-ethereum text-cyan-400 text-xs"></i>
-        <span>SOL: <span class="text-white font-bold" id="solPriceDisplay">$154.20</span></span>
       </div>
-      <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
-        <i class="fas fa-shield-halved text-xs"></i>
-        <span>99.98% UPTIME</span>
-      </div>
-    </div>
   </div>
 
   <!-- ==================== HEADER & GLOBAL NAVIGATION ==================== -->
@@ -127,9 +119,7 @@ html_code = """<!DOCTYPE html>
         <a href="#scanner" class="text-cyan-400 flex items-center gap-1.5">
           <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Live Scanner
         </a>
-        <a href="#how-it-works" class="hover:text-white transition-colors">Economic Logic</a>
-        <a href="#how-it-works" class="hover:text-white transition-colors">Micro-Credits</a>
-      </nav>
+        </nav>
 
       <!-- Right Action Controls -->
       <div class="flex items-center gap-3">
@@ -161,12 +151,12 @@ html_code = """<!DOCTYPE html>
       <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight max-w-4xl leading-tight">
         Reverse-Engineer Any Business.<br>
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
-          Extract Leaks. Close $5,000 Deals.
+          Extract Leaks. Close More Deals.
         </span>
       </h1>
 
       <p class="mt-4 text-slate-300 text-sm sm:text-base max-w-2xl font-normal leading-relaxed">
-        Input any website on Earth. In 4 seconds, our neural crawler calculates their exact monthly cash loss and generates an executive pitch script that gets CEOs to respond.
+        Input any website on Earth. We measure the site for real, model the revenue it may be losing (clearly labeled as an estimate), and draft outreach copy.
       </p>
 
       <!-- COMMAND SCANNER BAR -->
@@ -392,7 +382,7 @@ html_code = """<!DOCTYPE html>
             
             <button onclick="triggerPayment('solana')" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:opacity-95 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-purple-500/25 flex items-center justify-center gap-2 active:scale-95">
               <i class="fab fa-ethereum text-cyan-300"></i>
-              <span>Pay 0.025 SOL (~$3.90)</span>
+              <span>Pay USDC on Solana</span>
             </button>
 
             <button onclick="triggerPayment('card')" class="w-full py-4 px-6 rounded-2xl bg-white/[0.08] hover:bg-white/[0.12] text-white border border-white/10 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 active:scale-95">
@@ -409,7 +399,7 @@ html_code = """<!DOCTYPE html>
           </div>
 
           <div class="mt-6 flex items-center gap-6 text-[11px] font-mono text-slate-500">
-            <span><i class="fas fa-check text-emerald-400"></i> Instant 400ms Delivery</span>
+            <span><i class="fas fa-check text-emerald-400"></i> Unlocks after on-chain confirmation</span>
             <span><i class="fas fa-check text-emerald-400"></i> Zero KYC Required</span>
             <span><i class="fas fa-check text-emerald-400"></i> White-Label Rights</span>
           </div>
@@ -454,7 +444,7 @@ html_code = """<!DOCTYPE html>
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                  <i class="fab fa-whatsapp text-sm"></i> WhatsApp 1-to-1 Pitch (42% Reply Rate)
+                  <i class="fab fa-whatsapp text-sm"></i> WhatsApp 1-to-1 Pitch
                 </span>
                 <button onclick="copyPitchText('pitchWhatsAppText')" class="text-xs font-mono text-slate-300 hover:text-white px-3 py-1 bg-white/[0.05] rounded-lg border border-white/10">
                   <i class="fas fa-copy mr-1"></i> Copy
@@ -503,38 +493,7 @@ html_code = """<!DOCTYPE html>
 
     </section>
 
-    <!-- ==================== ECONOMIC FLYWHEEL SECTION ==================== -->
-    <section id="how-it-works" class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-      <div class="max-w-3xl">
-        <span class="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400 block mb-2">
-          THE $100/DAY AUTONOMOUS FLYWHEEL
-        </span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
-          How This Web Infrastructure Generates Continuous Cash Flow
-        </h2>
-        <p class="mt-3 text-slate-300 text-sm leading-relaxed">
-          Traditional SaaS fails because monthly subscriptions create high barrier-to-entry. AETHER RADAR uses <strong>asymmetric value arbitrage</strong>: we charge $3.90 for an intelligence dossier that agencies resell to enterprise clients for $500–$2,000.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/5">
-            <span class="text-2xl font-black text-cyan-400 font-display block">25 Scans/day</span>
-            <span class="text-xs font-mono text-slate-400 mt-1 block">@ $4.00 USDC = <strong>$100.00/day</strong></span>
-            <p class="text-[11px] text-slate-400 mt-2">Freelancers prospecting clients on Upwork, Twitter, and LinkedIn.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/5">
-            <span class="text-2xl font-black text-emerald-400 font-display block">10 Day-Passes</span>
-            <span class="text-xs font-mono text-slate-400 mt-1 block">@ $10.00 USDC = <strong>$100.00/day</strong></span>
-            <p class="text-[11px] text-slate-400 mt-2">Marketing agencies running high-speed prospecting sprints.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/5">
-            <span class="text-2xl font-black text-purple-400 font-display block">3 Pro Vaults</span>
-            <span class="text-xs font-mono text-slate-400 mt-1 block">@ $35.00/mo = <strong>$105.00/day</strong></span>
-            <p class="text-[11px] text-slate-400 mt-2">Continuous automated billing via Web3 or Stripe.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
   </main>
 
@@ -667,7 +626,7 @@ html_code = """<!DOCTYPE html>
           body: JSON.stringify({ url: url })
         });
 
-        if (!response.ok) throw new Error('Scan failed on server');
+        if (!response.ok) { let m = 'Scan failed'; try { m = (await response.json()).detail || m } catch (e) {} throw new Error(m) };
         const data = await response.json();
         
         clearInterval(animInterval);
@@ -821,6 +780,7 @@ html_code = """<!DOCTYPE html>
       alert(`Connected to ${walletName}! You now have 1-click micro-billing active.`);
     }
   </script>
+<script src="/pay.js"></script>
 </body>
 </html>
 """
