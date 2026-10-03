@@ -1,7 +1,7 @@
-FROM python:3.11-slim
+﻿FROM python:3.11-slim
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 EXPOSE 8095
-CMD ["uvicorn", "aether_engine:app", "--host", "0.0.0.0", "--port", "8095"]
+CMD ["sh", "-c", "uvicorn aether_engine:app --host 0.0.0.0 --port ${PORT:-8095}"]
