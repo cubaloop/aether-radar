@@ -74,7 +74,7 @@ main{{max-width:820px;margin:0 auto;padding:48px 20px}}a{{color:#4ee0ff}}.card{{
 <p class="muted">Automated analysis of the public homepage, generated {date}. Measured values below are real; money figures are modeled estimates, not the company's actual revenue.</p>
 <div class="card k"><div><small>Friction score</small><b>{score}/100</b>Grade {grade}</div><div><small>Response time</small><b>{ttfb} ms</b></div>
 <div><small>HTML size</small><b>{size} KB</b></div><div><small>WhatsApp click-to-chat</small><b>{wa}</b></div></div>
-<div class="card"><small>Estimated monthly revenue at risk (model)</small><h2>{loss}</h2><p class="muted">{assump}</p></div>
+<div class="card"><small>Estimated monthly revenue at risk (model)</small><h2>{loss}</h2><p class="muted">{assump}</p><p class="muted" style="font-size:11px;border-left:2px solid #06b6d4;padding-left:8px;margin-top:8px;">Disclaimer: Cifras de pérdida estimadas mediante simulación de coste de oportunidad y benchmarks de conversión por latencia técnica; no constituyen registros contables ni analíticas privadas.</p></div>
 <div class="card"><small>Primary issue ({sev})</small><h3>{flaw}</h3><p>{impact}</p></div>
 <p class="muted">Own this site or sell web services? The full dossier includes all 3 fixes and ready-to-send outreach copy.</p>
 </main></body></html>"""
