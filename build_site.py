@@ -497,23 +497,7 @@ html_code = """<!DOCTYPE html>
 
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="w-full border-t border-white/[0.08] bg-black/60 backdrop-blur-xl py-8 mt-16 text-xs text-slate-500 font-mono">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-        <span class="text-slate-300 font-bold">AETHER RADAR</span>
-        <span>• Autonomous B2B Telemetry & Micro-Settlement Terminal</span>
-      </div>
-      <div class="flex flex-wrap items-center gap-4">
-        <span>Built with Groq 120B Cognitive LPU & Solana Web3 Micro-Rails</span>
-        <span class="text-slate-600">|</span>
-        <a href="mailto:davidhabana98@gmail.com" class="hover:text-cyan-400">davidhabana98@gmail.com</a>
-        <span class="text-slate-600">|</span>
-        <a href="https://wa.me/971508379080" class="hover:text-emerald-400">+971 508379080</a>
-      </div>
-    </div>
-  </footer>
+
 
   <!-- ==================== WEB3 WALLET MODAL ==================== -->
   <div id="walletModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">

@@ -1,4 +1,4 @@
-﻿"""Programmatic SEO + discovery. Everything here runs inside the cloud app (no PC needed)."""
+"""Programmatic SEO + discovery. Everything here runs inside the cloud app (no PC needed)."""
 import os, json, time, hmac, hashlib, html, requests
 import core
 
@@ -76,8 +76,7 @@ main{{max-width:820px;margin:0 auto;padding:48px 20px}}a{{color:#4ee0ff}}.card{{
 <div><small>HTML size</small><b>{size} KB</b></div><div><small>WhatsApp click-to-chat</small><b>{wa}</b></div></div>
 <div class="card"><small>Estimated monthly revenue at risk (model)</small><h2>{loss}</h2><p class="muted">{assump}</p></div>
 <div class="card"><small>Primary issue ({sev})</small><h3>{flaw}</h3><p>{impact}</p></div>
-<p><a class="btn" href="/?scan={domain}">Run the full audit for {domain}</a></p>
-<p class="muted">Own this site or sell web services? The full dossier includes all 3 fixes and ready-to-send outreach copy. Contact: <a href="mailto:davidhabana98@gmail.com">davidhabana98@gmail.com</a></p>
+<p class="muted">Own this site or sell web services? The full dossier includes all 3 fixes and ready-to-send outreach copy.</p>
 </main></body></html>"""
 
 def render_page(p):

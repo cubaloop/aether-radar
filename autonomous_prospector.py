@@ -1,4 +1,4 @@
-﻿"""Outbound via the user's own gmaps-lead-gen leads + Baileys gateway.
+"""Outbound via the user's own gmaps-lead-gen leads + Baileys gateway.
 Only sends when WhatsApp is actually connected. Facts only, no invented numbers. Max per day capped."""
 import os, json, time, sqlite3, requests
 from dotenv import load_dotenv
@@ -53,14 +53,19 @@ def run():
         if l["formatted_phone"] in done: continue
         dom = core.norm_domain(l["website"])
         if not dom: continue
+        if dom in {"tiktok.com", "instagram.com", "facebook.com", "google.com", "youtube.com", "twitter.com", "x.com", "linkedin.com", "linktr.ee", "whatsapp.com"}:
+            continue
         pub, _, _ = core.analyze(dom)
         if not pub: continue
         r = requests.post(GATEWAY + "/send", json={"to": l["formatted_phone"], "message": message(l, pub)}, timeout=30)
         res = r.json() if r.ok else {"success": False}
+        is_success = bool(res.get("success"))
         sent_log.append({"date": today, "phone": l["formatted_phone"], "name": l["name"], "domain": dom,
-                         "success": bool(res.get("success")), "time": time.strftime("%H:%M:%S")})
+                         "success": is_success, "detail": res.get("error") or "delivered", "time": time.strftime("%H:%M:%S")})
         json.dump(sent_log, open(LOG, "w"), indent=2)
-        sent_today += 1; time.sleep(45)
+        if is_success:
+            sent_today += 1
+            time.sleep(45)
     state["sent_today"] = sent_today
     json.dump(state, open(STATE, "w"), indent=2)
 
