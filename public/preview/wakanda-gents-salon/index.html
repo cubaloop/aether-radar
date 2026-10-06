@@ -231,6 +231,57 @@
 
     ::selection { background: var(--brass-fill); color: #14201B; }
     :focus-visible { outline: 2px solid var(--brass-fill); outline-offset: 3px; }
+
+    /* ============================================================
+       CINEMATIC VIDEO HERO (OpenHero The Art of Living)
+       ============================================================ */
+    #hero {
+      background-color: #06110D !important;
+      color: #F6F1E7 !important;
+    }
+    #hero h1 {
+      color: #FFFFFF !important;
+    }
+    #hero .hero-desc {
+      color: #E2E8F0 !important;
+    }
+    #hero .eyebrow {
+      color: #D9B76F !important;
+    }
+    #hero .brass-text {
+      color: #D9B76F !important;
+    }
+    #hero .btn-ghost {
+      border: 1px solid rgba(246, 241, 231, 0.35);
+      color: #F6F1E7;
+      background: rgba(246, 241, 231, 0.06);
+      backdrop-filter: blur(12px);
+    }
+    #hero .btn-ghost:hover {
+      background: #D9B76F;
+      color: #06110D;
+      border-color: #D9B76F;
+    }
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      transform: scale(1.03);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(6, 17, 13, 0.94) 0%, rgba(6, 17, 13, 0.8) 55%, rgba(6, 17, 13, 0.45) 100%),
+        linear-gradient(to bottom, rgba(6, 17, 13, 0.6) 0%, transparent 45%, var(--bg) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -329,9 +380,17 @@
   </header>
 
   <main>
-  <!-- ==================== HERO: ARCH + AMBIENT LIGHTS & FALLING DETAILS ==================== -->
-  <section id="hero" class="relative px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-28 overflow-hidden">
+  <!-- ==================== HERO: OPENHERO THE ART OF LIVING VIDEO BACKGROUND ==================== -->
+  <section id="hero" class="relative px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-28 overflow-hidden bg-[#06110D]">
     
+    <!-- OpenHero Cinematic Background Video -->
+    <video autoplay loop muted playsinline class="hero-video-bg" aria-hidden="true">
+      <source src="hero-bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- Contrast Overlay Scrim -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <!-- Ambient Moving Emerald & Brass Aurora Mesh -->
     <div class="hero-ambient-lights" aria-hidden="true">
       <div class="ambient-orb orb-1"></div>
@@ -352,11 +411,11 @@
     <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
 
       <div class="lg:col-span-7 reveal">
-        <span class="eyebrow block mb-6" data-i18n="hero_eyebrow">Port Saeed · Deira · Dubai</span>
-        <h1 class="display font-medium text-[2.7rem] sm:text-6xl lg:text-[4.6rem] leading-[1.02] mb-7" data-i18n="hero_title">
-          The art of the <em class="brass-text">gentleman’s grooming</em>
+        <span class="eyebrow block mb-6 text-[#D9B76F]" data-i18n="hero_eyebrow">Port Saeed · Deira · Dubai</span>
+        <h1 class="display font-medium text-[2.7rem] sm:text-6xl lg:text-[4.6rem] leading-[1.02] mb-7 text-white" data-i18n="hero_title">
+          The art of the <em class="brass-text italic">gentleman’s grooming</em>
         </h1>
-        <p class="muted text-base sm:text-lg max-w-xl leading-relaxed mb-10" data-i18n="hero_desc">
+        <p class="hero-desc text-base sm:text-lg max-w-xl leading-relaxed mb-10 text-slate-200" data-i18n="hero_desc">
           Precision haircuts, hot towel beard sculpting, authentic Moroccan bath and executive VIP care in a private club ambiance.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
@@ -365,7 +424,7 @@
         </div>
         <div class="flex items-center gap-4 mt-10">
           <div class="flex gap-0.5 text-sm" style="color:var(--brass-fill)"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="text-sm"><strong class="display text-lg">4.9</strong> <span class="muted" data-i18n="hero_reviews_badge">• 115 Google Maps Reviews</span></p>
+          <p class="text-sm text-white"><strong class="display text-lg text-white">4.9</strong> <span class="text-slate-300" data-i18n="hero_reviews_badge">• 115 Google Maps Reviews</span></p>
         </div>
       </div>
 

@@ -320,6 +320,57 @@
       letter-spacing: 0;
     }
     [dir="rtl"] .flip { transform: scaleX(-1); }
+
+    /* ============================================================
+       CINEMATIC VIDEO HERO (OpenHero High-Performance Dynamics)
+       ============================================================ */
+    #hero {
+      background-color: #07090E !important;
+      color: #F8FAFC !important;
+    }
+    #hero h1 {
+      color: #FFFFFF !important;
+    }
+    #hero .hero-desc {
+      color: #CBD5E1 !important;
+    }
+    #hero .hero-badge-pill {
+      background: rgba(11, 15, 23, 0.75);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #F59E0B;
+      backdrop-filter: blur(12px);
+    }
+    #hero .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+    }
+    #hero .btn-ghost:hover {
+      background: #FFFFFF;
+      color: #07090E;
+      border-color: #FFFFFF;
+    }
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.52;
+      transform: scale(1.03);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(7, 9, 14, 0.94) 0%, rgba(7, 9, 14, 0.78) 55%, rgba(7, 9, 14, 0.45) 100%),
+        linear-gradient(to bottom, rgba(7, 9, 14, 0.6) 0%, transparent 45%, var(--bg) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
   </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
@@ -436,9 +487,17 @@
   </header>
 
   <main>
-    <!-- ==================== HERO SECTION WITH MOVING AMBIENT LIGHTS & PARTICLES ==================== -->
-    <section id="hero" class="relative px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-28 overflow-hidden">
+    <!-- ==================== HERO SECTION: OPENHERO CINEMATIC VIDEO BACKGROUND ==================== -->
+    <section id="hero" class="relative px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-28 overflow-hidden bg-[#07090E]">
       
+      <!-- OpenHero High-Performance Automotive Dynamics Video Background -->
+      <video autoplay loop muted playsinline class="hero-video-bg" aria-hidden="true">
+        <source src="hero-bg.mp4" type="video/mp4">
+      </video>
+
+      <!-- Contrast Overlay Scrim -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
       <!-- Ambient Moving Aurora Light Mesh -->
       <div class="hero-ambient-lights" aria-hidden="true">
         <div class="ambient-orb orb-1"></div>
@@ -461,16 +520,16 @@
 
         <!-- Hero Copy -->
         <div class="lg:col-span-7 reveal">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full card text-xs font-mono font-bold mb-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full hero-badge-pill text-xs font-mono font-bold mb-6">
             <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
             <span class="gold-text" data-i18n="hero_badge">5 MIN FROM DXB AIRPORT • 24/7 FLEET</span>
           </div>
 
-          <h1 class="display text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.05] tracking-tight mb-7 font-bold" data-i18n="hero_title">
+          <h1 class="display text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.05] tracking-tight mb-7 font-bold text-white" data-i18n="hero_title">
             DUBAI’S PREMIER <span class="gold-text italic font-normal">EXOTIC &amp; LUXURY</span> CAR RENTAL
           </h1>
 
-          <p class="muted text-base sm:text-lg max-w-xl leading-relaxed mb-10" data-i18n="hero_desc">
+          <p class="hero-desc text-base sm:text-lg max-w-xl leading-relaxed mb-10" data-i18n="hero_desc">
             Drive the world's most coveted supercars and luxury SUVs in Dubai. Complimentary doorstep, hotel, and airport delivery with zero bureaucracy.
           </p>
 
@@ -483,9 +542,9 @@
             <div class="flex gap-1 text-sm text-amber-500">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
             </div>
-            <p class="text-sm">
-              <strong class="display text-lg">4.5</strong> 
-              <span class="muted" data-i18n="hero_rating_sub">• 98 Verified Google Maps Reviews</span>
+            <p class="text-sm text-white">
+              <strong class="display text-lg text-white">4.5</strong> 
+              <span class="text-slate-300" data-i18n="hero_rating_sub">• 98 Verified Google Maps Reviews</span>
             </p>
           </div>
         </div>
