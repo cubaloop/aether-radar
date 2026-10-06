@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth" id="htmlRoot">
 <head>
   <meta charset="UTF-8">
@@ -159,6 +159,76 @@
     [dir="rtl"] .eyebrow, [dir="rtl"] .btn-primary, [dir="rtl"] .btn-ghost, [dir="rtl"] .chip { letter-spacing: 0; }
     [dir="rtl"] .brass-text { font-style: normal; }
     [dir="rtl"] .flip { transform: scaleX(-1); }
+    /* ============================================================
+       DYNAMIC AMBIENT LIGHTS & FALLING DETAILS (Emerald & Brass Aurora)
+       ============================================================ */
+    .hero-ambient-lights {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ambient-orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(85px);
+      opacity: 0.42;
+      animation: ambientFloat 18s ease-in-out infinite alternate;
+    }
+    html.dark .ambient-orb {
+      opacity: 0.28;
+      filter: blur(100px);
+    }
+    .orb-1 {
+      width: 440px; height: 440px; top: -50px; right: 8%;
+      background: radial-gradient(circle, rgba(184, 147, 74, 0.45) 0%, rgba(217, 183, 111, 0.15) 55%, transparent 75%);
+      animation-duration: 17s;
+    }
+    .orb-2 {
+      width: 540px; height: 540px; top: 15%; left: -8%;
+      background: radial-gradient(circle, rgba(15, 77, 58, 0.45) 0%, rgba(23, 105, 79, 0.15) 55%, transparent 75%);
+      animation-duration: 23s; animation-delay: -6s;
+    }
+    .orb-3 {
+      width: 400px; height: 400px; bottom: -30px; right: 30%;
+      background: radial-gradient(circle, rgba(184, 147, 74, 0.35) 0%, rgba(15, 77, 58, 0.15) 55%, transparent 75%);
+      animation-duration: 20s; animation-delay: -11s;
+    }
+    @keyframes ambientFloat {
+      0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+      33% { transform: translate(50px, -40px) scale(1.12) rotate(12deg); }
+      66% { transform: translate(-35px, 35px) scale(0.92) rotate(-8deg); }
+      100% { transform: translate(25px, -15px) scale(1.06) rotate(6deg); }
+    }
+
+    .falling-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle {
+      position: absolute;
+      top: -20px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #D9B76F, #7A5A1E);
+      opacity: 0.55;
+      animation: particleFall linear infinite;
+    }
+    html.dark .particle {
+      opacity: 0.75;
+      background: linear-gradient(180deg, #F3E8CF, #D9B76F);
+      box-shadow: 0 0 8px rgba(217, 183, 111, 0.6);
+    }
+    @keyframes particleFall {
+      0% { transform: translateY(-20px) translateX(0) scale(0.6); opacity: 0; }
+      15% { opacity: 0.8; }
+      85% { opacity: 0.7; }
+      100% { transform: translateY(105vh) translateX(40px) scale(1.2); opacity: 0; }
+    }
+
     ::selection { background: var(--brass-fill); color: #14201B; }
     :focus-visible { outline: 2px solid var(--brass-fill); outline-offset: 3px; }
   </style>
@@ -259,9 +329,27 @@
   </header>
 
   <main>
-  <!-- ==================== HERO: ARCH + EDITORIAL TYPE ==================== -->
-  <section id="hero" class="relative px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-28">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+  <!-- ==================== HERO: ARCH + AMBIENT LIGHTS & FALLING DETAILS ==================== -->
+  <section id="hero" class="relative px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-28 overflow-hidden">
+    
+    <!-- Ambient Moving Emerald & Brass Aurora Mesh -->
+    <div class="hero-ambient-lights" aria-hidden="true">
+      <div class="ambient-orb orb-1"></div>
+      <div class="ambient-orb orb-2"></div>
+      <div class="ambient-orb orb-3"></div>
+    </div>
+
+    <!-- Falling Luxury Brass & Gold Particles -->
+    <div class="falling-particles" aria-hidden="true">
+      <span class="particle" style="left:7%; width:4px; height:4px; animation-duration:14s; animation-delay:0s;"></span>
+      <span class="particle" style="left:24%; width:3px; height:3px; animation-duration:19s; animation-delay:3s;"></span>
+      <span class="particle" style="left:41%; width:5px; height:5px; animation-duration:16s; animation-delay:1s;"></span>
+      <span class="particle" style="left:58%; width:3px; height:3px; animation-duration:22s; animation-delay:5s;"></span>
+      <span class="particle" style="left:73%; width:4px; height:4px; animation-duration:17s; animation-delay:2s;"></span>
+      <span class="particle" style="left:88%; width:3px; height:3px; animation-duration:20s; animation-delay:4s;"></span>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
 
       <div class="lg:col-span-7 reveal">
         <span class="eyebrow block mb-6" data-i18n="hero_eyebrow">Port Saeed · Deira · Dubai</span>
