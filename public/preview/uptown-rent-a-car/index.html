@@ -371,17 +371,48 @@
       pointer-events: none;
       z-index: 1;
     }
+
+    /* Ultra-Luxury Obsidian Glass Navbar */
+    .nav-glass {
+      background: rgba(11, 15, 23, 0.85) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(245, 158, 11, 0.3) !important;
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75);
+      color: #FFFFFF !important;
+    }
+    .nav-glass .brand-title {
+      color: #FFFFFF !important;
+    }
+    .nav-glass .brand-sub {
+      color: #F59E0B !important;
+    }
+    .nav-glass nav a {
+      color: rgba(255, 255, 255, 0.82) !important;
+    }
+    .nav-glass nav a:hover {
+      color: #FFFFFF !important;
+    }
+    .nav-glass .icon-btn {
+      color: #FFFFFF !important;
+      border-color: rgba(255, 255, 255, 0.16) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+    .nav-glass .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-color: #F59E0B !important;
+    }
   </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
 
-  <!-- ==================== CLIENT PREVIEW BANNER ==================== -->
-  <aside class="sticky top-0 z-50 px-3 py-2 text-xs font-mono shadow-md" style="background:#0F141C;color:#F1F5F9;border-bottom:1px solid rgba(245,158,11,0.3)">
+  <!-- ==================== CLIENT PREVIEW BANNER (Scrolls naturally away) ==================== -->
+  <aside class="relative z-20 px-3 py-2 text-xs font-mono shadow-md" style="background:#0F141C;color:#F1F5F9;border-bottom:1px solid rgba(245,158,11,0.3)">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span class="uppercase tracking-widest text-slate-400 font-bold" data-i18n="preview_badge">Preview:</span>
-        <span class="font-bold text-amber-400" data-i18n="preview_title">Luxury STS Rent A Car (Port Saeed, Dubai)</span>
+        <span class="font-bold text-amber-400 notranslate" translate="no" data-i18n="preview_title">Uptown Rent A Car (Business Bay, Dubai)</span>
       </div>
       <div class="flex items-center gap-3">
         <span class="text-slate-400 hidden md:inline text-[11px]" data-i18n="preview_sub">Claim this official website with custom domain for 1,000 AED</span>
@@ -392,18 +423,18 @@
     </div>
   </aside>
 
-  <!-- ==================== FLOATING PILL HEADER ==================== -->
-  <header class="sticky top-4 z-40 px-3 sm:px-6 mt-3">
-    <div class="glass max-w-6xl mx-auto rounded-full px-3.5 sm:px-6 py-2.5 flex items-center justify-between gap-3 relative" style="box-shadow:var(--shadow)">
+  <!-- ==================== FLOATING OBSIDIAN GLASS PILL HEADER ==================== -->
+  <header class="sticky top-3 z-40 px-3 sm:px-6">
+    <div class="nav-glass max-w-6xl mx-auto rounded-full px-3.5 sm:px-6 py-2.5 flex items-center justify-between gap-3 relative">
 
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center gap-3 ps-1 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-black font-display font-black text-lg shadow-md group-hover:scale-105 transition-transform">
-          STS
+          <span class="notranslate" translate="no">U</span>
         </div>
         <div class="leading-tight">
-          <span class="display font-extrabold text-base sm:text-lg block tracking-wider" data-i18n="brand_name">UPTOWN RENT A CAR</span>
-          <span class="text-[9px] sm:text-[10px] uppercase font-bold block gold-text" style="letter-spacing:0.2em" data-i18n="brand_sub">Rent A Car • Dubai</span>
+          <span class="display font-extrabold text-base sm:text-lg block tracking-wider brand-title notranslate" translate="no" data-i18n="brand_name">UPTOWN RENT A CAR</span>
+          <span class="text-[9px] sm:text-[10px] uppercase font-bold block brand-sub" style="letter-spacing:0.2em" data-i18n="brand_sub">Luxury Supercars • Business Bay</span>
         </div>
       </a>
 
@@ -792,11 +823,11 @@
   <footer class="border-t py-12" style="border-color:var(--line);background:var(--bg-alt)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-center text-xs font-mono">
       <div>
-        <span class="display text-xl font-extrabold block mb-1" data-i18n="brand_name">UPTOWN RENT A CAR RENT A CAR</span>
+        <span class="display text-xl font-extrabold block mb-1" data-i18n="brand_name">UPTOWN RENT A CAR</span>
         <span class="muted" data-i18n="footer_tag">Exotic and luxury vehicle rentals in Dubai.</span>
       </div>
       <div class="muted md:text-center">
-        © 2026 Luxury STS Rent A Car • Port Saeed, Dubai, UAE
+        © 2026 Uptown Rent A Car • Empire Heights, Business Bay, Dubai
       </div>
       <div class="md:text-end font-semibold">
         Developed by <span class="gold-text font-bold">Tecnoemprende</span>
@@ -858,9 +889,9 @@
       <span class="px-3 py-1 rounded-full bg-amber-500/20 gold-text font-mono text-[10px] uppercase font-bold border border-amber-500/30 inline-block mb-3">
         Official Turnkey Handover
       </span>
-      <h3 class="display font-extrabold text-2xl sm:text-3xl mb-2">Claim This Website for Luxury STS</h3>
+      <h3 class="display font-extrabold text-2xl sm:text-3xl mb-2">Claim This Website for Uptown Rent A Car</h3>
       <p class="muted text-xs mb-6 leading-relaxed">
-        This fully functional website is ready to be launched under your official domain (e.g. <strong>luxurysts.com</strong> or <strong>luxurysts.ae</strong>) with direct WhatsApp fleet bookings and mobile administration.
+        This fully functional website is ready to be launched under your official domain (e.g. <strong>uptownrentacar.com</strong> or <strong>uptownrentacar.ae</strong>) with direct WhatsApp fleet bookings and mobile administration.
       </p>
 
       <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 mb-6 space-y-2 text-xs">
@@ -868,7 +899,7 @@
         <div class="flex justify-between items-center"><span class="muted">Optional Cloud Hosting &amp; 24/7 Support:</span><span class="font-mono font-bold">500 AED / year</span></div>
       </div>
 
-      <a href="https://wa.me/971508379080?text=Hi%20David%2C%20I%20would%20like%20to%20activate%20the%20official%20Luxury%20STS%20website%20for%201%2C000%20AED" target="_blank" class="w-full btn-gold !py-3.5 text-center">
+      <a href="https://wa.me/971508379080?text=Hi%20David%2C%20I%20would%20like%20to%20activate%20the%20official%20Uptown%20Rent%20A%20Car%20website%20for%201%2C000%20AED" target="_blank" class="w-full btn-gold !py-3.5 text-center">
         Claim Official Website via WhatsApp
       </a>
     </div>
@@ -888,11 +919,11 @@
           <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-500 flex items-center justify-center text-xl mx-auto mb-4">
             <i class="fas fa-user-shield"></i>
           </div>
-          <h3 class="display font-bold text-2xl mb-1">Luxury STS Fleet Manager</h3>
+          <h3 class="display font-bold text-2xl mb-1">Uptown Rent A Car Fleet Manager</h3>
           <p class="muted text-xs mb-6">Enter administrator credentials to manage fleet and rates.</p>
           
           <form onsubmit="handleAdminLogin(event)" class="space-y-4 text-xs">
-            <input type="email" id="adminEmailInput" value="admin@luxurysts.com" required class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none">
+            <input type="email" id="adminEmailInput" value="admin@uptownrentacar.com" required class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none">
             <input type="password" id="adminPasswordInput" value="admin123" required class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none">
             <button type="submit" class="w-full btn-gold !py-3">Unlock Dashboard</button>
           </form>
@@ -1012,7 +1043,7 @@
     const translations = {
       en: {
         preview_badge: "Preview:",
-        preview_title: "Luxury STS Rent A Car (Port Saeed, Dubai)",
+        preview_title: "Uptown Rent A Car (Business Bay, Dubai)",
         preview_sub: "Claim this official website with custom domain for 1,000 AED",
         preview_btn: "Activate Website",
         brand_name: "UPTOWN RENT A CAR",
@@ -1050,12 +1081,12 @@
         reviews_eyebrow: "Verified Google Maps Rating",
         reviews_count_label: "• 2,932 Google Maps Reviews",
         reviews_title: "Trusted by International Travelers & Residents",
-        reviews_desc: "Read verified reviews directly from clients who rented supercars and luxury SUVs with Luxury STS in Dubai.",
+        reviews_desc: "Read verified reviews directly from clients who rented supercars and luxury SUVs with Uptown Rent A Car in Dubai.",
         btn_view_reviews: "View 2,932 Reviews on Google Maps",
         loc_eyebrow: "Prime Location",
         loc_title: "Hours & Location",
-        loc_address_title: "Luxury STS Rent A Car",
-        loc_address_desc: "ACICO Business Park, Office M 02A, Port Saeed, Dubai, UAE (5 mins from DXB)",
+        loc_address_title: "Uptown Rent A Car",
+        loc_address_desc: "Empire Heights Tower B, R10 Al Asayel St, Business Bay, Dubai, UAE",
         loc_hours_title: "Operating Schedule",
         loc_hours_desc: "Open 24/7 • Instant Deliveries Day & Night",
         loc_email_title: "Official Inquiries",
@@ -1076,23 +1107,23 @@
       },
       ar: {
         preview_badge: "معاينة:",
-        preview_title: "لوكسري إس تي إس لتأجير السيارات (بورسعيد، دبي)",
+        preview_title: "أب تاون لتأجير السيارات الفاخرة (الخليج التجاري، دبي)",
         preview_sub: "احصل على هذا الموقع الرسمي بنطاق خاص مقابل 1,000 درهم",
         preview_btn: "تفعيل الموقع",
-        brand_name: "لوكسري إس تي إس",
+        brand_name: "أب تاون لتأجير السيارات",
         brand_sub: "لتأجير السيارات • دبي",
         nav_fleet: "الأسطول الفاخر",
         nav_experience: "خدمات كبار الزوار",
         nav_reviews: "التقييمات (4.9★)",
         nav_location: "الموقع والاتصال",
         btn_book_nav: "حجز سيارة",
-        hero_badge: "5 دقائق من مطار دبي • أسطول متاح 24/7",
+        hero_badge: "الخليج التجاري • أكثر من 2900 تقييم 5 نجوم",
         hero_title: 'أفضل تأجير <span class="gold-text">للسيارات الفاخرة والخارقة</span> في دبي',
         hero_desc: "انطلق بأفخم السيارات الرياضية والرباعية الدفع في دبي. توصيل مجاني إلى الفنادق والمطار بدون إجراءات معقدة.",
         btn_book_hero: "احجز سيارتك الخارقة",
         btn_explore_hero: "استكشف الأسطول",
         hero_rating_sub: "• 2,932 تقييم موثق على خرائط جوجل",
-        hero_stat_badge: "بورسعيد • مجمع أسيكو للأعمال",
+        hero_stat_badge: "أبراج إمباير هايتس • الخليج التجاري",
         hero_stat_title: "سائق خاص أو قيادة ذاتية",
         hero_badge_airport: "توصيل مطار دبي",
         hero_badge_airport_sub: "تسليم مجاني عند بوابات الوصول",
@@ -1114,12 +1145,12 @@
         reviews_eyebrow: "تقييم حقيقي على خرائط جوجل",
         reviews_count_label: "• 2,932 تقييم على خرائط جوجل",
         reviews_title: "ثقة الزوار الدوليين والمقيمين في دبي",
-        reviews_desc: "اطلع على التقييمات الموثقة للعملاء الذين استأجروا سيارات خارقة وفاخرة مع لوكسري إس تي إس.",
+        reviews_desc: "اطلع على التقييمات الموثقة للعملاء الذين استأجروا سيارات خارقة وفاخرة مع أب تاون لتأجير السيارات.",
         btn_view_reviews: "عرض 2,932 تقييماً على خرائط جوجل",
         loc_eyebrow: "موقع استراتيجي",
         loc_title: "الموقع وساعات العمل",
-        loc_address_title: "لوكسري إس تي إس لتأجير السيارات",
-        loc_address_desc: "مجمع أسيكو للأعمال، مكتب M 02A، بورسعيد، دبي (5 دقائق من المطار)",
+        loc_address_title: "أب تاون لتأجير السيارات",
+        loc_address_desc: "أبراج إمباير هايتس B، شارع الأصايل R10، الخليج التجاري، دبي، الإمارات",
         loc_hours_title: "جدول العمل",
         loc_hours_desc: "مفتوح 24 ساعة يومياً • تسليم فوري ليلاً ونهاراً",
         loc_email_title: "الاستفسارات الرسمية",
@@ -1419,13 +1450,13 @@
       e.preventDefault();
       const em = document.getElementById('adminEmailInput').value;
       const pw = document.getElementById('adminPasswordInput').value;
-      if (em === 'admin@luxurysts.com' && pw === 'admin123') {
+      if (em === 'admin@uptownrentacar.com' && pw === 'admin123') {
         document.getElementById('adminLoginSection').classList.add('hidden');
         document.getElementById('adminDashboardSection').classList.remove('hidden');
         renderAdminFleet();
         renderAdminOrders();
       } else {
-        alert('Invalid credentials. Use admin@luxurysts.com / admin123');
+        alert('Invalid credentials. Use admin@uptownrentacar.com / admin123');
       }
     }
 

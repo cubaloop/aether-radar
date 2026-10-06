@@ -371,17 +371,48 @@
       pointer-events: none;
       z-index: 1;
     }
+
+    /* Ultra-Luxury Obsidian Glass Navbar */
+    .nav-glass {
+      background: rgba(11, 15, 23, 0.85) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(245, 158, 11, 0.3) !important;
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75);
+      color: #FFFFFF !important;
+    }
+    .nav-glass .brand-title {
+      color: #FFFFFF !important;
+    }
+    .nav-glass .brand-sub {
+      color: #F59E0B !important;
+    }
+    .nav-glass nav a {
+      color: rgba(255, 255, 255, 0.82) !important;
+    }
+    .nav-glass nav a:hover {
+      color: #FFFFFF !important;
+    }
+    .nav-glass .icon-btn {
+      color: #FFFFFF !important;
+      border-color: rgba(255, 255, 255, 0.16) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+    .nav-glass .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-color: #F59E0B !important;
+    }
   </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
 
-  <!-- ==================== CLIENT PREVIEW BANNER ==================== -->
-  <aside class="sticky top-0 z-50 px-3 py-2 text-xs font-mono shadow-md" style="background:#0F141C;color:#F1F5F9;border-bottom:1px solid rgba(245,158,11,0.3)">
+  <!-- ==================== CLIENT PREVIEW BANNER (Scrolls naturally away) ==================== -->
+  <aside class="relative z-20 px-3 py-2 text-xs font-mono shadow-md" style="background:#0F141C;color:#F1F5F9;border-bottom:1px solid rgba(245,158,11,0.3)">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span class="uppercase tracking-widest text-slate-400 font-bold" data-i18n="preview_badge">Preview:</span>
-        <span class="font-bold text-amber-400" data-i18n="preview_title">Luxury STS Rent A Car (Port Saeed, Dubai)</span>
+        <span class="font-bold text-amber-400 notranslate" translate="no" data-i18n="preview_title">Luxury STS Rent A Car (Port Saeed, Dubai)</span>
       </div>
       <div class="flex items-center gap-3">
         <span class="text-slate-400 hidden md:inline text-[11px]" data-i18n="preview_sub">Claim this official website with custom domain for 1,000 AED</span>
@@ -392,18 +423,18 @@
     </div>
   </aside>
 
-  <!-- ==================== FLOATING PILL HEADER ==================== -->
-  <header class="sticky top-4 z-40 px-3 sm:px-6 mt-3">
-    <div class="glass max-w-6xl mx-auto rounded-full px-3.5 sm:px-6 py-2.5 flex items-center justify-between gap-3 relative" style="box-shadow:var(--shadow)">
+  <!-- ==================== FLOATING OBSIDIAN GLASS PILL HEADER ==================== -->
+  <header class="sticky top-3 z-40 px-3 sm:px-6">
+    <div class="nav-glass max-w-6xl mx-auto rounded-full px-3.5 sm:px-6 py-2.5 flex items-center justify-between gap-3 relative">
 
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center gap-3 ps-1 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-black font-display font-black text-lg shadow-md group-hover:scale-105 transition-transform">
-          STS
+          <span class="notranslate" translate="no">STS</span>
         </div>
         <div class="leading-tight">
-          <span class="display font-extrabold text-base sm:text-lg block tracking-wider" data-i18n="brand_name">LUXURY STS</span>
-          <span class="text-[9px] sm:text-[10px] uppercase font-bold block gold-text" style="letter-spacing:0.2em" data-i18n="brand_sub">Rent A Car • Dubai</span>
+          <span class="display font-extrabold text-base sm:text-lg block tracking-wider brand-title notranslate" translate="no" data-i18n="brand_name">LUXURY STS</span>
+          <span class="text-[9px] sm:text-[10px] uppercase font-bold block brand-sub" style="letter-spacing:0.2em" data-i18n="brand_sub">Exotic &amp; Luxury • Dubai</span>
         </div>
       </a>
 

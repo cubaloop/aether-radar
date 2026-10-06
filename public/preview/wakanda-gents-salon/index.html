@@ -282,6 +282,37 @@
       pointer-events: none;
       z-index: 1;
     }
+  
+    /* Ultra-Luxury Obsidian / Emerald Glass Navbar */
+    .nav-glass {
+      background: rgba(6, 17, 13, 0.85) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(217, 183, 111, 0.25) !important;
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75);
+      color: #F6F1E7 !important;
+    }
+    .nav-glass .brand-title {
+      color: #FFFFFF !important;
+    }
+    .nav-glass .brand-sub {
+      color: #D9B76F !important;
+    }
+    .nav-glass nav a {
+      color: rgba(246, 241, 231, 0.8) !important;
+    }
+    .nav-glass nav a:hover {
+      color: #FFFFFF !important;
+    }
+    .nav-glass .icon-btn {
+      color: #F6F1E7 !important;
+      border-color: rgba(217, 183, 111, 0.25) !important;
+      background: rgba(246, 241, 231, 0.08) !important;
+    }
+    .nav-glass .icon-btn:hover {
+      background: rgba(217, 183, 111, 0.2) !important;
+      border-color: #D9B76F !important;
+    }
   </style>
 </head>
 <body>
@@ -305,12 +336,12 @@
 
   <!-- ==================== FLOATING PILL HEADER ==================== -->
   <header class="sticky top-3 z-40 px-3 sm:px-6 mt-3">
-    <div class="glass max-w-6xl mx-auto rounded-full px-3 sm:px-5 py-2 flex items-center justify-between gap-2 relative" style="box-shadow:var(--shadow)">
+    <div class="nav-glass max-w-6xl mx-auto rounded-full px-3 sm:px-5 py-2 flex items-center justify-between gap-2 relative" style="box-shadow:var(--shadow)">
 
       <a href="#hero" class="flex items-center gap-3 ps-1">
         <span class="w-10 h-10 rounded-full flex items-center justify-center display text-xl font-semibold" style="background:var(--emerald);color:#D9B76F">S</span>
         <span class="leading-tight">
-          <span class="display font-semibold text-base sm:text-lg block" data-i18n="brand_name">WAKANDA</span>
+          <span class="display font-semibold text-base sm:text-lg block brand-title notranslate" translate="no" data-i18n="brand_name">WAKANDA</span>
           <span class="text-[9px] sm:text-[10px] uppercase font-semibold block" style="color:var(--brass);letter-spacing:.22em" data-i18n="brand_sub">Gents Saloon • Dubai</span>
         </span>
       </a>
