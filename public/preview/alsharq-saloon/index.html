@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth" id="htmlRoot">
 <head>
   <meta charset="UTF-8">
@@ -282,13 +282,9 @@
       </div>
 
       <div class="lg:col-span-5 relative reveal mx-auto w-full max-w-md lg:max-w-none">
-        <div class="arch-ring relative overflow-hidden">
-          <div class="arch aspect-[4/5] relative">
-            <video autoplay loop muted playsinline poster="hero.jpg" class="w-full h-full object-cover">
-              <source src="hero.mp4" type="video/mp4">
-              <img src="hero.jpg" alt="Al Sharq Gents Saloon interior, Dubai" class="w-full h-full object-cover">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+        <div class="arch-ring">
+          <div class="arch aspect-[4/5]">
+            <img src="hero.jpg" alt="Al Sharq Gents Saloon interior, Dubai" class="w-full h-full object-cover" fetchpriority="high">
           </div>
         </div>
         <div class="glass rounded-2xl px-4 py-3 absolute -start-2 sm:-start-6 bottom-14 flex items-center gap-3" style="box-shadow:var(--shadow)">
