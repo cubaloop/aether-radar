@@ -39,6 +39,10 @@ def message(l, pub):
             % (l["name"], l["website"], pub["ttfb_ms"], pub["page_size_kb"], wa, pub["est_monthly_loss_usd"], PUBLIC, core.norm_domain(l["website"])))
 
 def run():
+    paused_flag = os.path.join(HERE, "data", "outbound_paused.flag")
+    if os.path.exists(paused_flag) or os.getenv("OUTBOUND_PAUSED", "1") == "1":
+        print("[Prospector] Outbound is explicitly PAUSED by user. Standing by.")
+        return
     ok, st = gateway_connected()
     state = {"time": time.strftime("%Y-%m-%d %H:%M:%S"), "gateway_connected": ok, "detail": st}
     sent_log = load(LOG, [])

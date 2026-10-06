@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth dark" id="htmlRoot">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Al Sharq Gents Saloon | Master Grooming & Barbering Deira Dubai</title>
-  <meta name="description" content="Experience Dubai's premier gentlemen's grooming in Port Saeed, Deira. Master haircuts, royal beard sculpting, Moroccan bath, and executive VIP care.">
+  <title>Al Sharq Gents Saloon | Bespoke Grooming & Royal Barbering Dubai</title>
+  <meta name="description" content="Dubai's premier bespoke gentlemen's salon in Port Saeed, Deira. Precision haircuts, royal beard sculpting, authentic Moroccan bath, and executive VIP care.">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Syne & Montserrat -->
+  <!-- Google Fonts: Syne, Montserrat, Cairo (for Arabic), Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@500;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -25,20 +25,29 @@
           fontFamily: {
             display: ['Syne', 'sans-serif'],
             sans: ['Montserrat', 'sans-serif'],
-            condensed: ['Oswald', 'sans-serif']
+            arabic: ['Cairo', 'sans-serif']
           },
           colors: {
             gold: {
+              100: '#FEF9C3',
+              200: '#FEF08A',
               300: '#FDE047',
               400: '#EAB308',
               500: '#CA8A04',
-              600: '#A16207'
+              600: '#A16207',
+              700: '#854D0E'
+            },
+            cream: {
+              50: '#FDFCF7',
+              100: '#FBF9F0',
+              200: '#F5F1E4',
+              300: '#EBE4CE'
             },
             noir: {
               950: '#07090E',
-              900: '#0C0F17',
-              850: '#121724',
-              800: '#1A2133'
+              900: '#0D111A',
+              850: '#131926',
+              800: '#1C2436'
             }
           }
         }
@@ -47,106 +56,161 @@
   </script>
 
   <style>
-    body {
+    /* Smooth transition between light & dark theme */
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* DARK THEME */
+    html.dark body {
       background-color: #07090E;
       color: #E2E8F0;
-      font-family: 'Montserrat', sans-serif;
-      overflow-x: hidden;
     }
-    
-    .glass-panel {
-      background: rgba(18, 23, 36, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+    html.dark .glass-card {
+      background: rgba(13, 17, 26, 0.78);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    html.dark .ambient-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(202, 138, 4, 0.16) 0%, transparent 60%);
+    }
+    html.dark .header-glass {
+      background: rgba(13, 17, 26, 0.85);
+      border-color: rgba(255, 255, 255, 0.08);
     }
 
-    .ambient-glow {
-      background: radial-gradient(circle at 50% 0%, rgba(202, 138, 4, 0.15) 0%, transparent 60%);
+    /* LIGHT THEME: LUXURY WARM IVORY & BRONZE */
+    html:not(.dark) body {
+      background-color: #F8F6F0;
+      color: #1C1917;
+    }
+    html:not(.dark) .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(161, 98, 7, 0.15);
+      box-shadow: 0 10px 30px rgba(161, 98, 7, 0.06);
+    }
+    html:not(.dark) .ambient-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(202, 138, 4, 0.12) 0%, transparent 60%);
+    }
+    html:not(.dark) .header-glass {
+      background: rgba(248, 246, 240, 0.92);
+      border-color: rgba(161, 98, 7, 0.15);
     }
 
-    /* Subtle Animated Satin Wave */
-    .satin-layer {
-      background: linear-gradient(135deg, rgba(20, 26, 40, 0.8) 0%, rgba(7, 9, 14, 0.95) 100%);
+    /* RTL Arabic Typography Overrides */
+    [dir="rtl"] {
+      font-family: 'Cairo', sans-serif !important;
     }
-
-    /* Touch Safe scrolling */
-    .touch-scroll {
-      -webkit-overflow-scrolling: touch;
+    [dir="rtl"] .font-display {
+      font-family: 'Cairo', sans-serif !important;
+      font-weight: 800;
+    }
+    [dir="rtl"] .font-sans {
+      font-family: 'Cairo', sans-serif !important;
     }
   </style>
 </head>
-<body class="selection:bg-gold-500 selection:text-black">
+<body class="selection:bg-gold-500 selection:text-black antialiased">
 
   <!-- ==================== CLIENT PREVIEW BANNER ==================== -->
-  <aside class="sticky top-0 z-50 bg-gradient-to-r from-amber-950 via-zinc-950 to-amber-950 border-b border-gold-500/30 px-3 py-2.5 text-xs font-mono shadow-2xl">
+  <aside class="sticky top-0 z-50 bg-gradient-to-r from-amber-950 via-zinc-950 to-amber-950 text-white border-b border-gold-500/30 px-3 py-2 text-xs font-mono shadow-xl">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-slate-300 font-bold uppercase tracking-wider">Vista Previa Exclusiva:</span>
-        <span class="text-gold-400 font-semibold">Al Sharq Gents Saloon (Port Saeed, Deira)</span>
+        <span class="text-slate-300 font-bold uppercase tracking-wider" data-i18n="preview_badge">Preview:</span>
+        <span class="text-gold-400 font-semibold" data-i18n="preview_salon">Al Sharq Gents Saloon (Port Saeed, Deira)</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="text-slate-400 hidden md:inline">Reclama este sitio web oficial con tu propio dominio por solo 1,000 AED</span>
-        <button onclick="openActivationModal()" class="px-3 py-1 rounded-full bg-gold-400 hover:bg-gold-300 text-black font-sans font-bold text-[11px] uppercase tracking-wider transition-all shadow-lg shadow-gold-500/20 active:scale-95">
-          Activar Sitio Web
+        <span class="text-slate-400 hidden md:inline" data-i18n="preview_cta_sub">Claim this official website with custom domain for 1,000 AED</span>
+        <button onclick="openActivationModal()" class="px-3.5 py-1 rounded-full bg-gold-400 hover:bg-gold-300 text-black font-sans font-bold text-[11px] uppercase tracking-wider transition-all shadow-md active:scale-95" data-i18n="preview_btn">
+          Activate Website
         </button>
       </div>
     </div>
   </aside>
 
-  <!-- ==================== ANNOUNCEMENT MARQUEE ==================== -->
-  <div id="announcementBar" class="bg-noir-900 border-b border-white/5 py-1.5 px-4 text-center text-[11px] font-mono tracking-widest uppercase text-gold-400/90 overflow-hidden">
-    <div class="inline-block animate-pulse" id="announcementText">
-      ✦ OPEN DAILY 9:00 AM – 1:00 AM ✦ WALK-INS & ONLINE RESERVATIONS WELCOME ✦ PORT SAEED, DEIRA
+  <!-- ==================== ANNOUNCEMENT BAR ==================== -->
+  <div id="announcementBar" class="bg-amber-500/10 dark:bg-noir-900 border-b border-gold-500/10 dark:border-white/5 py-1.5 px-4 text-center text-[11px] font-mono tracking-widest uppercase text-amber-800 dark:text-gold-400/90 overflow-hidden">
+    <div class="inline-block animate-pulse" id="announcementText" data-i18n="marquee_text">
+      ✦ OPEN DAILY 9:00 AM – 1:00 AM ✦ WALK-INS & ONLINE RESERVATIONS ✦ PORT SAEED, DEIRA, DUBAI
     </div>
   </div>
 
-  <!-- ==================== HEADER & NAVIGATION ==================== -->
-  <header class="sticky top-9 z-40 glass-panel border-b border-white/5 px-4 sm:px-8 py-4 transition-all">
+  <!-- ==================== MAIN HEADER ==================== -->
+  <header class="sticky top-8 z-40 header-glass backdrop-blur-xl border-b px-4 sm:px-8 py-3.5 transition-all">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-amber-700 flex items-center justify-center text-black font-display font-black text-xl shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black font-display font-black text-xl shadow-md group-hover:scale-105 transition-transform">
           S
         </div>
         <div>
-          <span class="font-display font-extrabold text-base sm:text-lg tracking-wider text-white block leading-tight">
+          <span class="font-display font-extrabold text-base sm:text-lg tracking-wider text-stone-900 dark:text-white block leading-tight" data-i18n="brand_name">
             AL SHARQ
           </span>
-          <span class="font-sans text-[10px] uppercase tracking-[0.25em] text-gold-400 font-medium block">
+          <span class="font-sans text-[10px] uppercase tracking-[0.25em] text-gold-600 dark:text-gold-400 font-semibold block" data-i18n="brand_sub">
             Gents Saloon • Dubai
           </span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 font-sans text-xs uppercase tracking-widest text-slate-300 font-medium">
-        <a href="#services" class="hover:text-gold-400 transition-colors">Servicios</a>
-        <a href="#experience" class="hover:text-gold-400 transition-colors">Experiencia</a>
-        <a href="#reviews" class="hover:text-gold-400 transition-colors">Reseñas (4.9★)</a>
-        <a href="#location" class="hover:text-gold-400 transition-colors">Ubicación</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 font-sans text-xs uppercase tracking-widest text-stone-600 dark:text-slate-300 font-medium">
+        <a href="#services" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors" data-i18n="nav_services">Services</a>
+        <a href="#amenities" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors" data-i18n="nav_amenities">Amenities</a>
+        <a href="#reviews" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors" data-i18n="nav_reviews">Reviews (4.9★)</a>
+        <a href="#location" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors" data-i18n="nav_location">Location</a>
       </nav>
 
-      <!-- Header CTAs (Strict Icon Only for WhatsApp) -->
-      <div class="flex items-center gap-3">
-        <!-- WhatsApp Header Button: STRICTLY ICON ONLY -->
+      <!-- Action Controls: Language, Theme, WhatsApp & Booking -->
+      <div class="flex items-center gap-2.5">
+        
+        <!-- Language Switcher Dropdown (English / العربية) -->
+        <div class="relative">
+          <button onclick="toggleLangDropdown()" id="langBtn" class="px-2.5 py-1.5 rounded-lg bg-stone-200/60 dark:bg-white/5 hover:bg-gold-400/20 text-stone-800 dark:text-slate-200 border border-stone-300 dark:border-white/10 text-xs font-mono font-bold flex items-center gap-1.5 transition-all">
+            <span id="currentLangLabel">EN</span>
+            <i class="fas fa-chevron-down text-[10px] text-stone-500 dark:text-slate-400"></i>
+          </button>
+          <div id="langDropdown" class="absolute right-0 mt-2 w-32 rounded-xl glass-card py-1.5 hidden shadow-2xl z-50 text-xs font-medium border border-gold-500/20">
+            <button onclick="changeLang('en')" class="w-full text-left px-3 py-2 hover:bg-gold-500/10 flex items-center justify-between text-stone-800 dark:text-white">
+              <span>English</span>
+              <span class="text-[10px] text-slate-400 font-mono">EN</span>
+            </button>
+            <button onclick="changeLang('ar')" class="w-full text-right px-3 py-2 hover:bg-gold-500/10 flex items-center justify-between font-arabic text-stone-800 dark:text-white">
+              <span>العربية</span>
+              <span class="text-[10px] text-slate-400 font-mono">AR</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Light / Dark Theme Toggle Button -->
+        <button onclick="toggleTheme()" id="themeToggleBtn" class="w-9 h-9 rounded-lg bg-stone-200/60 dark:bg-white/5 hover:bg-gold-400/20 text-stone-800 dark:text-gold-400 border border-stone-300 dark:border-white/10 flex items-center justify-center text-sm transition-all" title="Toggle Light / Dark Mode">
+          <i class="fas fa-sun hidden dark:inline"></i>
+          <i class="fas fa-moon inline dark:hidden"></i>
+        </button>
+
+        <!-- WhatsApp Button: STRICTLY ICON ONLY -->
         <a href="https://wa.me/971547229787" target="_blank" rel="noopener noreferrer" 
-           class="w-10 h-10 rounded-full bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-black border border-emerald-500/30 flex items-center justify-center text-lg transition-all shadow-lg active:scale-95"
+           class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center text-lg sm:text-xl transition-all shadow-md active:scale-95"
            title="WhatsApp Chat">
           <i class="fab fa-whatsapp"></i>
         </a>
 
-        <!-- Book Appointment Button -->
-        <button onclick="openBookingModal()" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-white/[0.08] hover:bg-white text-white hover:text-black border border-white/20 font-sans text-xs uppercase tracking-wider font-semibold transition-all">
-          Reservar Cita
+        <!-- Booking CTA Button -->
+        <button onclick="openBookingModal()" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-stone-900 dark:bg-white/[0.08] hover:bg-gold-500 text-white hover:text-black border border-stone-800 dark:border-white/20 font-sans text-xs uppercase tracking-wider font-semibold transition-all" data-i18n="btn_book_nav">
+          Book Appointment
         </button>
 
-        <!-- Admin Access Key Pill -->
-        <button onclick="openAdminModal()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-gold-500/20 text-slate-400 hover:text-gold-400 border border-white/5 flex items-center justify-center text-xs transition-all" title="Admin Dashboard">
+        <!-- Admin Access Key -->
+        <button onclick="openAdminModal()" class="w-8 h-8 rounded-full bg-stone-200/60 dark:bg-white/5 text-stone-600 dark:text-slate-400 hover:text-gold-500 flex items-center justify-center text-xs transition-all" title="Admin Dashboard">
           <i class="fas fa-lock"></i>
         </button>
+
       </div>
 
     </div>
@@ -155,207 +219,227 @@
   <!-- ==================== HERO SECTION ==================== -->
   <section id="hero" class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden ambient-glow">
     
-    <!-- Background Image with Depth Gradients -->
+    <!-- Hero Background Image with Theme Gradients -->
     <div class="absolute inset-0 z-0">
-      <img src="hero.jpg" alt="Al Sharq Gents Saloon Dubai" class="w-full h-full object-cover object-center opacity-40 scale-105 animate-[pulse_10s_ease-in-out_infinite]">
-      <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/70 to-noir-950/40"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-noir-950 via-transparent to-noir-950"></div>
+      <img src="hero.jpg" alt="Al Sharq Gents Saloon Dubai" class="w-full h-full object-cover object-center opacity-30 dark:opacity-45 scale-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#F8F6F0] via-[#F8F6F0]/70 to-[#F8F6F0]/40 dark:from-noir-950 dark:via-noir-950/75 dark:to-noir-950/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#F8F6F0] via-transparent to-[#F8F6F0] dark:from-noir-950 dark:via-transparent dark:to-noir-950"></div>
     </div>
 
-    <!-- Content -->
+    <!-- Hero Content -->
     <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
       
       <!-- Verified Google Rating Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border-gold-500/30 text-xs font-mono text-gold-400 mb-6 shadow-xl">
-        <span class="flex text-amber-400 text-xs">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-mono text-amber-700 dark:text-gold-400 mb-6 shadow-md">
+        <span class="flex text-amber-500 text-xs">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </span>
-        <span class="font-bold text-white">4.9 / 5.0</span>
-        <span class="text-slate-400">• 698 Reseñas en Google Maps</span>
+        <span class="font-bold text-stone-900 dark:text-white">4.9 / 5.0</span>
+        <span class="text-stone-500 dark:text-slate-400" data-i18n="hero_reviews_badge">• 698 Google Maps Reviews</span>
       </div>
 
-      <!-- Main Title -->
-      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.08] mb-6">
-        ARTE Y DISTINCIÓN EN <span class="bg-gradient-to-r from-gold-300 via-amber-400 to-gold-500 bg-clip-text text-transparent">BARBERÍA MASCULINA</span>
+      <!-- Main Display Title -->
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-stone-950 dark:text-white leading-[1.06] mb-6" data-i18n="hero_title">
+        MASTER GROOMING & <span class="bg-gradient-to-r from-amber-700 via-gold-500 to-amber-600 dark:from-gold-300 dark:via-amber-400 dark:to-gold-500 bg-clip-text text-transparent">ROYAL BARBERING</span>
       </h1>
 
-      <!-- Description -->
-      <p class="font-sans text-sm sm:text-lg text-slate-300 max-w-2xl font-light leading-relaxed mb-10">
-        Ubicado en Mabrooka, Port Saeed, Deira. Cortes de precisión, perfilado de barba con toalla caliente, baño marroquí y cuidado facial ejecutivo con maestros barberos de primer nivel.
+      <p class="font-sans text-sm sm:text-lg text-stone-700 dark:text-slate-300 max-w-2xl font-normal dark:font-light leading-relaxed mb-10" data-i18n="hero_desc">
+        Located in Mabrooka, Port Saeed, Deira. Precision haircuts, hot towel beard sculpting, authentic Moroccan bath, and executive VIP care in a private club ambiance.
       </p>
 
-      <!-- Hero Actions -->
+      <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-        <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-400 via-amber-500 to-gold-500 hover:from-gold-300 hover:to-amber-400 text-black font-sans font-bold text-xs uppercase tracking-widest shadow-xl shadow-gold-500/25 active:scale-95 transition-all">
-          Reservar Cita
+        <button onclick="openBookingModal()" class="w-full sm:w-auto px-9 py-4 rounded-full bg-gradient-to-r from-gold-500 via-amber-500 to-gold-600 hover:from-gold-400 hover:to-amber-400 text-black font-sans font-bold text-xs uppercase tracking-widest shadow-lg shadow-gold-500/25 active:scale-95 transition-all" data-i18n="btn_book_hero">
+          Book Appointment
         </button>
 
-        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full glass-panel hover:bg-white/10 text-white font-sans text-xs uppercase tracking-widest font-semibold border border-white/10 transition-all">
-          Explorar Servicios
+        <a href="#services" class="w-full sm:w-auto px-9 py-4 rounded-full glass-card hover:bg-stone-200 dark:hover:bg-white/10 text-stone-900 dark:text-white font-sans text-xs uppercase tracking-widest font-semibold transition-all" data-i18n="btn_explore_hero">
+          Explore Services
         </a>
       </div>
 
-      <!-- Micro Badges -->
-      <div class="grid grid-cols-3 gap-6 mt-16 pt-10 border-t border-white/10 w-full max-w-lg text-center">
+      <!-- Quick Highlights Bar -->
+      <div class="grid grid-cols-3 gap-6 mt-16 pt-10 border-t border-stone-300/60 dark:border-white/10 w-full max-w-lg text-center">
         <div>
-          <span class="block font-display font-bold text-xl sm:text-2xl text-white">9 AM – 1 AM</span>
-          <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Abierto Diario</span>
+          <span class="block font-display font-bold text-xl sm:text-2xl text-stone-900 dark:text-white" data-i18n="stat_hours_val">9 AM – 1 AM</span>
+          <span class="text-[11px] font-mono text-stone-500 dark:text-slate-400 uppercase tracking-wider" data-i18n="stat_hours_lbl">Open Daily</span>
         </div>
         <div>
-          <span class="block font-display font-bold text-xl sm:text-2xl text-gold-400">Port Saeed</span>
-          <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Deira • Dubai</span>
+          <span class="block font-display font-bold text-xl sm:text-2xl text-amber-700 dark:text-gold-400" data-i18n="stat_loc_val">Port Saeed</span>
+          <span class="text-[11px] font-mono text-stone-500 dark:text-slate-400 uppercase tracking-wider" data-i18n="stat_loc_lbl">Deira • Dubai</span>
         </div>
         <div>
-          <span class="block font-display font-bold text-xl sm:text-2xl text-emerald-400">VIP Care</span>
-          <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Atención de Élite</span>
+          <span class="block font-display font-bold text-xl sm:text-2xl text-emerald-600 dark:text-emerald-400" data-i18n="stat_rate_val">4.9★</span>
+          <span class="text-[11px] font-mono text-stone-500 dark:text-slate-400 uppercase tracking-wider" data-i18n="stat_rate_lbl">698 Reviews</span>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ==================== BENTO GRID: SERVICIOS Y PRECIOS ==================== -->
+  <!-- ==================== BESPOKE AMENITIES ==================== -->
+  <section id="amenities" class="py-12 border-y border-stone-200 dark:border-white/5 bg-stone-100/70 dark:bg-noir-900/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-gold-500/10 text-amber-700 dark:text-gold-400 flex items-center justify-center text-base">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <span class="font-display font-bold text-xs text-stone-900 dark:text-white uppercase tracking-wider" data-i18n="amenity_coffee_title">Espresso & Tea Bar</span>
+          <span class="text-[11px] text-stone-500 dark:text-slate-400" data-i18n="amenity_coffee_sub">Complimentary specialty selection</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-gold-500/10 text-amber-700 dark:text-gold-400 flex items-center justify-center text-base">
+            <i class="fas fa-hot-tub-person"></i>
+          </div>
+          <span class="font-display font-bold text-xs text-stone-900 dark:text-white uppercase tracking-wider" data-i18n="amenity_hammam_title">Private Moroccan Suite</span>
+          <span class="text-[11px] text-stone-500 dark:text-slate-400" data-i18n="amenity_hammam_sub">Steam & scrub rituals</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-gold-500/10 text-amber-700 dark:text-gold-400 flex items-center justify-center text-base">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <span class="font-display font-bold text-xs text-stone-900 dark:text-white uppercase tracking-wider" data-i18n="amenity_hygiene_title">Hospital-Grade Sterilization</span>
+          <span class="text-[11px] text-stone-500 dark:text-slate-400" data-i18n="amenity_hygiene_sub">Sealed single-use blades</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-gold-500/10 text-amber-700 dark:text-gold-400 flex items-center justify-center text-base">
+            <i class="fas fa-clock"></i>
+          </div>
+          <span class="font-display font-bold text-xs text-stone-900 dark:text-white uppercase tracking-wider" data-i18n="amenity_late_title">Late-Night Care</span>
+          <span class="text-[11px] text-stone-500 dark:text-slate-400" data-i18n="amenity_late_sub">Continuous service until 1:00 AM</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BENTO GRID: SERVICES WITH DISTINCT PHOTOS ==================== -->
   <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     
     <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Menú de Cuidado Ejecutivo</span>
-      <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
-        SERVICIOS MAESTROS
+      <span class="text-amber-700 dark:text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-2" data-i18n="sec_menu_badge">Bespoke Treatment Menu</span>
+      <h2 class="font-display font-black text-3xl sm:text-5xl text-stone-950 dark:text-white tracking-tight" data-i18n="sec_menu_title">
+        MASTER SERVICES
       </h2>
-      <p class="text-slate-400 text-sm mt-3 font-light">
-        Tratamientos personalizados ejecutados con herramientas tradicionales, navaja libre y productos cosméticos internacionales.
+      <p class="text-stone-600 dark:text-slate-400 text-sm mt-3 font-normal dark:font-light" data-i18n="sec_menu_sub">
+        Every treatment is delivered with premium imported grooming cosmetics and time-honored barbering craftsmanship.
       </p>
     </div>
 
-    <!-- Dynamic Category Filter Tabs -->
+    <!-- Category Filters -->
     <div class="flex items-center justify-center gap-2 mb-10 overflow-x-auto pb-2" id="categoryFilterContainer">
       <!-- Dynamic Categories Loaded by JS -->
     </div>
 
-    <!-- Bento Grid Container -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="servicesGrid">
-      <!-- Dynamic Services Injected by JS -->
+    <!-- Asymmetric Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid">
+      <!-- Dynamic Services with Individual Dedicated Images Injected by JS -->
     </div>
 
   </section>
 
-  <!-- ==================== THE EXPERIENCE (FEATURE HIGHLIGHT) ==================== -->
-  <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="glass-panel rounded-3xl p-8 sm:p-12 lg:p-16 border border-gold-500/20 relative overflow-hidden">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-3">La Experiencia Al Sharq</span>
-          <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight leading-tight mb-6">
-            RITUAL DE GROOMING TRADICIONAL CON EL LUJO DE DUBÁI
-          </h2>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
-            En Al Sharq Gents Saloon entendemos que el corte y afeitado de un caballero no es una tarea rápida, sino un ritual de descanso y presencia. Nuestras instalaciones en Port Saeed cuentan con sillones ergonómicos de cuero vintage, aromaterapia relajante y servicio de café árabe.
-          </p>
+  <!-- ==================== ATMOSPHERE SHOWCASE ==================== -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 lg:p-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="text-amber-700 dark:text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-3" data-i18n="atmosphere_badge">Private Gentlemen's Club</span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-stone-950 dark:text-white tracking-tight leading-tight mb-5" data-i18n="atmosphere_title">
+          AN OASIS OF BESPOKE COMFORT IN DEIRA
+        </h2>
+        <p class="text-stone-700 dark:text-slate-300 text-sm leading-relaxed mb-6 font-normal dark:font-light" data-i18n="atmosphere_desc">
+          Step into a private and tranquil atmosphere designed for your personal time. Chesterfield leather armchairs, ambient illumination, and warm hospitality focused entirely on your grooming excellence.
+        </p>
 
-          <ul class="space-y-3 font-sans text-xs text-slate-300 mb-8">
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-gold-400"></i>
-              <span>Toallas calientes vaporizadas con aceites esenciales de cedro y sándalo.</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-gold-400"></i>
-              <span>Baño marroquí privado y exfoliación corporal profunda.</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-gold-400"></i>
-              <span>Afeitado clásico a navaja libre con cuchillas esterilizadas individuales.</span>
-            </li>
-          </ul>
-
-          <button onclick="openBookingModal()" class="px-8 py-3.5 rounded-full bg-white text-black hover:bg-gold-400 font-sans font-bold text-xs uppercase tracking-wider transition-all">
-            Reservar Cita Ahora
+        <div class="flex items-center gap-4 pt-4 border-t border-stone-300/60 dark:border-white/10">
+          <button onclick="openBookingModal()" class="px-7 py-3 rounded-full bg-stone-900 dark:bg-white text-white dark:text-black hover:bg-gold-500 font-sans font-bold text-xs uppercase tracking-wider transition-all" data-i18n="btn_book_lounge">
+            Book Appointment
           </button>
-        </div>
-
-        <div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl">
-          <img src="service.jpg" alt="Master Beard Sculpting Al Sharq" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 right-6">
-            <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 font-mono text-[10px] uppercase font-bold border border-gold-500/30">
-              Perfección Artesanal
-            </span>
-            <h3 class="font-display font-bold text-xl text-white mt-2">
-              The Gentleman's Code
-            </h3>
-          </div>
+          
+          <a href="https://wa.me/971547229787" target="_blank" rel="noopener noreferrer"
+             class="w-11 h-11 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center text-xl transition-all shadow-md active:scale-95"
+             title="WhatsApp Chat">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </div>
 
+      <div class="rounded-2xl overflow-hidden aspect-[4/3] border border-stone-300/40 dark:border-white/10 shadow-2xl">
+        <img src="lounge.jpg" alt="Al Sharq VIP Lounge Dubai" class="w-full h-full object-cover">
+      </div>
     </div>
   </section>
 
-  <!-- ==================== GOOGLE REVIEWS SECTION ==================== -->
+  <!-- ==================== GOOGLE REVIEWS ==================== -->
   <section id="reviews" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
       <div>
-        <span class="text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-1">Reputación Verificada</span>
-        <h2 class="font-display font-black text-2xl sm:text-4xl text-white tracking-tight">
-          TESTIMONIOS EN GOOGLE MAPS
+        <span class="text-amber-700 dark:text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-1" data-i18n="reviews_badge">Verified Client Testimonials</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-stone-950 dark:text-white tracking-tight" data-i18n="reviews_title">
+          GOOGLE MAPS REVIEWS (4.9★)
         </h2>
       </div>
-      <a href="https://www.google.com/maps/place/Alsharq+gents+saloon/data=!4m7!3m6!1s0x3e5f5ddd862927fd:0xfc925384e4a08c56!8m2!3d25.263493!4d55.3303718!16s%2Fg%2F11bbwn4_fq!19sChIJ_Scpht1dXz4RVoyg5IRTkvw?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full glass-panel hover:bg-white/10 text-xs font-mono text-slate-300 border border-white/10 transition-all flex items-center gap-2">
-        <i class="fab fa-google text-amber-400"></i> Ver las 698 Reseñas en Google
+      <a href="https://www.google.com/maps/place/Alsharq+gents+saloon/data=!4m7!3m6!1s0x3e5f5ddd862927fd:0xfc925384e4a08c56!8m2!3d25.263493!4d55.3303718!16s%2Fg%2F11bbwn4_fq!19sChIJ_Scpht1dXz4RVoyg5IRTkvw?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full glass-card hover:bg-stone-200 dark:hover:bg-white/10 text-xs font-mono text-stone-800 dark:text-slate-300 transition-all flex items-center gap-2">
+        <i class="fab fa-google text-amber-500"></i> <span data-i18n="reviews_link_btn">View 698 Reviews on Google</span>
       </a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
-      <div class="glass-panel rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
         <div>
-          <div class="flex text-amber-400 text-xs mb-3">
+          <div class="flex text-amber-500 text-xs mb-3">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+          <p class="text-xs text-stone-700 dark:text-slate-300 leading-relaxed font-normal dark:font-light mb-4" data-i18n="review_1_text">
             "The best barber in Deira without doubt. The fade is crisp, the staff is very polite and the hot towel service is unbeatable after a long working day."
           </p>
         </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-white/5 text-xs">
-          <div class="w-8 h-8 rounded-full bg-gold-400/20 text-gold-400 font-bold flex items-center justify-center">M</div>
+        <div class="flex items-center gap-3 pt-3 border-t border-stone-200 dark:border-white/5 text-xs">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-800 dark:text-gold-400 font-bold flex items-center justify-center">M</div>
           <div>
-            <strong class="text-white block font-sans">Mohammed Al Hashimi</strong>
-            <span class="text-slate-500 font-mono text-[10px]">Cliente Verificado en Google</span>
+            <strong class="text-stone-900 dark:text-white block font-sans">Mohammed Al Hashimi</strong>
+            <span class="text-stone-500 dark:text-slate-500 font-mono text-[10px]" data-i18n="verified_client">Verified Google Reviewer</span>
           </div>
         </div>
       </div>
 
-      <div class="glass-panel rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
         <div>
-          <div class="flex text-amber-400 text-xs mb-3">
+          <div class="flex text-amber-500 text-xs mb-3">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+          <p class="text-xs text-stone-700 dark:text-slate-300 leading-relaxed font-normal dark:font-light mb-4" data-i18n="review_2_text">
             "Always come here for the Moroccan bath and beard shaping. Clean salon, luxurious atmosphere and open until 1:00 AM which is so convenient."
           </p>
         </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-white/5 text-xs">
-          <div class="w-8 h-8 rounded-full bg-emerald-400/20 text-emerald-400 font-bold flex items-center justify-center">R</div>
+        <div class="flex items-center gap-3 pt-3 border-t border-stone-200 dark:border-white/5 text-xs">
+          <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-bold flex items-center justify-center">R</div>
           <div>
-            <strong class="text-white block font-sans">Rashid K.</strong>
-            <span class="text-slate-500 font-mono text-[10px]">Cliente Frecuente</span>
+            <strong class="text-stone-900 dark:text-white block font-sans">Rashid K.</strong>
+            <span class="text-stone-500 dark:text-slate-500 font-mono text-[10px]" data-i18n="regular_client">Frequent Guest</span>
           </div>
         </div>
       </div>
 
-      <div class="glass-panel rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
         <div>
-          <div class="flex text-amber-400 text-xs mb-3">
+          <div class="flex text-amber-500 text-xs mb-3">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+          <p class="text-xs text-stone-700 dark:text-slate-300 leading-relaxed font-normal dark:font-light mb-4" data-i18n="review_3_text">
             "5 stars for precision and attention to detail. Great prices for the high quality they deliver. Definitely my regular barber in Port Saeed."
           </p>
         </div>
-        <div class="flex items-center gap-3 pt-3 border-t border-white/5 text-xs">
-          <div class="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 font-bold flex items-center justify-center">A</div>
+        <div class="flex items-center gap-3 pt-3 border-t border-stone-200 dark:border-white/5 text-xs">
+          <div class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-700 dark:text-cyan-400 font-bold flex items-center justify-center">A</div>
           <div>
-            <strong class="text-white block font-sans">Ahmed Tariq</strong>
-            <span class="text-slate-500 font-mono text-[10px]">Reseña de Google Maps</span>
+            <strong class="text-stone-900 dark:text-white block font-sans">Ahmed Tariq</strong>
+            <span class="text-stone-500 dark:text-slate-500 font-mono text-[10px]" data-i18n="verified_client">Verified Google Reviewer</span>
           </div>
         </div>
       </div>
@@ -365,45 +449,45 @@
 
   <!-- ==================== LOCATION & HOURS ==================== -->
   <section id="location" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       
       <div>
-        <span class="text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Visítanos</span>
-        <h2 class="font-display font-black text-3xl text-white mb-6">
-          HORARIOS Y UBICACIÓN
+        <span class="text-amber-700 dark:text-gold-400 font-mono text-xs uppercase tracking-[0.25em] font-semibold block mb-2" data-i18n="loc_badge">Visit Us</span>
+        <h2 class="font-display font-black text-3xl text-stone-950 dark:text-white mb-6" data-i18n="loc_title">
+          HOURS & LOCATION
         </h2>
         
-        <div class="space-y-4 font-sans text-xs text-slate-300">
+        <div class="space-y-4 font-sans text-xs text-stone-700 dark:text-slate-300">
           <div class="flex items-start gap-3">
-            <i class="fas fa-map-marker-alt text-gold-400 text-sm mt-1"></i>
+            <i class="fas fa-map-marker-alt text-amber-600 dark:text-gold-400 text-sm mt-1"></i>
             <div>
-              <strong class="text-white block text-sm">Al Sharq Gents Saloon</strong>
-              <span>Mabrooka Building, 1B St, Port Saeed, Deira, Dubai, UAE</span>
+              <strong class="text-stone-950 dark:text-white block text-sm" data-i18n="loc_address_title">Al Sharq Gents Saloon</strong>
+              <span data-i18n="loc_address_sub">Mabrooka Building, 1B St, Port Saeed, Deira, Dubai, UAE</span>
             </div>
           </div>
 
           <div class="flex items-start gap-3">
-            <i class="fas fa-clock text-gold-400 text-sm mt-1"></i>
+            <i class="fas fa-clock text-amber-600 dark:text-gold-400 text-sm mt-1"></i>
             <div>
-              <strong class="text-white block text-sm">Horario de Atención</strong>
-              <span>Todos los días: 9:00 AM – 1:00 AM</span>
+              <strong class="text-stone-950 dark:text-white block text-sm" data-i18n="loc_hours_title">Operating Hours</strong>
+              <span data-i18n="loc_hours_sub">Daily from 9:00 AM to 1:00 AM (Continuous Service)</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="https://www.google.com/maps/place/Alsharq+gents+saloon/data=!4m7!3m6!1s0x3e5f5ddd862927fd:0xfc925384e4a08c56!8m2!3d25.263493!4d55.3303718!16s%2Fg%2F11bbwn4_fq!19sChIJ_Scpht1dXz4RVoyg5IRTkvw?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-white text-black hover:bg-gold-400 font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2">
-            <i class="fas fa-location-arrow"></i> Abrir en Google Maps
+        <div class="mt-8 flex flex-wrap gap-4 items-center">
+          <a href="https://www.google.com/maps/place/Alsharq+gents+saloon/data=!4m7!3m6!1s0x3e5f5ddd862927fd:0xfc925384e4a08c56!8m2!3d25.263493!4d55.3303718!16s%2Fg%2F11bbwn4_fq!19sChIJ_Scpht1dXz4RVoyg5IRTkvw?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-stone-900 dark:bg-white text-white dark:text-black hover:bg-gold-500 font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2" data-i18n="btn_maps">
+            <i class="fas fa-location-arrow"></i> Open in Google Maps
           </a>
 
-          <a href="https://wa.me/971547229787" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center text-xl transition-all shadow-lg active:scale-95" title="WhatsApp Chat">
+          <!-- WhatsApp Button: STRICTLY ICON ONLY -->
+          <a href="https://wa.me/971547229787" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center text-xl transition-all shadow-md active:scale-95" title="WhatsApp Chat">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>
       </div>
 
-      <div class="rounded-2xl overflow-hidden aspect-video border border-white/10 shadow-xl bg-noir-900 flex items-center justify-center relative">
-        <!-- Interactive Map Embed Frame -->
+      <div class="rounded-2xl overflow-hidden aspect-video border border-stone-300 dark:border-white/10 shadow-xl bg-noir-900 flex items-center justify-center relative">
         <iframe 
           src="https://maps.google.com/maps?q=Alsharq%20gents%20saloon%20Port%20Saeed%20Deira%20Dubai&t=&z=15&ie=UTF8&iwloc=&output=embed" 
           class="w-full h-full border-0 filter invert contrast-125 opacity-80" 
@@ -416,13 +500,13 @@
   </section>
 
   <!-- ==================== FOOTER OBLIGATORIO: Developed by Tecnoemprende ==================== -->
-  <footer class="w-full border-t border-white/10 bg-noir-950 py-10 text-center text-xs text-slate-500 font-mono">
+  <footer class="w-full border-t border-stone-300 dark:border-white/10 bg-stone-100 dark:bg-noir-950 py-10 text-center text-xs text-stone-500 dark:text-slate-500 font-mono">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <span>© 2026 Al Sharq Gents Saloon • Port Saeed, Deira, Dubai</span>
       </div>
-      <div class="text-slate-400 font-semibold tracking-wider">
-        Developed by <span class="text-gold-400 font-bold">Tecnoemprende</span>
+      <div class="text-stone-600 dark:text-slate-400 font-semibold tracking-wider">
+        Developed by <span class="text-amber-700 dark:text-gold-400 font-bold">Tecnoemprende</span>
       </div>
     </div>
   </footer>
@@ -436,39 +520,39 @@
 
   <!-- ==================== BOOKING MODAL ==================== -->
   <div id="bookingModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="glass-panel rounded-3xl max-w-md w-full p-6 sm:p-8 relative border border-gold-500/30">
-      <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">&times;</button>
+    <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 relative border border-gold-500/40">
+      <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-stone-400 hover:text-stone-900 dark:hover:text-white text-xl">&times;</button>
       
       <div class="text-center mb-6">
-        <span class="text-gold-400 font-mono text-xs uppercase tracking-widest block mb-1">Paso Rápido</span>
-        <h3 class="font-display font-black text-2xl text-white">RESERVAR CITA</h3>
-        <p class="text-slate-400 text-xs mt-1">Selecciona tu servicio y confirma directo por WhatsApp</p>
+        <span class="text-amber-700 dark:text-gold-400 font-mono text-xs uppercase tracking-widest block mb-1" data-i18n="modal_book_badge">Instant Booking</span>
+        <h3 class="font-display font-black text-2xl text-stone-900 dark:text-white" data-i18n="modal_book_title">BOOK APPOINTMENT</h3>
+        <p class="text-stone-500 dark:text-slate-400 text-xs mt-1" data-i18n="modal_book_sub">Confirm your booking directly via WhatsApp</p>
       </div>
 
       <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4 text-xs font-sans">
         <div>
-          <label class="block text-slate-300 font-medium mb-1">Nombre Completo</label>
-          <input type="text" id="bookName" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-gold-400">
+          <label class="block text-stone-700 dark:text-slate-300 font-medium mb-1" data-i18n="form_name">Full Name</label>
+          <input type="text" id="bookName" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none focus:border-gold-500">
         </div>
 
         <div>
-          <label class="block text-slate-300 font-medium mb-1">Servicio de Interés</label>
-          <select id="bookService" class="w-full px-4 py-3 rounded-xl bg-noir-900 border border-white/10 text-white focus:outline-none focus:border-gold-400">
-            <option value="Master Haircut & Fade (AED 85)">Master Haircut & Fade (AED 85)</option>
-            <option value="Royal Beard Sculpting (AED 65)">Royal Beard Sculpting (AED 65)</option>
-            <option value="VIP Grooming Package (AED 250)">VIP Grooming Package (AED 250)</option>
-            <option value="Moroccan Bath (AED 180)">Moroccan Bath & Steam (AED 180)</option>
-            <option value="Deep Facial Treatment (AED 120)">Deep Facial Treatment (AED 120)</option>
+          <label class="block text-stone-700 dark:text-slate-300 font-medium mb-1" data-i18n="form_service">Service</label>
+          <select id="bookService" class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none focus:border-gold-500">
+            <option value="Master Scissor Haircut & Fade (AED 85)">Master Haircut & Skin Fade (AED 85 • 45 min)</option>
+            <option value="Royal Hot Towel Beard Sculpting (AED 65)">Royal Beard Sculpting (AED 65 • 30 min)</option>
+            <option value="VIP Executive Grooming Suite (AED 250)">VIP Executive Suite (AED 250 • 90 min)</option>
+            <option value="Authentic Moroccan Bath & Steam (AED 180)">Moroccan Bath & Steam (AED 180 • 60 min)</option>
+            <option value="Deep Charcoal & Gold Facial (AED 120)">Deep Charcoal & Gold Facial (AED 120 • 45 min)</option>
           </select>
         </div>
 
         <div>
-          <label class="block text-slate-300 font-medium mb-1">Fecha y Hora Preferida</label>
-          <input type="text" id="bookTime" placeholder="Ej: Hoy a las 7:00 PM" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-gold-400">
+          <label class="block text-stone-700 dark:text-slate-300 font-medium mb-1" data-i18n="form_time">Preferred Time</label>
+          <input type="text" id="bookTime" placeholder="e.g. Today at 7:30 PM" required class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none focus:border-gold-500">
         </div>
 
-        <button type="submit" class="w-full py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-black font-sans font-bold text-xs uppercase tracking-widest transition-all mt-4 shadow-lg shadow-gold-500/20">
-          Reservar Cita
+        <button type="submit" class="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-sans font-bold text-xs uppercase tracking-widest transition-all mt-4 shadow-lg shadow-gold-500/20" data-i18n="btn_book_submit">
+          Confirm Appointment
         </button>
       </form>
     </div>
@@ -476,111 +560,113 @@
 
   <!-- ==================== ACTIVATION MODAL (1000 AED OFFER) ==================== -->
   <div id="activationModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="glass-panel rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border border-gold-500/40">
-      <button onclick="closeActivationModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">&times;</button>
+    <div class="glass-card rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border border-gold-500/40">
+      <button onclick="closeActivationModal()" class="absolute top-6 right-6 text-stone-400 hover:text-white text-xl">&times;</button>
       
       <div class="text-center mb-6">
-        <span class="px-3 py-1 rounded-full bg-gold-400/10 text-gold-400 font-mono text-[10px] uppercase font-bold border border-gold-500/20">Oferta Especial de Lanzamiento</span>
-        <h3 class="font-display font-black text-2xl text-white mt-2">RECLAMA ESTE SITIO WEB OFICIAL</h3>
-        <p class="text-slate-300 text-xs mt-2 leading-relaxed">
-          Diseñado exclusivamente para <strong>Al Sharq Gents Saloon</strong>. Incluye panel de control para editar precios, subir fotos desde tu móvil y tu propio dominio.
+        <span class="px-3 py-1 rounded-full bg-gold-400/20 text-amber-800 dark:text-gold-400 font-mono text-[10px] uppercase font-bold border border-gold-500/20">Official Launch Proposal</span>
+        <h3 class="font-display font-black text-2xl text-stone-900 dark:text-white mt-2">CLAIM THIS OFFICIAL WEBSITE</h3>
+        <p class="text-stone-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
+          Crafted exclusively for <strong>Al Sharq Gents Saloon</strong>. Includes private admin dashboard to edit prices, upload photos from your smartphone, custom domain & annual support.
         </p>
       </div>
 
-      <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3 mb-6 text-xs">
-        <div class="flex justify-between items-center text-slate-300">
-          <span>Diseño Web Completo + Dominio + Hosting:</span>
-          <strong class="text-gold-400 text-sm">1,000 AED (Pago Único)</strong>
+      <div class="p-4 rounded-2xl bg-stone-100 dark:bg-white/[0.03] border border-stone-300 dark:border-white/10 space-y-3 mb-6 text-xs">
+        <div class="flex justify-between items-center text-stone-800 dark:text-slate-300">
+          <span>Complete Web Design + Domain + Fast Cloud Hosting:</span>
+          <strong class="text-amber-700 dark:text-gold-400 text-sm">1,000 AED (One-time)</strong>
         </div>
-        <div class="flex justify-between items-center text-slate-300">
-          <span>Soporte Anual y Mantenimiento (Opcional):</span>
-          <strong class="text-slate-200">500 AED / año</strong>
+        <div class="flex justify-between items-center text-stone-800 dark:text-slate-300">
+          <span>Annual Maintenance & Priority Tech Support (Optional):</span>
+          <strong class="text-stone-900 dark:text-slate-200">500 AED / year</strong>
         </div>
       </div>
 
-      <a href="https://wa.me/971508379080?text=Hola%20David,%20quiero%20activar%20el%20sitio%20web%20de%20Al%20Sharq%20Gents%20Saloon%20por%201,000%20AED" target="_blank" class="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-sans font-bold text-xs uppercase tracking-widest text-center block transition-all shadow-lg shadow-emerald-500/20">
-        Contactar para Activar Sitio (1,000 AED)
+      <a href="https://wa.me/971508379080?text=Hello%20David,%20I%20want%20to%20activate%20the%20official%20website%20for%20Al%20Sharq%20Gents%20Saloon%20for%201,000%20AED" target="_blank" class="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-sans font-bold text-xs uppercase tracking-widest text-center block transition-all shadow-lg shadow-emerald-500/20">
+        Contact to Activate (1,000 AED)
       </a>
     </div>
   </div>
 
   <!-- ==================== TIERRA QUERIDA ADMIN DASHBOARD MODAL ==================== -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="glass-panel rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative border border-gold-500/30 my-8">
-      <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">&times;</button>
+    <div class="glass-card rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative border border-gold-500/30 my-8">
+      <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-stone-400 hover:text-white text-xl">&times;</button>
       
       <!-- Login View -->
       <div id="adminLoginSection">
         <div class="text-center mb-6">
-          <div class="w-12 h-12 rounded-2xl bg-gold-400/20 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
+          <div class="w-12 h-12 rounded-2xl bg-gold-400/20 text-gold-500 flex items-center justify-center text-xl mx-auto mb-3">
             <i class="fas fa-crown"></i>
           </div>
-          <h3 class="font-display font-black text-2xl text-white">Panel de Administración</h3>
-          <p class="text-slate-400 text-xs">Acceso exclusivo para el dueño o gerente del salón</p>
+          <h3 class="font-display font-black text-2xl text-stone-900 dark:text-white">Admin Control Panel</h3>
+          <p class="text-stone-500 dark:text-slate-400 text-xs">Owner & Manager Private Mobile Dashboard</p>
         </div>
 
         <form onsubmit="handleAdminLogin(event)" class="space-y-4 max-w-sm mx-auto text-xs">
           <div>
-            <label class="block text-slate-300 mb-1">Correo Electrónico</label>
-            <input type="email" id="adminEmailInput" value="admin@alsharqsalon.com" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-gold-400">
+            <label class="block text-stone-700 dark:text-slate-300 mb-1">Email</label>
+            <input type="email" id="adminEmailInput" value="admin@alsharqsalon.com" required class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none focus:border-gold-500">
           </div>
           <div>
-            <label class="block text-slate-300 mb-1">Contraseña</label>
-            <input type="password" id="adminPasswordInput" value="admin123" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-gold-400">
+            <label class="block text-stone-700 dark:text-slate-300 mb-1">Password</label>
+            <input type="password" id="adminPasswordInput" value="admin123" required class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white focus:outline-none focus:border-gold-500">
           </div>
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-400 hover:bg-gold-300 text-black font-bold uppercase tracking-widest transition-all">
-            Ingresar al Panel
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold uppercase tracking-widest transition-all">
+            Enter Dashboard
           </button>
         </form>
       </div>
 
       <!-- Dashboard View (After Login) -->
       <div id="adminDashboardSection" class="hidden">
-        <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-stone-300 dark:border-white/10">
           <div>
-            <h3 class="font-display font-bold text-xl text-white">Al Sharq Control Hub</h3>
-            <span class="text-xs font-mono text-emerald-400">● Conectado (Dual-Layer Active)</span>
+            <h3 class="font-display font-bold text-xl text-stone-900 dark:text-white">Al Sharq Control Hub</h3>
+            <span class="text-xs font-mono text-emerald-500">● Connected (Dual-Layer Active)</span>
           </div>
-          <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 text-xs">
-            Cerrar Sesión
+          <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded-lg bg-stone-200 dark:bg-white/5 hover:bg-rose-500/20 text-stone-600 dark:text-slate-400 hover:text-rose-500 text-xs">
+            Logout
           </button>
         </div>
 
         <!-- 5 Tabs Navigation -->
-        <div class="flex border-b border-white/10 mb-6 gap-2 overflow-x-auto text-xs font-mono">
-          <button onclick="switchTab('tabServices')" id="btnTabServices" class="px-4 py-2 border-b-2 border-gold-400 text-gold-400 font-bold whitespace-nowrap">1. Servicios & CRUD</button>
-          <button onclick="switchTab('tabAnnounce')" id="btnTabAnnounce" class="px-4 py-2 border-b-2 border-transparent text-slate-400 whitespace-nowrap">2. Anuncios</button>
-          <button onclick="switchTab('tabCategories')" id="btnTabCategories" class="px-4 py-2 border-b-2 border-transparent text-slate-400 whitespace-nowrap">3. Categorías</button>
-          <button onclick="switchTab('tabOrders')" id="btnTabOrders" class="px-4 py-2 border-b-2 border-transparent text-slate-400 whitespace-nowrap">4. Citas Recibidas</button>
-          <button onclick="switchTab('tabConfig')" id="btnTabConfig" class="px-4 py-2 border-b-2 border-transparent text-slate-400 whitespace-nowrap">5. Backup / Nube</button>
+        <div class="flex border-b border-stone-300 dark:border-white/10 mb-6 gap-2 overflow-x-auto text-xs font-mono">
+          <button onclick="switchTab('tabServices')" id="btnTabServices" class="px-4 py-2 border-b-2 border-gold-500 text-gold-600 dark:text-gold-400 font-bold whitespace-nowrap">1. Services & CRUD</button>
+          <button onclick="switchTab('tabAnnounce')" id="btnTabAnnounce" class="px-4 py-2 border-b-2 border-transparent text-stone-500 dark:text-slate-400 whitespace-nowrap">2. Announcements</button>
+          <button onclick="switchTab('tabCategories')" id="btnTabCategories" class="px-4 py-2 border-b-2 border-transparent text-stone-500 dark:text-slate-400 whitespace-nowrap">3. Categories</button>
+          <button onclick="switchTab('tabOrders')" id="btnTabOrders" class="px-4 py-2 border-b-2 border-transparent text-stone-500 dark:text-slate-400 whitespace-nowrap">4. Appointments Log</button>
+          <button onclick="switchTab('tabConfig')" id="btnTabConfig" class="px-4 py-2 border-b-2 border-transparent text-stone-500 dark:text-slate-400 whitespace-nowrap">5. Backup / Cloud</button>
         </div>
 
         <!-- TAB 1: SERVICES CRUD & HTML5 CANVAS IMAGE UPLOADER -->
         <div id="tabServices" class="space-y-6">
-          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-            <h4 class="font-bold text-white text-xs uppercase mb-3">Agregar / Editar Servicio</h4>
+          <div class="p-4 rounded-2xl bg-stone-100 dark:bg-white/[0.03] border border-stone-300 dark:border-white/5">
+            <h4 class="font-bold text-stone-900 dark:text-white text-xs uppercase mb-3">Add / Edit Service</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-3">
-              <input type="text" id="svcName" placeholder="Nombre del Servicio (Ej: Keratin Treatment)" class="px-3 py-2.5 rounded-lg bg-noir-900 border border-white/10 text-white">
-              <input type="number" id="svcPrice" placeholder="Precio en AED (Ej: 150)" class="px-3 py-2.5 rounded-lg bg-noir-900 border border-white/10 text-white">
-              <select id="svcCategory" class="px-3 py-2.5 rounded-lg bg-noir-900 border border-white/10 text-white">
-                <option value="Barbería">Barbería</option>
-                <option value="Barba">Barba</option>
-                <option value="Tratamientos">Tratamientos</option>
-                <option value="Paquetes VIP">Paquetes VIP</option>
+              <input type="text" id="svcName" placeholder="Service Name (e.g. Keratin Treatment)" class="px-3 py-2.5 rounded-lg bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white">
+              <input type="number" id="svcPrice" placeholder="Price in AED (e.g. 150)" class="px-3 py-2.5 rounded-lg bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white">
+              <input type="text" id="svcDuration" placeholder="Duration (e.g. 45 min)" class="px-3 py-2.5 rounded-lg bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white">
+              <select id="svcCategory" class="px-3 py-2.5 rounded-lg bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white">
+                <option value="Barbering">Barbering</option>
+                <option value="Beard">Beard</option>
+                <option value="Treatments">Treatments</option>
+                <option value="VIP Packages">VIP Packages</option>
               </select>
-              
-              <!-- HTML5 Canvas Camera / Gallery Upload -->
-              <div class="flex items-center gap-2">
-                <label class="flex-1 px-3 py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400/20 text-gold-300 border border-gold-500/30 text-center cursor-pointer transition-all">
-                  <i class="fas fa-camera mr-1"></i> Subir Foto desde Móvil
-                  <input type="file" id="svcPhotoInput" accept="image/*" class="hidden" onchange="handleImageCompress(event)">
-                </label>
-                <img id="svcPhotoPreview" class="w-10 h-10 rounded-lg object-cover hidden border border-gold-400">
-              </div>
             </div>
-            <textarea id="svcDesc" placeholder="Descripción breve del servicio..." rows="2" class="w-full px-3 py-2 rounded-lg bg-noir-900 border border-white/10 text-white text-xs mb-3"></textarea>
-            <button onclick="saveServiceItem()" class="px-5 py-2 rounded-lg bg-gold-400 text-black font-bold text-xs uppercase tracking-wider">
-              Guardar Servicio
+            
+            <!-- HTML5 Canvas Camera / Gallery Upload -->
+            <div class="flex items-center gap-3 mb-3">
+              <label class="flex-1 px-4 py-3 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-amber-800 dark:text-gold-300 border border-gold-500/30 text-center cursor-pointer transition-all">
+                <i class="fas fa-camera mr-2"></i> Upload Photo from Smartphone (Auto Canvas Compress)
+                <input type="file" id="svcPhotoInput" accept="image/*" class="hidden" onchange="handleImageCompress(event)">
+              </label>
+              <img id="svcPhotoPreview" class="w-12 h-12 rounded-lg object-cover hidden border border-gold-500">
+            </div>
+
+            <textarea id="svcDesc" placeholder="Service description..." rows="2" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white text-xs mb-3"></textarea>
+            <button onclick="saveServiceItem()" class="px-6 py-2.5 rounded-lg bg-gold-500 text-black font-bold text-xs uppercase tracking-wider">
+              Save Service
             </button>
           </div>
 
@@ -592,18 +678,18 @@
 
         <!-- TAB 2: ANNOUNCEMENTS -->
         <div id="tabAnnounce" class="hidden space-y-4 text-xs">
-          <label class="block text-slate-300 font-bold">Texto de la Marquesina Superior:</label>
-          <input type="text" id="announceTextInput" class="w-full px-4 py-3 rounded-xl bg-noir-900 border border-white/10 text-white">
-          <button onclick="saveAnnouncement()" class="px-5 py-2.5 rounded-lg bg-gold-400 text-black font-bold uppercase tracking-wider">
-            Actualizar Anuncio
+          <label class="block text-stone-700 dark:text-slate-300 font-bold">Top Marquee Text:</label>
+          <input type="text" id="announceTextInput" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white">
+          <button onclick="saveAnnouncement()" class="px-5 py-2.5 rounded-lg bg-gold-500 text-black font-bold uppercase tracking-wider">
+            Update Announcement
           </button>
         </div>
 
         <!-- TAB 3: CATEGORIES -->
         <div id="tabCategories" class="hidden space-y-4 text-xs">
           <div class="flex gap-2">
-            <input type="text" id="newCategoryInput" placeholder="Nueva Categoría (Ej: Spa Facial)" class="flex-1 px-3 py-2 rounded-lg bg-noir-900 border border-white/10 text-white">
-            <button onclick="addCategory()" class="px-4 py-2 bg-gold-400 text-black font-bold rounded-lg">Agregar</button>
+            <input type="text" id="newCategoryInput" placeholder="New Category (e.g. Royal Spa)" class="flex-1 px-3 py-2 rounded-lg bg-white dark:bg-noir-900 border border-stone-300 dark:border-white/10 text-stone-900 dark:text-white">
+            <button onclick="addCategory()" class="px-4 py-2 bg-gold-500 text-black font-bold rounded-lg">Add</button>
           </div>
           <div class="flex flex-wrap gap-2" id="adminCategoryTags"></div>
         </div>
@@ -611,19 +697,19 @@
         <!-- TAB 4: ORDERS & APPOINTMENTS LOG -->
         <div id="tabOrders" class="hidden space-y-3 text-xs">
           <div id="ordersLogContainer" class="space-y-2">
-            <p class="text-slate-500 font-mono">No hay citas registradas en esta sesión.</p>
+            <p class="text-stone-500 dark:text-slate-500 font-mono">No appointments recorded yet.</p>
           </div>
         </div>
 
         <!-- TAB 5: BACKUP & NUBE -->
         <div id="tabConfig" class="hidden space-y-4 text-xs font-mono">
-          <p class="text-slate-400">Respaldo de datos instantáneo en 1 Clic (JSON):</p>
+          <p class="text-stone-600 dark:text-slate-400">Instant 1-Click JSON Backup & Restore:</p>
           <div class="flex gap-3">
-            <button onclick="exportDataBackup()" class="px-4 py-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20 font-bold">
-              <i class="fas fa-download mr-1"></i> Descargar Respaldo JSON
+            <button onclick="exportDataBackup()" class="px-4 py-2.5 rounded-lg bg-stone-200 dark:bg-white/10 text-stone-900 dark:text-white font-bold">
+              <i class="fas fa-download mr-1"></i> Export Backup JSON
             </button>
-            <label class="px-4 py-2.5 rounded-lg bg-gold-400/20 text-gold-300 border border-gold-500/30 font-bold cursor-pointer">
-              <i class="fas fa-upload mr-1"></i> Restaurar Respaldo
+            <label class="px-4 py-2.5 rounded-lg bg-gold-500/20 text-amber-800 dark:text-gold-300 border border-gold-500/30 font-bold cursor-pointer">
+              <i class="fas fa-upload mr-1"></i> Restore Backup
               <input type="file" accept=".json" class="hidden" onchange="importDataBackup(event)">
             </label>
           </div>
@@ -634,136 +720,368 @@
     </div>
   </div>
 
-  <!-- ==================== CORE LOGIC & DATA ENGINE ==================== -->
+  <!-- ==================== I18N DICTIONARY & CORE SCRIPT ==================== -->
   <script>
-    // Initial Seed Data for Al Sharq Gents Saloon
+    // Complete Bilingual Dictionary (English & Arabic)
+    const translations = {
+      en: {
+        preview_badge: "Preview:",
+        preview_salon: "Al Sharq Gents Saloon (Port Saeed, Deira)",
+        preview_cta_sub: "Claim this official website with custom domain for 1,000 AED",
+        preview_btn: "Activate Website",
+        marquee_text: "✦ OPEN DAILY 9:00 AM – 1:00 AM ✦ WALK-INS & ONLINE RESERVATIONS ✦ PORT SAEED, DEIRA, DUBAI",
+        brand_name: "AL SHARQ",
+        brand_sub: "Gents Saloon • Dubai",
+        nav_services: "Services",
+        nav_amenities: "Amenities",
+        nav_reviews: "Reviews (4.9★)",
+        nav_location: "Location",
+        btn_book_nav: "Book Appointment",
+        hero_reviews_badge: "• 698 Google Maps Reviews",
+        hero_title: 'MASTER GROOMING & <span class="bg-gradient-to-r from-amber-700 via-gold-500 to-amber-600 dark:from-gold-300 dark:via-amber-400 dark:to-gold-500 bg-clip-text text-transparent">ROYAL BARBERING</span>',
+        hero_desc: "Located in Mabrooka, Port Saeed, Deira. Precision haircuts, hot towel beard sculpting, authentic Moroccan bath, and executive VIP care in a private club ambiance.",
+        btn_book_hero: "Book Appointment",
+        btn_explore_hero: "Explore Services",
+        stat_hours_val: "9 AM – 1 AM",
+        stat_hours_lbl: "Open Daily",
+        stat_loc_val: "Port Saeed",
+        stat_loc_lbl: "Deira • Dubai",
+        stat_rate_val: "4.9★",
+        stat_rate_lbl: "698 Reviews",
+        amenity_coffee_title: "Espresso & Tea Bar",
+        amenity_coffee_sub: "Complimentary specialty selection",
+        amenity_hammam_title: "Private Moroccan Suite",
+        amenity_hammam_sub: "Steam & scrub rituals",
+        amenity_hygiene_title: "Hospital-Grade Hygiene",
+        amenity_hygiene_sub: "Sealed single-use blades",
+        amenity_late_title: "Late-Night Care",
+        amenity_late_sub: "Continuous service until 1:00 AM",
+        sec_menu_badge: "Bespoke Treatment Menu",
+        sec_menu_title: "MASTER SERVICES",
+        sec_menu_sub: "Every treatment is delivered with premium imported grooming cosmetics and time-honored barbering craftsmanship.",
+        atmosphere_badge: "Private Gentlemen's Club",
+        atmosphere_title: "AN OASIS OF BESPOKE COMFORT IN DEIRA",
+        atmosphere_desc: "Step into a private and tranquil atmosphere designed for your personal time. Chesterfield leather armchairs, ambient illumination, and warm hospitality focused entirely on your grooming excellence.",
+        btn_book_lounge: "Book Appointment",
+        reviews_badge: "Verified Client Testimonials",
+        reviews_title: "GOOGLE MAPS REVIEWS (4.9★)",
+        reviews_link_btn: "View 698 Reviews on Google",
+        review_1_text: '"The best barber in Deira without doubt. The fade is crisp, the staff is very polite and the hot towel service is unbeatable after a long working day."',
+        review_2_text: '"Always come here for the Moroccan bath and beard shaping. Clean salon, luxurious atmosphere and open until 1:00 AM which is so convenient."',
+        review_3_text: '"5 stars for precision and attention to detail. Great prices for the high quality they deliver. Definitely my regular barber in Port Saeed."',
+        verified_client: "Verified Google Reviewer",
+        regular_client: "Frequent Guest",
+        loc_badge: "Visit Us",
+        loc_title: "HOURS & LOCATION",
+        loc_address_title: "Al Sharq Gents Saloon",
+        loc_address_sub: "Mabrooka Building, 1B St, Port Saeed, Deira, Dubai, UAE",
+        loc_hours_title: "Operating Hours",
+        loc_hours_sub: "Daily from 9:00 AM to 1:00 AM (Continuous Service)",
+        btn_maps: "Open in Google Maps",
+        modal_book_badge: "Instant Booking",
+        modal_book_title: "BOOK APPOINTMENT",
+        modal_book_sub: "Confirm your booking directly via WhatsApp",
+        form_name: "Full Name",
+        form_service: "Service",
+        form_time: "Preferred Time",
+        btn_book_submit: "Confirm Appointment",
+        aed: "AED",
+        book_action: "Book Appointment"
+      },
+      ar: {
+        preview_badge: "معاينة حصرية:",
+        preview_salon: "صالون الشرق للرجال (بورت سعيد، ديرة)",
+        preview_cta_sub: "احصل على هذا الموقع الرسمي بنطاقك الخاص مقابل 1,000 درهم فقط",
+        preview_btn: "تفعيل الموقع",
+        marquee_text: "✦ مفتوح يومياً من 9:00 صباحاً حتى 1:00 صباحاً ✦ نرحب بجميع الزوار والحجوزات ✦ بورت سعيد، ديرة، دبي",
+        brand_name: "صالون الشرق",
+        brand_sub: "للرجال • دبي",
+        nav_services: "الخدمات",
+        nav_amenities: "المزايا",
+        nav_reviews: "التقييمات (4.9★)",
+        nav_location: "الموقع",
+        btn_book_nav: "حجز موعد",
+        hero_reviews_badge: "• 698 تقييم حقيقي على خرائط جوجل",
+        hero_title: 'فن الحلاقة الفاخرة و <span class="bg-gradient-to-r from-amber-700 via-gold-500 to-amber-600 dark:from-gold-300 dark:via-amber-400 dark:to-gold-500 bg-clip-text text-transparent">العناية الملكية</span>',
+        hero_desc: "يقع في مبروكة، بورت سعيد، ديرة. قصات شعر دقيقة، نحت اللحية بالفوطة الساخنة، حمام مغربي تقليدي وعناية تنفيذية VIP في أجواء نادي خاص راقٍ.",
+        btn_book_hero: "احجز موعدك الآن",
+        btn_explore_hero: "استعرض قائمة الخدمات",
+        stat_hours_val: "9 ص – 1 ص",
+        stat_hours_lbl: "مفتوح يومياً",
+        stat_loc_val: "بورت سعيد",
+        stat_loc_lbl: "ديرة • دبي",
+        stat_rate_val: "4.9★",
+        stat_rate_lbl: "698 تقييم",
+        amenity_coffee_title: "ركن القهوة الإيطالية",
+        amenity_coffee_sub: "قهوة وشاي عربي مجاني",
+        amenity_hammam_title: "جناح الحمام المغربي",
+        amenity_hammam_sub: "طقوس البخار والتقشير الخاص",
+        amenity_hygiene_title: "تعقيم طبي معتمد",
+        amenity_hygiene_sub: "شفرات معقمة للاستخدام الواحد",
+        amenity_late_title: "خدمة حتى وقت متأخر",
+        amenity_late_sub: "خدمة متواصلة حتى الواحدة صباحاً",
+        sec_menu_badge: "قائمة العناية الرجالية",
+        sec_menu_title: "الخدمات الحصرية",
+        sec_menu_sub: "تُقدم كل جلسة عناية باستخدام أرقى مستحضرات التجميل المستوردة وحرفية الحلاقة الأصيلة.",
+        atmosphere_badge: "أجواء النادي الخاص",
+        atmosphere_title: "واحة من الراحة والتميز في ديرة",
+        atmosphere_desc: "استمتع بأجواء هادئة وفاخرة صُممت خصيصاً لوقتك الخاص. مقاعد جلدية مريحة، إضاءة مدروسة، وضيافة عربية أصيلة تركز على أناقتك وراحتك.",
+        btn_book_lounge: "احجز موعدك الآن",
+        reviews_badge: "آراء عملائنا الكرام",
+        reviews_title: "تقييمات خرائط جوجل (4.9★)",
+        reviews_link_btn: "عرض 698 تقييماً على جوجل",
+        review_1_text: '"أفضل حلاق في ديرة بلا منازع. التدرج دقيق جداً، الطاقم محترم والخدمة بالفوطة الساخنة ممتازة بعد يوم عمل طويل."',
+        review_2_text: '"آتي إلى هنا دائماً للحمام المغربي وتشذيب اللحية. صالون نظيف وراقٍ ومفتوح حتى الواحدة صباحاً وهو أمر مناسب جداً."',
+        review_3_text: '"5 نجوم على الدقة والاهتمام بأدق التفاصيل. أسعار ممتازة مقارنة بالجودة العالية المقدمة. حلاقي الدائم في بورت سعيد."',
+        verified_client: "عميل معتمد على جوجل",
+        regular_client: "عميل دائم",
+        loc_badge: "تفضل بزيارتنا",
+        loc_title: "الموقع وساعات العمل",
+        loc_address_title: "صالون الشرق للرجال",
+        loc_address_sub: "بناية مبروكة، شارع 1B، بورت سعيد، ديرة، دبي، الإمارات",
+        loc_hours_title: "ساعات العمل الرسمية",
+        loc_hours_sub: "يومياً من الساعة 9:00 صباحاً حتى 1:00 صباحاً (خدمة مستمرة)",
+        btn_maps: "فتح في خرائط جوجل",
+        modal_book_badge: "حجز فوري",
+        modal_book_title: "حجز موعد",
+        modal_book_sub: "أكد حجزك مباشرة عبر تطبيق الواتساب",
+        form_name: "الاسم الكامل",
+        form_service: "الخدمة المطلوبة",
+        form_time: "الوقت المفضل",
+        btn_book_submit: "تأكيد الحجز عبر واتساب",
+        aed: "درهم",
+        book_action: "حجز موعد"
+      }
+    };
+
+    // Dedicated Services Dataset with Individual Images
     const DEFAULT_SERVICES = [
       {
         id: "svc-1",
-        name: "Master Haircut & Signature Fade",
+        name_en: "Master Haircut & Skin Fade",
+        name_ar: "قص شعر دقيق وتدرج احترافي",
         price: 85,
-        category: "Barbería",
-        desc: "Precision taper, skin fade or scissor cut tailored to facial structure, washed and styled.",
-        image: "hero.jpg"
+        duration: "45 min",
+        category_en: "Barbering",
+        category_ar: "حلاقة",
+        desc_en: "Precision scissor work and seamless skin fade tailored to your facial structure. Includes wash and matte clay finish.",
+        desc_ar: "قص دقيق بالمقص وتدرج سلس يتناسب مع ملامح وجهك. يشمل غسيل الشعر وتصفيفه بالطين غير اللامع.",
+        image: "haircut.jpg",
+        badge_en: "Most Popular",
+        badge_ar: "الأكثر طلباً"
       },
       {
         id: "svc-2",
-        name: "Royal Beard Sculpting",
+        name_en: "Royal Hot Towel Beard Sculpting",
+        name_ar: "نحت اللحية الملكي بالفوطة الساخنة",
         price: 65,
-        category: "Barba",
-        desc: "Razor line sculpting, hot herbal towel treatment, and nourishing conditioning oil.",
-        image: "service.jpg"
+        duration: "30 min",
+        category_en: "Beard",
+        category_ar: "لحية",
+        desc_en: "Straight razor contouring with eucalyptus steaming towels, botanical shaving cream, and sandalwood beard oil massage.",
+        desc_ar: "تحديد دقيق بالموس مع فوط البخار العشبية برائحة الكينا وكريم الحلاقة النباتي وتدليك بزيت خشب الصندل.",
+        image: "beard.jpg",
+        badge_en: "Signature Ritual",
+        badge_ar: "بصمة الشرق"
       },
       {
         id: "svc-3",
-        name: "VIP Executive Package",
-        price: 250,
-        category: "Paquetes VIP",
-        desc: "Complete haircut, beard grooming, black mask facial cleansing, and relaxing head massage.",
-        image: "hero.jpg"
+        name_en: "Authentic Moroccan Bath & Hammam",
+        name_ar: "حمام مغربي تقليدي وبخار خاص",
+        price: 180,
+        duration: "60 min",
+        category_en: "Treatments",
+        category_ar: "علاجات",
+        desc_en: "Private marble steam suite, traditional black olive soap, deep Kessa glove exfoliation, and pure eucalyptus relaxation.",
+        desc_ar: "جناح بخار رخامي خاص، صابون زيتون أسود بلدي، تقشير بكيس الكيسة التقليدي، واسترخاء بزيت الكينا.",
+        image: "bath.jpg",
+        badge_en: "Traditional Ritual",
+        badge_ar: "طقس تقليدي"
       },
       {
         id: "svc-4",
-        name: "Moroccan Bath & Steam Ritual",
-        price: 180,
-        category: "Tratamientos",
-        desc: "Traditional black olive soap, Kessa scrub exfoliation, and rejuvenating eucalyptus steam.",
-        image: "service.jpg"
+        name_en: "Deep Cleansing Charcoal & 24K Mask",
+        name_ar: "تنظيف عميق بالفحم وقناع الذهب",
+        price: 120,
+        duration: "45 min",
+        category_en: "Treatments",
+        category_ar: "علاجات",
+        desc_en: "Ultrasonic blackhead detox, steam hydration, gold collagen mask, and cold stone facial acupressure.",
+        desc_ar: "إزالة الرؤوس السوداء بالموجات الصوتية، ترطيب بالبخار، قناع الكولاجين بالذهب، وتدليك الوجه بالحجارة الباردة.",
+        image: "facial.jpg",
+        badge_en: "Executive Detox",
+        badge_ar: "ديتوكس تنفيذي"
       },
       {
         id: "svc-5",
-        name: "Deep Cleansing Facial & Black Mask",
-        price: 120,
-        category: "Tratamientos",
-        desc: "Pore detox, blackhead extraction, cold rosewater tone, and brightening gold sheet mask.",
-        image: "service.jpg"
-      },
-      {
-        id: "svc-6",
-        name: "Ear & Nose Hot Waxing",
-        price: 45,
-        category: "Barbería",
-        desc: "Quick, painless waxing removing unwanted facial hairs with soothing aloe finish.",
-        image: "hero.jpg"
+        name_en: "VIP Executive Suite Experience",
+        name_ar: "باقة الجناح التنفيذي الملكية VIP",
+        price: 250,
+        duration: "90 min",
+        category_en: "VIP Packages",
+        category_ar: "باقات VIP",
+        desc_en: "Complete hair sculpture, beard sculpting, express detox facial, relaxing scalp massage, and complimentary barista selection.",
+        desc_ar: "قص شعر كامل، نحت اللحية، تنظيف سريع للوجه، تدليك مهدئ لفروة الرأس، وقهوة باريستا فاخرة.",
+        image: "lounge.jpg",
+        badge_en: "Complete Suite",
+        badge_ar: "الباقة الشاملة"
       }
     ];
 
-    const DEFAULT_CATEGORIES = ["Todos", "Barbería", "Barba", "Tratamientos", "Paquetes VIP"];
+    const DEFAULT_CATEGORIES_EN = ["All", "Barbering", "Beard", "Treatments", "VIP Packages"];
+    const DEFAULT_CATEGORIES_AR = ["الكل", "حلاقة", "لحية", "علاجات", "باقات VIP"];
 
     // State Variables
+    let currentLang = localStorage.getItem('alsharq_lang') || 'en';
+    let currentTheme = localStorage.getItem('alsharq_theme') || 'dark';
     let services = JSON.parse(localStorage.getItem('alsharq_services')) || DEFAULT_SERVICES;
-    let categories = JSON.parse(localStorage.getItem('alsharq_categories')) || DEFAULT_CATEGORIES;
-    let announcement = localStorage.getItem('alsharq_announcement') || "✦ OPEN DAILY 9:00 AM – 1:00 AM ✦ WALK-INS & ONLINE RESERVATIONS WELCOME ✦ PORT SAEED, DEIRA";
+    let currentFilterIdx = 0;
     let orders = JSON.parse(localStorage.getItem('alsharq_orders')) || [];
-    let currentCategoryFilter = "Todos";
     let currentCompressedPhoto = null;
 
     // Boot App
     document.addEventListener('DOMContentLoaded', () => {
-      renderCategoryFilters();
-      renderServices();
-      document.getElementById('announcementText').innerText = announcement;
-      document.getElementById('announceTextInput').value = announcement;
+      applyTheme(currentTheme);
+      applyLanguage(currentLang);
     });
 
-    // Render Public Category Filter
+    // Theme Management
+    function applyTheme(theme) {
+      currentTheme = theme;
+      localStorage.setItem('alsharq_theme', theme);
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+
+    // Language Management
+    function toggleLangDropdown() {
+      const drop = document.getElementById('langDropdown');
+      drop.classList.toggle('hidden');
+    }
+
+    function changeLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('alsharq_lang', lang);
+      document.getElementById('langDropdown').classList.add('hidden');
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.getElementById('currentLangLabel').innerText = lang.toUpperCase();
+
+      const dict = translations[lang] || translations.en;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          if (key === 'hero_title') {
+            el.innerHTML = dict[key];
+          } else {
+            el.innerText = dict[key];
+          }
+        }
+      });
+
+      renderCategoryFilters();
+      renderServices();
+    }
+
+    // Render Filters
     function renderCategoryFilters() {
       const container = document.getElementById('categoryFilterContainer');
-      container.innerHTML = categories.map(cat => `
-        <button onclick="setFilter('${cat}')" class="px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap ${currentCategoryFilter === cat ? 'bg-gold-400 text-black font-bold shadow-lg shadow-gold-500/20' : 'glass-panel text-slate-400 hover:text-white'}">
+      const cats = currentLang === 'ar' ? DEFAULT_CATEGORIES_AR : DEFAULT_CATEGORIES_EN;
+
+      container.innerHTML = cats.map((cat, idx) => `
+        <button onclick="setFilterIndex(${idx})" class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap ${currentFilterIdx === idx ? 'bg-gold-500 text-black font-bold shadow-md shadow-gold-500/20' : 'glass-card text-stone-600 dark:text-slate-400 hover:text-black dark:hover:text-white'}">
           ${cat}
         </button>
       `).join('');
     }
 
-    function setFilter(cat) {
-      currentCategoryFilter = cat;
+    function setFilterIndex(idx) {
+      currentFilterIdx = idx;
       renderCategoryFilters();
       renderServices();
     }
 
-    // Render Public Bento Services
+    // Render Services with Distinct Individual Images
     function renderServices() {
       const container = document.getElementById('servicesGrid');
-      const filtered = currentCategoryFilter === "Todos" 
-        ? services 
-        : services.filter(s => s.category === currentCategoryFilter);
+      const isAr = currentLang === 'ar';
+      const catsEn = DEFAULT_CATEGORIES_EN;
 
-      container.innerHTML = filtered.map(s => `
-        <div class="glass-panel rounded-3xl p-6 border border-white/5 flex flex-col justify-between hover:border-gold-500/30 transition-all group">
+      let filtered = services;
+      if (currentFilterIdx !== 0) {
+        const selectedCatEn = catsEn[currentFilterIdx];
+        filtered = services.filter(s => s.category_en === selectedCatEn || s.category === selectedCatEn);
+      }
+
+      const dict = translations[currentLang] || translations.en;
+
+      container.innerHTML = filtered.map(s => {
+        const name = isAr ? (s.name_ar || s.name) : (s.name_en || s.name);
+        const desc = isAr ? (s.desc_ar || s.desc) : (s.desc_en || s.desc);
+        const cat = isAr ? (s.category_ar || s.category) : (s.category_en || s.category);
+        const badge = isAr ? (s.badge_ar || s.badge) : (s.badge_en || s.badge);
+
+        return `
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all duration-300 group shadow-xl">
           <div>
-            <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 border border-white/5">
-              <img src="${s.image || 'hero.jpg'}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-gold-400 font-mono text-[10px] font-bold uppercase border border-gold-500/20">
-                ${s.category}
-              </span>
+            <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 border border-stone-300/60 dark:border-white/10 bg-noir-900">
+              <img src="${s.image}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              
+              <div class="absolute top-3 ${isAr ? 'right-3' : 'left-3'} flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-gold-400 font-mono text-[10px] font-bold uppercase border border-gold-500/30">
+                  ${cat}
+                </span>
+                ${badge ? `<span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono text-[9px] font-semibold border border-amber-500/20">${badge}</span>` : ''}
+              </div>
+
+              ${s.duration ? `
+              <span class="absolute bottom-3 ${isAr ? 'left-3' : 'right-3'} px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-slate-300 font-mono text-[10px]">
+                <i class="far fa-clock mr-1 text-gold-400"></i>${s.duration}
+              </span>` : ''}
             </div>
+
             <div class="flex items-start justify-between gap-3 mb-2">
-              <h3 class="font-display font-bold text-lg text-white group-hover:text-gold-400 transition-colors">
-                ${s.name}
+              <h3 class="font-display font-bold text-lg text-stone-900 dark:text-white group-hover:text-gold-500 transition-colors">
+                ${name}
               </h3>
-              <span class="font-display font-extrabold text-lg text-gold-400 shrink-0">
-                ${s.price} <span class="text-xs font-mono font-normal">AED</span>
-              </span>
+              <div class="${isAr ? 'text-left' : 'text-right'} shrink-0">
+                <span class="font-display font-black text-xl text-amber-700 dark:text-gold-400">
+                  ${s.price} <span class="text-xs font-mono font-normal">${dict.aed}</span>
+                </span>
+              </div>
             </div>
-            <p class="text-xs text-slate-400 font-light leading-relaxed mb-6">
-              ${s.desc}
+
+            <p class="text-xs text-stone-600 dark:text-slate-400 font-normal dark:font-light leading-relaxed mb-6">
+              ${desc}
             </p>
           </div>
-          <button onclick="bookDirect('${s.name} (AED ${s.price})')" class="w-full py-3 rounded-xl bg-white/[0.05] hover:bg-gold-400 hover:text-black text-slate-200 border border-white/10 font-sans text-xs uppercase tracking-wider font-semibold transition-all">
-            Reservar Cita
+
+          <button onclick="bookDirect('${name} (${s.price} ${dict.aed})')" class="w-full py-3.5 rounded-xl bg-stone-900 dark:bg-white/[0.05] hover:bg-gold-500 text-white hover:text-black border border-stone-800 dark:border-white/10 font-sans text-xs uppercase tracking-wider font-semibold transition-all shadow-md active:scale-95">
+            ${dict.book_action}
           </button>
         </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
-    // Book Direct helper
     function bookDirect(serviceText) {
       document.getElementById('bookService').value = serviceText;
       openBookingModal();
     }
 
-    // Modal Triggers
+    // Modal Handling
     function openBookingModal() {
       document.getElementById('bookingModal').classList.remove('hidden');
       document.getElementById('bookingModal').classList.add('flex');
@@ -812,8 +1130,11 @@
       orders.unshift(orderItem);
       localStorage.setItem('alsharq_orders', JSON.stringify(orders));
 
-      // Compose WhatsApp message directly to Al Sharq
-      const waText = encodeURIComponent(`Hola Al Sharq Gents Saloon, deseo reservar una cita:\n- Cliente: ${name}\n- Servicio: ${service}\n- Horario: ${time}`);
+      const isAr = currentLang === 'ar';
+      const waText = isAr
+        ? encodeURIComponent(`مرحباً صالون الشرق للرجال، أود حجز موعد:\n- الاسم: ${name}\n- الخدمة: ${service}\n- الموعد: ${time}`)
+        : encodeURIComponent(`Hello Al Sharq Gents Saloon, I would like to book an appointment:\n- Name: ${name}\n- Service: ${service}\n- Preferred Time: ${time}`);
+
       window.open(`https://wa.me/971547229787?text=${waText}`, '_blank');
       closeBookingModal();
     }
@@ -827,7 +1148,7 @@
         document.getElementById('adminLoginSection').classList.add('hidden');
         document.getElementById('adminDashboardSection').classList.remove('hidden');
       } else {
-        alert("Credenciales incorrectas.");
+        alert("Invalid admin credentials.");
       }
     }
 
@@ -836,7 +1157,6 @@
       document.getElementById('adminDashboardSection').classList.add('hidden');
     }
 
-    // Switch Dashboard Tabs
     function switchTab(tabId) {
       ['tabServices', 'tabAnnounce', 'tabCategories', 'tabOrders', 'tabConfig'].forEach(id => {
         document.getElementById(id).classList.add('hidden');
@@ -844,9 +1164,9 @@
       document.getElementById(tabId).classList.remove('hidden');
 
       ['btnTabServices', 'btnTabAnnounce', 'btnTabCategories', 'btnTabOrders', 'btnTabConfig'].forEach(btn => {
-        document.getElementById(btn).className = "px-4 py-2 border-b-2 border-transparent text-slate-400 whitespace-nowrap";
+        document.getElementById(btn).className = "px-4 py-2 border-b-2 border-transparent text-stone-500 dark:text-slate-400 whitespace-nowrap";
       });
-      document.getElementById('btn' + tabId.charAt(0).toUpperCase() + tabId.slice(1)).className = "px-4 py-2 border-b-2 border-gold-400 text-gold-400 font-bold whitespace-nowrap";
+      document.getElementById('btn' + tabId.charAt(0).toUpperCase() + tabId.slice(1)).className = "px-4 py-2 border-b-2 border-gold-500 text-gold-600 dark:text-gold-400 font-bold whitespace-nowrap";
     }
 
     // HTML5 Canvas Client-Side Mobile Image Compressor
@@ -876,7 +1196,6 @@
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, width, height);
 
-          // WebP / JPEG ~50KB
           currentCompressedPhoto = canvas.toDataURL('image/jpeg', 0.82);
           const preview = document.getElementById('svcPhotoPreview');
           preview.src = currentCompressedPhoto;
@@ -887,41 +1206,47 @@
       reader.readAsDataURL(file);
     }
 
-    // Save or Add Service
     function saveServiceItem() {
       const name = document.getElementById('svcName').value.trim();
       const price = parseFloat(document.getElementById('svcPrice').value) || 50;
+      const duration = document.getElementById('svcDuration').value.trim() || "30 min";
       const category = document.getElementById('svcCategory').value;
       const desc = document.getElementById('svcDesc').value.trim();
 
-      if (!name) return alert('Ingresa el nombre del servicio.');
+      if (!name) return alert('Please enter service name.');
 
       const newSvc = {
         id: "svc-" + Date.now(),
-        name,
+        name_en: name,
+        name_ar: name,
         price,
-        category,
-        desc: desc || "Cuidado profesional de barbería.",
-        image: currentCompressedPhoto || "hero.jpg"
+        duration,
+        category_en: category,
+        category_ar: category,
+        desc_en: desc || "Professional grooming care.",
+        desc_ar: desc || "عناية حلاقة احترافية.",
+        image: currentCompressedPhoto || "haircut.jpg",
+        badge_en: "New",
+        badge_ar: "جديد"
       };
 
       services.unshift(newSvc);
       localStorage.setItem('alsharq_services', JSON.stringify(services));
       
-      // Reset inputs
       document.getElementById('svcName').value = '';
       document.getElementById('svcPrice').value = '';
+      document.getElementById('svcDuration').value = '';
       document.getElementById('svcDesc').value = '';
       document.getElementById('svcPhotoPreview').classList.add('hidden');
       currentCompressedPhoto = null;
 
       renderServices();
       renderAdminServices();
-      alert('Servicio guardado con éxito.');
+      alert('Service saved successfully.');
     }
 
     function deleteServiceItem(id) {
-      if (!confirm('¿Eliminar este servicio?')) return;
+      if (!confirm('Delete this service?')) return;
       services = services.filter(s => String(s.id) !== String(id));
       localStorage.setItem('alsharq_services', JSON.stringify(services));
       renderServices();
@@ -931,35 +1256,33 @@
     function renderAdminServices() {
       const list = document.getElementById('adminServicesList');
       list.innerHTML = services.map(s => `
-        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between text-xs">
+        <div class="p-3 rounded-xl bg-stone-100 dark:bg-white/[0.03] border border-stone-300 dark:border-white/5 flex items-center justify-between text-xs">
           <div class="flex items-center gap-3">
-            <img src="${s.image}" class="w-9 h-9 rounded-lg object-cover">
+            <img src="${s.image}" class="w-10 h-10 rounded-lg object-cover">
             <div>
-              <strong class="text-white block font-sans">${s.name}</strong>
-              <span class="text-gold-400 font-mono">${s.price} AED</span> • <span class="text-slate-400">${s.category}</span>
+              <strong class="text-stone-900 dark:text-white block font-sans">${s.name_en || s.name}</strong>
+              <span class="text-amber-700 dark:text-gold-400 font-mono">${s.price} AED</span> • <span class="text-stone-500 dark:text-slate-400">${s.category_en || s.category}</span>
             </div>
           </div>
-          <button onclick="deleteServiceItem('${s.id}')" class="px-2.5 py-1 rounded bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition-colors">
+          <button onclick="deleteServiceItem('${s.id}')" class="px-2.5 py-1 rounded bg-rose-500/20 text-rose-500 hover:bg-rose-500 hover:text-white transition-colors">
             <i class="fas fa-trash"></i>
           </button>
         </div>
       `).join('');
     }
 
-    // Announcement Logic
     function saveAnnouncement() {
-      announcement = document.getElementById('announceTextInput').value.trim();
-      localStorage.setItem('alsharq_announcement', announcement);
-      document.getElementById('announcementText').innerText = announcement;
-      alert('Anuncio actualizado en vivo.');
+      const text = document.getElementById('announceTextInput').value.trim();
+      localStorage.setItem('alsharq_announcement', text);
+      document.getElementById('announcementText').innerText = text;
+      alert('Announcement updated.');
     }
 
-    // Categories Logic
     function addCategory() {
       const val = document.getElementById('newCategoryInput').value.trim();
-      if (!val || categories.includes(val)) return;
-      categories.push(val);
-      localStorage.setItem('alsharq_categories', JSON.stringify(categories));
+      if (!val) return;
+      DEFAULT_CATEGORIES_EN.push(val);
+      DEFAULT_CATEGORIES_AR.push(val);
       document.getElementById('newCategoryInput').value = '';
       renderCategoryFilters();
       renderAdminCategories();
@@ -967,36 +1290,34 @@
 
     function renderAdminCategories() {
       const cont = document.getElementById('adminCategoryTags');
-      cont.innerHTML = categories.map(c => `
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 flex items-center gap-2">
+      cont.innerHTML = DEFAULT_CATEGORIES_EN.map(c => `
+        <span class="px-3 py-1 rounded-full bg-stone-200 dark:bg-white/5 border border-stone-300 dark:border-white/10 text-stone-700 dark:text-slate-300 flex items-center gap-2">
           ${c}
         </span>
       `).join('');
     }
 
-    // Orders Log
     function renderAdminOrders() {
       const cont = document.getElementById('ordersLogContainer');
       if (!orders.length) {
-        cont.innerHTML = '<p class="text-slate-500 font-mono">No hay citas registradas.</p>';
+        cont.innerHTML = '<p class="text-stone-500 dark:text-slate-500 font-mono">No appointments recorded.</p>';
         return;
       }
       cont.innerHTML = orders.map(o => `
-        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-          <div class="flex justify-between items-center text-gold-400 font-mono text-[10px]">
+        <div class="p-3 rounded-xl bg-stone-100 dark:bg-white/[0.03] border border-stone-300 dark:border-white/5">
+          <div class="flex justify-between items-center text-amber-700 dark:text-gold-400 font-mono text-[10px]">
             <span>${o.id}</span>
             <span>${o.date}</span>
           </div>
-          <strong class="text-white block text-xs mt-1">${o.name}</strong>
-          <span class="text-slate-300 block text-xs">${o.service}</span>
-          <span class="text-slate-500 text-[11px] font-mono">Horario solicitado: ${o.time}</span>
+          <strong class="text-stone-900 dark:text-white block text-xs mt-1">${o.name}</strong>
+          <span class="text-stone-700 dark:text-slate-300 block text-xs">${o.service}</span>
+          <span class="text-stone-500 dark:text-slate-500 text-[11px] font-mono">Time requested: ${o.time}</span>
         </div>
       `).join('');
     }
 
-    // Backup & Restore
     function exportDataBackup() {
-      const data = { services, categories, announcement, orders };
+      const data = { services, orders };
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -1013,21 +1334,14 @@
         try {
           const d = JSON.parse(evt.target.result);
           if (d.services) services = d.services;
-          if (d.categories) categories = d.categories;
-          if (d.announcement) announcement = d.announcement;
           if (d.orders) orders = d.orders;
-
           localStorage.setItem('alsharq_services', JSON.stringify(services));
-          localStorage.setItem('alsharq_categories', JSON.stringify(categories));
-          localStorage.setItem('alsharq_announcement', announcement);
           localStorage.setItem('alsharq_orders', JSON.stringify(orders));
-
-          renderCategoryFilters();
           renderServices();
           renderAdminServices();
-          alert('Datos restaurados correctamente.');
+          alert('Data restored successfully.');
         } catch (err) {
-          alert('Error al leer el archivo JSON.');
+          alert('Invalid JSON file.');
         }
       };
       reader.readAsText(file);
