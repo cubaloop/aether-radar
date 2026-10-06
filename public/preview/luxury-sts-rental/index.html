@@ -22,10 +22,10 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Syne, Montserrat, Cairo (Arabic) -->
+  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Serif), Inter & Montserrat (UI), Cairo (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -37,8 +37,8 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['Syne', 'Montserrat', 'sans-serif'],
-            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'Montserrat', 'system-ui', 'sans-serif'],
             arabic: ['Cairo', 'sans-serif']
           },
           colors: {
@@ -65,7 +65,7 @@
 
   <style>
     /* ============================================================
-       DESIGN TOKENS (Octane Luxury Motors DNA + Ultra-Contrast)
+       DESIGN TOKENS (Timeless Luxury Automotive Prestige)
        LIGHT: Platinum Pearl #F5F6F8 / Ink #0B0F17 (16:1) / Gold #B45309 (6:1)
        DARK : OLED Midnight #07090E / Ivory #F8FAFC (18:1) / Gold #F59E0B
        ============================================================ */
@@ -102,12 +102,12 @@
         radial-gradient(760px 560px at -5% 35%, rgba(6, 182, 212, 0.1), transparent 60%),
         radial-gradient(800px 500px at 65% 80%, var(--glow), transparent 65%);
       color: var(--ink);
-      font-family: 'Montserrat', system-ui, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    .display { font-family: 'Syne', 'Montserrat', sans-serif; letter-spacing: -0.02em; }
+    .display { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.01em; font-weight: 600; }
     .muted { color: var(--muted); }
     .gold-text { color: var(--accent-gold); }
 
@@ -360,8 +360,8 @@
             <span class="gold-text" data-i18n="hero_badge">5 MIN FROM DXB AIRPORT • 24/7 FLEET</span>
           </div>
 
-          <h1 class="display font-extrabold text-4xl sm:text-6xl lg:text-[4.5rem] leading-[1.03] mb-7" data-i18n="hero_title">
-            DUBAI’S PREMIER <span class="gold-text">EXOTIC &amp; LUXURY</span> CAR RENTAL
+          <h1 class="display text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.05] tracking-tight mb-7 font-bold" data-i18n="hero_title">
+            DUBAI’S PREMIER <span class="gold-text italic font-normal">EXOTIC &amp; LUXURY</span> CAR RENTAL
           </h1>
 
           <p class="muted text-base sm:text-lg max-w-xl leading-relaxed mb-10" data-i18n="hero_desc">
