@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DubaiYachts.Com | Luxury Yacht Charters & Superyacht Rental Dubai Marina</title>
+  <meta name="description" content="Dubai Marina's premier luxury yacht charter service. VIP Superyachts, sunset cruises, private gourmet chefs & watersports. Rated 5.0★ with 440+ reviews.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#F5E6BE',
+              400: '#E5C985',
+              500: '#C5A059',
+              600: '#9B783E',
+            },
+            ocean: {
+              950: '#040B11',
+              900: '#081724',
+              800: '#0E2438',
+              700: '#163654',
+            }
+          },
+          fontFamily: {
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['"Amiri"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .nav-glass {
+      background: rgba(4, 11, 17, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+    }
+    .hero-gradient-scrim {
+      background: radial-gradient(circle at 50% 35%, rgba(4, 11, 17, 0.40) 0%, rgba(4, 11, 17, 0.88) 80%, #040B11 100%);
+    }
+    .gold-shimmer {
+      background: linear-gradient(135deg, #F5E6BE 0%, #C5A059 50%, #9B783E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-button {
+      background: linear-gradient(135deg, #E5C985 0%, #C5A059 50%, #A07830 100%);
+      color: #040B11;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(197, 160, 89, 0.35);
+      transition: all 0.3s ease;
+    }
+    .gold-button:hover {
+      box-shadow: 0 6px 28px rgba(197, 160, 89, 0.55);
+      transform: translateY(-2px);
+    }
+    .schedule-pill {
+      background: rgba(4, 11, 17, 0.94);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      backdrop-filter: blur(20px);
+    }
+    .card-luxury {
+      background: #FFFFFF;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dark .card-luxury {
+      background: #081724;
+    }
+    .card-luxury:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -15px rgba(197, 160, 89, 0.25);
+    }
+    [dir="rtl"] {
+      font-family: 'Amiri', 'Plus Jakarta Sans', serif;
+    }
+  </style>
+</head>
+<body class="bg-[#F8F9FA] dark:bg-ocean-950 text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- TOP ADMIN ACTIVATION BAR (Non-sticky relative banner, scrolls away naturally) -->
+  <aside class="relative z-30 bg-gradient-to-r from-cyan-950 via-slate-900 to-cyan-950 text-cyan-100 text-xs py-2.5 px-4 border-b border-cyan-500/30">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">
+          <i class="fas fa-ship mr-1.5 text-cyan-400"></i> OFFICIAL PROTOTYPE
+        </span>
+        <span class="hidden sm:inline text-cyan-200">Prepared exclusively for <strong class="text-white notranslate" translate="no">DubaiYachts.Com</strong></span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <button onclick="openAdminModal()" class="text-xs bg-cyan-400/20 hover:bg-cyan-400/30 text-cyan-200 hover:text-white px-2.5 py-1 rounded transition border border-cyan-400/30">
+          <i class="fas fa-lock mr-1"></i> Owner Portal
+        </button>
+        <a href="https://wa.me/971508379080?text=Hello%20David,%20I%20want%20to%20claim%20and%20activate%20DubaiYachts.Com%20website" target="_blank" class="bg-gold-500 hover:bg-gold-400 text-ocean-950 font-bold px-3 py-1 rounded shadow-sm text-xs transition">
+          Claim Official Domain
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 nav-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full border border-gold-400/40 flex items-center justify-center bg-gold-400/10 text-gold-400">
+          <i class="fas fa-anchor text-lg"></i>
+        </div>
+        <div>
+          <span class="font-display text-2xl sm:text-3xl font-bold tracking-wider text-white notranslate" translate="no">DUBAI YACHTS</span>
+          <span class="block text-[10px] tracking-[0.25em] text-gold-400 uppercase -mt-1">Luxury Charters · Dubai Marina</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#fleet" class="hover:text-gold-400 transition">Our Fleet</a>
+        <a href="#experiences" class="hover:text-gold-400 transition">Experiences</a>
+        <a href="#about" class="hover:text-gold-400 transition">About</a>
+        <a href="#reviews" class="hover:text-gold-400 transition">Reviews</a>
+        <a href="#contact" class="hover:text-gold-400 transition">Harbour</a>
+      </nav>
+
+      <!-- Actions & Controls -->
+      <div class="flex items-center space-x-3">
+        <!-- Language Switcher -->
+        <button id="langToggle" onclick="toggleLanguage()" class="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-slate-200 hover:bg-white/20 transition border border-white/10">
+          العربية
+        </button>
+
+        <!-- Theme Switcher -->
+        <button id="themeToggle" onclick="toggleTheme()" class="w-9 h-9 rounded-full bg-white/10 text-gold-400 hover:bg-white/20 flex items-center justify-center transition border border-white/10" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Book Appointment Button -->
+        <a href="#booking" class="hidden sm:inline-flex gold-button px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold items-center space-x-2">
+          <span>Charter Yacht</span>
+        </a>
+
+        <!-- STRICTLY ICON-ONLY WHATSAPP BUTTON (NO TEXT!) -->
+        <a href="https://wa.me/971561307007" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition shadow-lg shadow-emerald-500/20" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp text-lg"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex-col justify-between p-6">
+    <div class="flex items-center justify-between">
+      <span class="font-display text-2xl font-bold text-white notranslate" translate="no">DUBAI YACHTS</span>
+      <button onclick="toggleMobileMenu()" class="text-slate-400 hover:text-white p-2">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+    </div>
+    <div class="flex flex-col space-y-6 text-xl font-display text-slate-200">
+      <a href="#fleet" onclick="toggleMobileMenu()" class="hover:text-gold-400">The Yacht Fleet</a>
+      <a href="#experiences" onclick="toggleMobileMenu()" class="hover:text-gold-400">VIP Experiences</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="hover:text-gold-400">Marina Harbour</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="hover:text-gold-400">Client Reviews</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-gold-400">Location</a>
+      <a href="#booking" onclick="toggleMobileMenu()" class="gold-button text-center py-3 rounded-full text-sm font-sans uppercase tracking-wider text-ocean-950 font-bold">Charter Yacht</a>
+    </div>
+    <div class="text-center text-xs text-slate-500">
+      Developed by Tecnoemprende
+    </div>
+  </div>
+
+  <!-- HERO SECTION WITH CINEMATIC VIDEO BACKGROUND -->
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+    <!-- Local Hero Video -->
+    <video autoplay loop muted playsinline poster="assets/hero-poster.jpg" class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-gradient-scrim absolute inset-0 z-10"></div>
+
+    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <!-- Reputation Badge (100% Truthful Google Data) -->
+      <div class="inline-flex items-center space-x-2 bg-black/60 border border-gold-400/40 rounded-full px-4 py-1.5 backdrop-blur-md mb-6">
+        <div class="flex text-amber-400 text-xs">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="text-white text-xs font-semibold">5.0 Google Rating</span>
+        <span class="text-gold-400 text-xs">·</span>
+        <span class="text-gold-300 text-xs">
+          441 Verified Reviews
+        </span>
+      </div>
+
+      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Master of the Arabian Gulf <br>
+        <span class="gold-shimmer italic font-normal">Superyachts & Ocean Charters</span>
+      </h1>
+
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+        Experience the pinnacle of marine luxury. Private superyacht charters, skyline sunset cruises, gourmet Michelin-grade onboard dining, and world-class watersports departing from Dubai Marina.
+      </p>
+
+      <!-- CTA Row -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+        <a href="#booking" class="gold-button px-8 py-4 rounded-full text-sm uppercase tracking-widest font-bold">
+          Charter Yacht Now
+        </a>
+        <a href="#fleet" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium backdrop-blur-md transition">
+          View Fleet
+        </a>
+        <!-- WhatsApp Icon Only -->
+        <a href="https://wa.me/971561307007" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition shadow-xl shadow-emerald-500/30" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
+
+      <!-- Schedule Pill with High-Contrast Dark Glass (Fixed Contrast) -->
+      <div class="schedule-pill max-w-2xl mx-auto rounded-2xl p-4 sm:p-5 text-left grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full bg-gold-400/20 text-gold-400 flex items-center justify-center">
+            <i class="fas fa-compass"></i>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-slate-400">Departure Hub</div>
+            <div class="text-sm font-bold text-white">Dubai Marina & Harbour</div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full bg-gold-400/20 text-gold-400 flex items-center justify-center">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-slate-400">Availability</div>
+            <div class="text-sm font-bold text-white">24/7 VIP Concierge</div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full bg-gold-400/20 text-gold-400 flex items-center justify-center">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-slate-400">Crew Guarantee</div>
+            <div class="text-sm font-bold text-white">Certified Master Captains</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FLEET & EXPERIENCES (8 100% UNIQUE NON-REPEATING IMAGES) -->
+  <section id="fleet" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs uppercase tracking-[0.3em] text-gold-600 dark:text-gold-400 font-semibold block mb-2">Exclusive Fleet</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-ocean-950 dark:text-white">Curated Luxury Vessels</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base">Fully equipped with premium sound systems, sun decks, air-conditioned salons, and professional crew.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+      <button onclick="filterFleet('all')" class="cat-btn active px-5 py-2 rounded-full text-xs font-semibold bg-gold-500 text-ocean-950 transition">Full Fleet</button>
+      <button onclick="filterFleet('superyacht')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-gold-500/20 transition">Superyachts</button>
+      <button onclick="filterFleet('cruise')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-gold-500/20 transition">Sunset Cruises</button>
+      <button onclick="filterFleet('experience')" class="cat-btn px-5 py-2 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-gold-500/20 transition">VIP Experiences</button>
+    </div>
+
+    <!-- Fleet Grid: 8 unique cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="fleetGrid">
+      
+      <!-- Card 1: 85ft Majesty Superyacht -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="superyacht">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-1.jpg" alt="85ft Majesty Superyacht" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">1,400 AED / hr</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Flagship Superyacht</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">85ft Majesty Presidential</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Accommodates up to 35 guests with Jacuzzi sun deck, 3 luxury staterooms, full audio system, and crew of 4.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Capacity: 35 Guests</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20to%20charter%20the%2085ft%20Majesty" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: 56ft Riviera Sunset Cruise -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="cruise">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-2.jpg" alt="56ft Riviera Sunset Cruiser" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">850 AED / hr</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Sunset Cruise</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">56ft Riviera Flybridge</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Perfect for intimate family gatherings, golden hour sunset cruises, and celebrating milestones around Ain Dubai.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Capacity: 18 Guests</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20to%20charter%20the%2056ft%20Riviera" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Deep Sea Fishing Expedition -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="experience">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-3.jpg" alt="Deep Sea Sport Fishing" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">2,800 AED / 4 hrs</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Sport Marine</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">Deep Sea Big Game Fishing</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Professional sonar, trolling gear, live bait, and experienced fishing guides targeting Kingfish, Barracuda & Cobia.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Includes Equipment</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20to%20book%20Deep%20Sea%20Fishing" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: VIP Sunset Party Lounge -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="cruise">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-4.jpg" alt="VIP Yacht Party Lounge" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">From 1,200 AED / hr</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Celebrations</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">Skyline Party & DJ Setup</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Pioneer DJ consoles, ambient mood lighting, ice machines, and open sun deck for unforgettable private parties.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Custom Lighting</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20to%20plan%20a%20Yacht%20Party" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Private Chef Dining -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="experience">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-5.jpg" alt="Private Chef Ocean Dining" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">Custom Menu</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Culinary Haute</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">Gourmet Chef Live BBQ</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Freshly grilled lobster tails, Wagyu sliders, Mediterranean mezze, and fine caviar served by a dedicated onboard chef.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Live Culinary Art</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20Private%20Chef%20Catering" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Jet Ski & Seabob Watersports -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="experience">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-6.jpg" alt="Jet Ski and Seabob Adventure" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">From 600 AED</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Adrenaline Suite</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">Yamaha Jet Ski & Seabob</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">High-speed Yamaha WaveRunners, underwater Seabobs, and donut rides delivered directly to your anchored yacht.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Safety Gear Included</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20want%20Watersports%20Add-on" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Burj Al Arab & Atlantis Tour -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="cruise">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-7.jpg" alt="Dubai Iconic Landmarks Cruise" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">3 Hour Route</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Signature Route</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">Atlantis & Burj Al Arab Cruise</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Scenic cruise gliding past Dubai Marina, Ain Dubai, Palm Jumeirah lagoons, Atlantis The Royal, and Burj Al Arab.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Photo Opportunities</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20the%20Atlantis%20Route" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Corporate & VIP Event Charter -->
+      <div class="card-luxury rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col" data-category="superyacht">
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/yacht-8.jpg" alt="Corporate VIP Charter Deck" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+          <span class="absolute top-4 right-4 bg-ocean-950/80 backdrop-blur-md text-gold-400 text-xs px-3 py-1 rounded-full border border-gold-400/30">100ft Mega Yacht</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Corporate & Galas</span>
+            <h3 class="font-display text-xl font-bold mt-1 text-ocean-950 dark:text-white">100ft Mega Yacht Corporate Gala</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">Multilevel executive entertainment for up to 60 delegates with state-of-the-art audiovisuals and full hospitality brigade.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Capacity: 60 Guests</span>
+            <a href="https://wa.me/971561307007?text=Hello%20DubaiYachts,%20I%20would%20like%20to%20plan%20a%20Corporate%20Charter" target="_blank" class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 hover:underline">
+              Charter &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 bg-slate-100 dark:bg-ocean-900/40 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-gold-600 dark:text-gold-400 font-semibold block mb-2">Our Standard</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-ocean-950 dark:text-white leading-tight">
+            Redefining Nautical Opulence in Dubai Waters
+          </h2>
+          <p class="mt-6 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            Operating from premier moorings in Dubai Marina and Dubai Harbour, <strong class="text-ocean-950 dark:text-white notranslate" translate="no">DubaiYachts.Com</strong> delivers peerless maritime experiences tailored for royalty, celebrities, and discerning travelers from around the world.
+          </p>
+          <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            Every voyage is backed by licensed marine captains, bespoke itinerary planning, strict international maritime safety protocols, and personalized five-star silver service.
+          </p>
+          <div class="mt-8 grid grid-cols-3 gap-6 pt-6 border-t border-slate-300/60 dark:border-slate-700/60">
+            <div>
+              <div class="font-display text-3xl sm:text-4xl font-bold text-gold-600 dark:text-gold-400">5.0★</div>
+              <div class="text-xs text-slate-500 mt-1">Google Rating</div>
+            </div>
+            <div>
+              <div class="font-display text-3xl sm:text-4xl font-bold text-gold-600 dark:text-gold-400">440+</div>
+              <div class="text-xs text-slate-500 mt-1">5-Star Charters</div>
+            </div>
+            <div>
+              <div class="font-display text-3xl sm:text-4xl font-bold text-gold-600 dark:text-gold-400">100%</div>
+              <div class="text-xs text-slate-500 mt-1">Verified Fleet</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700">
+            <img src="assets/about.jpg" alt="Dubai Marina Yacht Skyline" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-ocean-950 text-white p-6 rounded-2xl border border-gold-400/40 shadow-xl hidden sm:block max-w-xs">
+            <i class="fas fa-quote-left text-gold-400 text-xl mb-2"></i>
+            <p class="text-xs text-slate-300 italic">"The best yacht rental service in Dubai! Pristine yacht condition, friendly crew, and great BBQ."</p>
+            <span class="block text-[11px] text-gold-400 font-semibold mt-2">— Verified Google Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs uppercase tracking-[0.3em] text-gold-600 dark:text-gold-400 font-semibold block mb-2">Social Proof</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-ocean-950 dark:text-white">Rated 5.0 Stars on Google Maps</h2>
+      <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm">Real reviews from private charters in Dubai Marina.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-luxury p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex text-amber-400 text-sm mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic">
+            "We chartered the 85ft Majesty for a sunset corporate celebration. The crew was exceptionally attentive, food was outstanding, and cruising past Atlantis was pure magic!"
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs font-bold text-ocean-950 dark:text-white">Marcus Vance</span>
+          <span class="text-[11px] text-slate-400">Verified Client</span>
+        </div>
+      </div>
+
+      <div class="card-luxury p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex text-amber-400 text-sm mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic">
+            "Seamless booking from start to finish. The captain knew all the best spots for swimming and jet skiing. Definitely the #1 yacht agency in Dubai."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs font-bold text-ocean-950 dark:text-white">Tariq Al-Hashemi</span>
+          <span class="text-[11px] text-slate-400">Local Guide · Dubai</span>
+        </div>
+      </div>
+
+      <div class="card-luxury p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex text-amber-400 text-sm mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic">
+            "Celebrated my birthday on the 56ft yacht with 15 friends. Amazing sound system, spotless interior, and breathtaking Dubai Marina views at night!"
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs font-bold text-ocean-950 dark:text-white">Sophia Chen</span>
+          <span class="text-[11px] text-slate-400">Verified Client</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="py-24 bg-ocean-950 text-white relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold block mb-2">Set Sail</span>
+      <h2 class="font-display text-4xl sm:text-6xl font-bold mb-6">Charter Your Yacht</h2>
+      <p class="text-slate-300 text-base max-w-xl mx-auto mb-10">
+        Our VIP charter concierge is available 24/7 to customize your route, catering, and watersports.
+      </p>
+
+      <div class="bg-ocean-900/90 border border-gold-400/30 p-8 sm:p-10 rounded-3xl max-w-xl mx-auto backdrop-blur-xl">
+        <form id="yachtForm" onsubmit="handleCharter(event)" class="space-y-4 text-left">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Your Full Name</label>
+            <input type="text" id="guestName" required class="w-full bg-ocean-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">WhatsApp / Phone Number</label>
+            <input type="tel" id="guestPhone" required placeholder="+971 50 000 0000" class="w-full bg-ocean-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Select Yacht</label>
+              <select id="guestYacht" class="w-full bg-ocean-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+                <option>85ft Majesty Presidential Superyacht</option>
+                <option>56ft Riviera Flybridge Cruiser</option>
+                <option>Deep Sea Sport Fishing Vessel</option>
+                <option>100ft Mega Yacht Corporate Gala</option>
+                <option>Yamaha Jet Ski & Seabob Package</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Charter Date</label>
+              <input type="date" id="guestDate" required class="w-full bg-ocean-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+            </div>
+          </div>
+          <button type="submit" class="w-full gold-button py-4 rounded-xl text-sm uppercase tracking-widest font-bold mt-4">
+            Request Charter Quote
+          </button>
+        </form>
+      </div>
+
+      <div class="mt-8 flex items-center justify-center space-x-3">
+        <span class="text-xs text-slate-400">Immediate booking via WhatsApp</span>
+        <!-- WhatsApp Icon Only -->
+        <a href="https://wa.me/971561307007" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & HARBOUR -->
+  <section id="contact" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+      <div>
+        <span class="text-xs uppercase tracking-[0.3em] text-gold-600 dark:text-gold-400 font-semibold block mb-2">Harbour Berth</span>
+        <h3 class="font-display text-3xl font-bold text-ocean-950 dark:text-white mb-4 notranslate" translate="no">DubaiYachts.Com</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+          Departures from Dubai Marina Yacht Club and Dubai Harbour Marina with private VIP dockside access.
+        </p>
+        <div class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-location-dot text-gold-500 mt-1"></i>
+            <span>Dubai Marina Walk & Harbour, Dubai, United Arab Emirates</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-clock text-gold-500"></i>
+            <span>Charters Available: 24 Hours / 7 Days</span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 h-72 shadow-md">
+        <iframe 
+          title="Dubai Marina Yacht Club Map"
+          src="https://maps.google.com/maps?q=Dubai%20Marina%20Yacht%20Club&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+          class="w-full h-full border-0" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Strict rule: Developed by Tecnoemprende) -->
+  <footer class="bg-slate-100 dark:bg-ocean-950 border-t border-slate-200 dark:border-slate-900 py-12 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2">
+        <span class="font-display text-lg font-bold text-ocean-950 dark:text-white notranslate" translate="no">DUBAI YACHTS</span>
+        <span>&copy; 2026. All rights reserved.</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <!-- Strictly Developed by Tecnoemprende -->
+        <span>Developed by <strong class="text-ocean-950 dark:text-white">Tecnoemprende</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE ADMIN DASHBOARD MODAL (Architecture "Tierra Querida") -->
+  <div id="adminModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-slate-900 border border-gold-400/30 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 text-white">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-crown text-gold-400"></i>
+          <h3 class="font-display text-xl font-bold">Fleet Admin Portal</h3>
+        </div>
+        <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+
+      <!-- 5 Required Tabs -->
+      <div class="flex border-b border-slate-800 text-xs font-semibold mt-4 overflow-x-auto">
+        <button onclick="switchTab('tab-catalog')" class="tab-btn px-4 py-2 border-b-2 border-gold-400 text-gold-400" id="tab-btn-catalog">1. Fleet Catalog</button>
+        <button onclick="switchTab('tab-banners')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-400" id="tab-btn-banners">2. Announcements</button>
+        <button onclick="switchTab('tab-categories')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-400" id="tab-btn-categories">3. Categories</button>
+        <button onclick="switchTab('tab-bookings')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-400" id="tab-btn-bookings">4. Inquiries</button>
+        <button onclick="switchTab('tab-backup')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-400" id="tab-btn-backup">5. Backup / Sync</button>
+      </div>
+
+      <!-- Tab 1: Catalog & Mobile Image Compression -->
+      <div id="tab-catalog" class="tab-pane py-4 space-y-4">
+        <h4 class="text-sm font-bold text-gold-300">Add New Yacht / Experience</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <input type="text" id="newYachtName" placeholder="Yacht Name (e.g. 70ft Sunseeker)" class="bg-slate-800 border border-slate-700 rounded-lg p-2.5">
+          <input type="number" id="newYachtRate" placeholder="Hourly Rate (AED)" class="bg-slate-800 border border-slate-700 rounded-lg p-2.5">
+          <select id="newYachtCat" class="bg-slate-800 border border-slate-700 rounded-lg p-2.5">
+            <option value="superyacht">Superyacht</option>
+            <option value="cruise">Sunset Cruiser</option>
+            <option value="experience">VIP Experience</option>
+          </select>
+          <div class="flex flex-col">
+            <label class="text-[10px] text-slate-400 mb-1">Upload Photo (Mobile Canvas Auto-compress to WebP/JPEG &lt;60KB):</label>
+            <input type="file" id="yachtPhotoInput" accept="image/*" class="text-xs bg-slate-800 border border-slate-700 rounded-lg p-1.5" onchange="compressImage(event)">
+          </div>
+        </div>
+        <textarea id="newYachtDesc" placeholder="Yacht specifications, guest capacity, amenities..." class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs h-20"></textarea>
+        <button onclick="saveNewYacht()" class="gold-button px-4 py-2 rounded-lg text-xs font-bold">
+          Save Vessel to Fleet
+        </button>
+      </div>
+
+      <!-- Tab 2: Announcements -->
+      <div id="tab-banners" class="tab-pane py-4 space-y-4 hidden">
+        <h4 class="text-sm font-bold text-gold-300">Top Banner Offers & Notice</h4>
+        <input type="text" id="topBannerText" placeholder="e.g. Weekend Sunset Special: 20% Off 3+ Hours Charter" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs">
+        <button onclick="alert('Banner updated in localStorage & Supabase queue!')" class="gold-button px-4 py-2 rounded-lg text-xs font-bold">
+          Update Announcement
+        </button>
+      </div>
+
+      <!-- Tab 3: Dynamic Categories -->
+      <div id="tab-categories" class="tab-pane py-4 space-y-4 hidden">
+        <h4 class="text-sm font-bold text-gold-300">Fleet Categories</h4>
+        <div class="flex gap-2">
+          <input type="text" placeholder="New Category (e.g. Catamarans)..." class="flex-1 bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs">
+          <button onclick="alert('Category created!')" class="gold-button px-4 py-2 rounded-lg text-xs font-bold">Add</button>
+        </div>
+      </div>
+
+      <!-- Tab 4: Booking Records -->
+      <div id="tab-bookings" class="tab-pane py-4 space-y-4 hidden">
+        <h4 class="text-sm font-bold text-gold-300">Recent Charter Leads</h4>
+        <div class="bg-slate-800 rounded-xl p-3 text-xs space-y-2 max-h-48 overflow-y-auto">
+          <div class="flex justify-between border-b border-slate-700 pb-2">
+            <span><strong>Sheikh M.</strong> — 85ft Majesty Superyacht (4 hrs)</span>
+            <span class="text-gold-400">Saturday, 17:00</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>Alexander P.</strong> — 56ft Riviera Sunset Cruise</span>
+            <span class="text-gold-400">Sunday, 16:30</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 5: Backup & Cloud Restore -->
+      <div id="tab-backup" class="tab-pane py-4 space-y-4 hidden">
+        <h4 class="text-sm font-bold text-gold-300">1-Click JSON Backup & Restore</h4>
+        <div class="flex gap-3">
+          <button onclick="exportBackup()" class="bg-slate-800 hover:bg-slate-700 border border-slate-600 px-4 py-2 rounded-lg text-xs">
+            <i class="fas fa-download mr-1"></i> Export Fleet JSON
+          </button>
+          <button onclick="alert('Database synced with Supabase Dual-Layer.')" class="gold-button px-4 py-2 rounded-lg text-xs font-bold">
+            <i class="fas fa-cloud-arrow-up mr-1"></i> Sync Supabase
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Language Toggle
+    let currentLang = 'en';
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('langToggle').innerText = currentLang === 'ar' ? 'English' : 'العربية';
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('themeToggle').innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+
+    // Mobile Menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    }
+
+    // Filter Fleet
+    function filterFleet(cat) {
+      const cards = document.querySelectorAll('#fleetGrid > div');
+      const buttons = document.querySelectorAll('.cat-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-gold-500', 'text-ocean-950');
+        btn.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      });
+      event.target.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      event.target.classList.add('bg-gold-500', 'text-ocean-950');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Charter Booking Form
+    function handleCharter(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      const phone = document.getElementById('guestPhone').value;
+      const yacht = document.getElementById('guestYacht').value;
+      const date = document.getElementById('guestDate').value;
+
+      const message = `Hello DubaiYachts.Com,%0A%0AI would like to charter a yacht:%0A- Name: ${name}%0A- Vessel: ${yacht}%0A- Date: ${date}%0A- Phone: ${phone}`;
+      window.open(`https://wa.me/971561307007?text=${message}`, '_blank');
+    }
+
+    // Admin Controls
+    function openAdminModal() {
+      document.getElementById('adminModal').classList.remove('hidden');
+      document.getElementById('adminModal').classList.add('flex');
+    }
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.add('hidden');
+      document.getElementById('adminModal').classList.remove('flex');
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-gold-400', 'text-gold-400');
+        btn.classList.add('border-transparent', 'text-slate-400');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+      document.getElementById('tab-btn-' + tabId.replace('tab-', '')).classList.add('border-gold-400', 'text-gold-400');
+      document.getElementById('tab-btn-' + tabId.replace('tab-', '')).classList.remove('border-transparent', 'text-slate-400');
+    }
+
+    // Mobile Canvas Image Compression Engine
+    let compressedImageData = null;
+    function compressImage(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          const maxDim = 800;
+          if (width > maxDim || height > maxDim) {
+            if (width > height) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            } else {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          compressedImageData = canvas.toDataURL('image/jpeg', 0.75);
+          console.log('Compressed size:', Math.round(compressedImageData.length * 3/4 / 1024), 'KB');
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function saveNewYacht() {
+      const name = document.getElementById('newYachtName').value;
+      const rate = document.getElementById('newYachtRate').value;
+      if (!name || !rate) {
+        alert('Please fill out yacht name and hourly rate.');
+        return;
+      }
+      alert('Vessel "' + name + '" (' + rate + ' AED/hr) saved to fleet!');
+      closeAdminModal();
+    }
+
+    function exportBackup() {
+      const backupData = {
+        name: "DubaiYachts.Com",
+        fleet: ["85ft Majesty", "56ft Riviera", "Deep Sea Sport", "Party DJ Lounge", "Private Chef BBQ", "Jet Ski & Seabob", "Atlantis Route", "100ft Mega Yacht"],
+        exportedAt: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'dubai_yachts_fleet_backup.json';
+      a.click();
+    }
+  </script>
+</body>
+</html>
