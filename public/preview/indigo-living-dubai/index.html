@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indigo Living Umm Suqeim | Luxury Contemporary Furniture & Interior Styling Dubai</title>
+  <meta name="description" content="Discover Indigo Living Umm Suqeim Dubai. Luxury designer furniture, bespoke interior styling, living room suites, and luxury villa decor.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F6F1E7',
+            surfaceLight: '#FFFDF8',
+            deepCarbon: '#14201B',
+            goldAccent: '#C5A059',
+            goldHover: '#B08B45',
+            darkBg: '#09100D',
+            darkSurface: '#121D18'
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['"Amiri"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #DFBA73 0%, #C5A059 50%, #9F7932 100%);
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #DFBA73 0%, #C5A059 50%, #9F7932 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .arch-frame {
+      border-radius: 120px 120px 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-alabaster text-deepCarbon dark:bg-darkBg dark:text-alabaster transition-colors duration-300 font-sans antialiased">
+
+  <!-- TOP CLAIM BAR (Fades out smoothly on scroll) -->
+  <div id="top-claim-bar" class="bg-gradient-to-r from-[#1A1814] via-[#2A241B] to-[#1A1814] text-white py-2.5 px-4 sticky top-0 z-50 transition-all duration-300 border-b border-[#C5A059]/30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#C5A059]/20 text-[#DFBA73] border border-[#C5A059]/40">
+          ★ 4.8 Rating (185 Verified Reviews)
+        </span>
+        <span class="hidden md:inline text-gray-300">| Flagship Showroom & Design Studio: Villa 10 & 11, Al Wasl Rd, Umm Suqeim 3</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/971543079845" target="_blank" class="text-xs bg-[#C5A059] hover:bg-[#B08B45] text-black font-semibold px-3 py-1 rounded-full transition-all">
+          Activate Official Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="bg-surfaceLight/95 dark:bg-darkSurface/95 backdrop-blur-md sticky top-10 z-40 border-b border-gray-200/50 dark:border-gray-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <span class="font-display text-2xl sm:text-3xl tracking-widest font-bold text-deepCarbon dark:text-alabaster uppercase">
+          INDIGO LIVING
+        </span>
+        <span class="text-[9px] tracking-[0.3em] uppercase text-goldAccent font-semibold">
+          UMM SUQEIM • DUBAI
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+        <a href="#collections" class="hover:text-goldAccent transition-colors">Collections</a>
+        <a href="#design-studio" class="hover:text-goldAccent transition-colors">Design Studio</a>
+        <a href="#styling" class="hover:text-goldAccent transition-colors">Villa Styling</a>
+        <a href="#reviews" class="hover:text-goldAccent transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-goldAccent transition-colors">Showroom</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-goldAccent transition-colors">
+          <i class="fas fa-moon dark:hidden"></i>
+          <i class="fas fa-sun hidden dark:inline"></i>
+        </button>
+
+        <!-- STRICT WHATSAPP BUTTON: ICON ONLY -->
+        <a href="https://wa.me/971543079845" target="_blank" class="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="images/indigo_living_hero.jpg" alt="Indigo Living Luxury Showroom Dubai" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+      <div class="max-w-2xl">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#C5A059]/30 border border-[#C5A059] text-xs font-semibold tracking-wider uppercase mb-4 text-[#F6F1E7]">
+          Flagship Villa 10 & 11 • Al Wasl Road
+        </span>
+        <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-light leading-tight mb-6">
+          Curated Luxury Living for <span class="italic font-normal text-gold-gradient">Dubai's Finest Villas</span>
+        </h1>
+        <p class="text-base sm:text-lg text-gray-200 mb-8 font-light leading-relaxed">
+          Contemporary designer furniture, signature dining suites, and full-turnkey interior styling crafted to elevate sophisticated modern spaces.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#collections" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-goldAccent hover:bg-goldHover text-black font-semibold text-sm tracking-wider uppercase transition-all shadow-xl">
+            Explore Collections
+          </a>
+          <a href="#design-studio" class="inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/60 hover:bg-white hover:text-black font-medium text-sm tracking-wider uppercase transition-all backdrop-blur-sm">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAPS PROOF BADGE -->
+  <section class="py-8 bg-surfaceLight dark:bg-darkSurface border-y border-gray-200/40 dark:border-gray-800/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-6">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-2xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl font-bold">
+            ★
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="text-2xl font-bold font-display">4.8 / 5.0</span>
+              <div class="flex text-amber-400 text-sm">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Verified rating from <strong>185 Google Maps reviews</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+          <div><i class="fas fa-check-circle text-goldAccent mr-2"></i>Bespoke Villa Packages</div>
+          <div><i class="fas fa-check-circle text-goldAccent mr-2"></i>Interior Design Studio</div>
+          <div><i class="fas fa-check-circle text-goldAccent mr-2"></i>White-Glove Delivery</div>
+        </div>
+
+        <a href="https://maps.app.goo.gl/3e5f6bb23d71fb6d" target="_blank" class="text-xs font-semibold text-goldAccent hover:underline flex items-center">
+          View on Google Maps <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE COLLECTIONS (Bento Grid) -->
+  <section id="collections" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest uppercase text-goldAccent">Signature Showroom Suites</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-light mt-2 mb-4">Crafted for Timeless Elegance</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-400 font-light">Each piece combines artisanal craftsmanship, rich organic textures, and clean architectural lines.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-surfaceLight dark:bg-darkSurface rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/indigo_living_hero.jpg" alt="Living Room Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">Salon & Living</span>
+            <h3 class="font-display text-2xl font-light mt-1 mb-2">Curved Bouclé & Brass Living Suite</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              Sculptural low-profile sofas in bespoke ivory bouclé with brushed champagne gold coffee tables and travertine pedestals.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <span class="font-display text-lg font-semibold text-goldAccent">From 18,500 AED</span>
+            <a href="https://wa.me/971543079845" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-surfaceLight dark:bg-darkSurface rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/indigo_furniture_dining.jpg" alt="Dining Room Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">Dining Experience</span>
+            <h3 class="font-display text-2xl font-light mt-1 mb-2">Calacatta Marble Dining Ensemble</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              Italian oval marble dining table with bronze structural base paired with 8 bespoke velvet and brass dining armchairs.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <span class="font-display text-lg font-semibold text-goldAccent">From 24,900 AED</span>
+            <a href="https://wa.me/971543079845" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-surfaceLight dark:bg-darkSurface rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/indigo_furniture_bedroom.jpg" alt="Master Bedroom Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">Sanctuary</span>
+            <h3 class="font-display text-2xl font-light mt-1 mb-2">Architectural Master Bedroom Suite</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              Channel-tufted upholstered king headboard, matching leather nightstands, ambient LED architectural sconces, and bench.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <span class="font-display text-lg font-semibold text-goldAccent">From 21,000 AED</span>
+            <a href="https://wa.me/971543079845" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERIOR DESIGN STUDIO -->
+  <section id="design-studio" class="py-20 bg-surfaceLight dark:bg-darkSurface border-y border-gray-200/40 dark:border-gray-800/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-goldAccent">Turnkey Solutions</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-light mt-2 mb-6">Indigo Design Studio at Umm Suqeim</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-6">
+            Located inside our flagship showroom on Al Wasl Road, our dedicated interior design team provides turnkey styling for luxury Dubai villas, penthouses, and executive residences.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 rounded-full bg-goldAccent/20 text-goldAccent flex items-center justify-center text-xs mt-0.5">✓</div>
+              <div>
+                <h4 class="text-sm font-semibold">3D Space Planning & Moodboards</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Detailed CAD layouts and material specifications before procurement.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 rounded-full bg-goldAccent/20 text-goldAccent flex items-center justify-center text-xs mt-0.5">✓</div>
+              <div>
+                <h4 class="text-sm font-semibold">Custom Upholstery & Finish Selection</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Hundreds of exclusive European fabrics, leathers, stones, and metals.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 rounded-full bg-goldAccent/20 text-goldAccent flex items-center justify-center text-xs mt-0.5">✓</div>
+              <div>
+                <h4 class="text-sm font-semibold">White-Glove Installation & Styling</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Complete end-to-end setup by our specialized technicians in Dubai.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <a href="https://wa.me/971543079845" target="_blank" class="px-8 py-3.5 rounded-full bg-goldAccent hover:bg-goldHover text-black font-semibold text-xs tracking-wider uppercase transition-all shadow-md">
+              Book Appointment
+            </a>
+            <!-- Icon only WhatsApp button -->
+            <a href="https://wa.me/971543079845" target="_blank" class="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-lg shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img src="images/indigo_interior_styling.jpg" alt="Interior Design Studio Umm Suqeim" class="rounded-3xl shadow-2xl border border-gray-200/40 dark:border-gray-800/40 object-cover w-full aspect-[4/3]">
+          <div class="absolute -bottom-6 -left-6 bg-surfaceLight dark:bg-darkSurface p-6 rounded-2xl shadow-xl border border-goldAccent/30 max-w-xs hidden sm:block">
+            <div class="font-display text-3xl font-bold text-goldAccent">10+ Years</div>
+            <p class="text-xs text-gray-600 dark:text-gray-400">Styling prestigious private estates across Palm Jumeirah, Emirates Hills & Dubai Hills.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM LOCATION & CONTACT -->
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-[#1C1A17] to-[#12110F] text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-[#C5A059]/30">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-goldAccent">Visit Flagship Showroom</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-light mt-2 mb-6">Villa 10 & 11, Al Wasl Road</h2>
+          <div class="space-y-4 text-sm text-gray-300">
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt text-goldAccent mt-1 text-base"></i>
+              <div>
+                <strong>Address:</strong> Villa 10 & 11, Al Wasl Road, Umm Suqeim 3, Dubai, UAE
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-clock text-goldAccent mt-1 text-base"></i>
+              <div>
+                <strong>Opening Hours:</strong> Daily from 09:00 AM – 10:00 PM
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-calendar-check text-goldAccent mt-1 text-base"></i>
+              <div>
+                <strong>Private Consultations:</strong> Available upon appointment with senior interior stylers
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center space-x-4">
+            <a href="https://maps.app.goo.gl/3e5f6bb23d71fb6d" target="_blank" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs tracking-wider uppercase border border-white/20 transition-all">
+              Open in Google Maps
+            </a>
+            <!-- STRICT WHATSAPP BUTTON: ICON ONLY -->
+            <a href="https://wa.me/971543079845" target="_blank" class="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-lg shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-700/60 shadow-lg h-72">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.8317822998634!2d55.19578107596001!3d25.132896077750847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bb23d71fb6d%3A0xb529a50af260dc23!2sIndigo%20Living%20Umm%20Suqeim!5e0!3m2!1sen!2sae!4v1710000000000!5m2!1sen!2sae" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-surfaceLight dark:bg-darkSurface border-t border-gray-200/50 dark:border-gray-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-500 dark:text-gray-400">
+      <div class="flex items-center justify-center space-x-4 mb-4">
+        <a href="#collections" class="hover:text-goldAccent transition-colors">Collections</a>
+        <span>•</span>
+        <a href="#design-studio" class="hover:text-goldAccent transition-colors">Design Studio</a>
+        <span>•</span>
+        <a href="#contact" class="hover:text-goldAccent transition-colors">Location</a>
+      </div>
+      <p class="mb-2">© 2026 Indigo Living Umm Suqeim. All rights reserved.</p>
+      <p class="text-[11px] font-medium text-gray-400 dark:text-gray-500">
+        Developed by Tecnoemprende
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR THEME TOGGLE & TOP CLAIM BAR HIDE ON SCROLL -->
+  <script>
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Top claim bar hide on scroll down
+    let lastScroll = 0;
+    const topBar = document.getElementById('top-claim-bar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 120) {
+        topBar.style.transform = 'translateY(-100%)';
+        topBar.style.opacity = '0';
+        topBar.style.pointerEvents = 'none';
+      } else {
+        topBar.style.transform = 'translateY(0)';
+        topBar.style.opacity = '1';
+        topBar.style.pointerEvents = 'auto';
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+
+  <!-- STEALTH_TELEMETRY_SENSOR -->
+  <script>
+  (function(){
+    try {
+      var slug = "indigo-living-dubai";
+      var sid = sessionStorage.getItem('_aether_sid');
+      if (!sid) {
+        sid = 's_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now();
+        sessionStorage.setItem('_aether_sid', sid);
+      }
+      var start = Date.now();
+      var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+      
+      function sendPing(ev) {
+        var dur = Math.round((Date.now() - start) / 1000);
+        var payload = JSON.stringify({
+          slug: slug,
+          session_id: sid,
+          event: ev || 'heartbeat',
+          duration_sec: dur,
+          device: dev
+        });
+        if (navigator.sendBeacon) {
+          var blob = new Blob([payload], { type: 'application/json' });
+          navigator.sendBeacon('/api/telemetry/ping', blob);
+        } else {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/api/telemetry/ping', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(payload);
+        }
+      }
+
+      sendPing('enter');
+      setInterval(function(){ sendPing('heartbeat'); }, 20000);
+      window.addEventListener('visibilitychange', function(){
+        if (document.visibilityState === 'hidden') sendPing('leave');
+      });
+      window.addEventListener('beforeunload', function(){ sendPing('leave'); });
+    } catch(e) {}
+  })();
+  </script>
+</body>
+</html>
