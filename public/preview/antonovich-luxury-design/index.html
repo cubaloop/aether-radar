@@ -879,5 +879,47 @@
       a.click();
     }
   </script>
+<!-- STEALTH_TELEMETRY_SENSOR -->
+<script>
+(function(){
+  try {
+    var slug = 'antonovich-luxury-design';
+    var sid = sessionStorage.getItem('_aether_sid');
+    if (!sid) {
+      sid = 's_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now();
+      sessionStorage.setItem('_aether_sid', sid);
+    }
+    var start = Date.now();
+    var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+    
+    function sendPing(ev) {
+      var dur = Math.round((Date.now() - start) / 1000);
+      var payload = JSON.stringify({
+        slug: slug,
+        session_id: sid,
+        event: ev || 'heartbeat',
+        duration_sec: dur,
+        device: dev
+      });
+      if (navigator.sendBeacon) {
+        var blob = new Blob([payload], { type: 'application/json' });
+        navigator.sendBeacon('/api/telemetry/ping', blob);
+      } else {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/telemetry/ping', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(payload);
+      }
+    }
+
+    sendPing('enter');
+    setInterval(function(){ sendPing('heartbeat'); }, 20000);
+    window.addEventListener('visibilitychange', function(){
+      if (document.visibilityState === 'hidden') sendPing('leave');
+    });
+    window.addEventListener('beforeunload', function(){ sendPing('leave'); });
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>

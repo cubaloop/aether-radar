@@ -1,4 +1,4 @@
-﻿import os, time, asyncio, logging
+import os, time, asyncio, logging
 from collections import defaultdict
 from dotenv import load_dotenv
 load_dotenv()
@@ -106,6 +106,96 @@ async def indexnow_key(key: str):
 @app.get("/api/status")
 async def status():
     return {"targets": len(seo.load_targets()["domains"]), "reports": len(seo.list_reports()), "llm_calls_today": _day["n"]}
+
+# ─── Stealth Telemetry Sensor (Client Site Previews) ─────────────────────────
+import json
+TELEMETRY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "telemetry.json")
+
+def load_telemetry():
+    if os.path.exists(TELEMETRY_FILE):
+        try:
+            with open(TELEMETRY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+def save_telemetry(data):
+    try:
+        os.makedirs(os.path.dirname(TELEMETRY_FILE), exist_ok=True)
+        with open(TELEMETRY_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+    except Exception as e:
+        log.warning("telemetry save error: %s", e)
+
+class TelemetryPing(BaseModel):
+    slug: str
+    session_id: str = ""
+    event: str = "ping"  # 'enter', 'heartbeat', 'leave'
+    duration_sec: int = 0
+    device: str = ""
+
+@app.post("/api/telemetry/ping")
+async def telemetry_ping(ping: TelemetryPing, request: Request):
+    ip = (request.headers.get("x-forwarded-for") or request.client.host).split(",")[0].strip()
+    data = load_telemetry()
+    slug = ping.slug.strip().lower()
+    if slug not in data:
+        data[slug] = {
+            "slug": slug,
+            "total_visits": 0,
+            "sessions": {},
+            "total_time_seconds": 0,
+            "last_visit_at": None,
+            "first_visit_at": None,
+            "ips": []
+        }
+    
+    entry = data[slug]
+    now_iso = time.strftime("%Y-%m-%d %H:%M:%S")
+    if not entry.get("first_visit_at"):
+        entry["first_visit_at"] = now_iso
+    entry["last_visit_at"] = now_iso
+    if ip not in entry["ips"]:
+        entry["ips"].append(ip)
+
+    sess_id = ping.session_id or f"{ip}_{int(time.time() // 3600)}"
+    if sess_id not in entry["sessions"]:
+        entry["sessions"][sess_id] = {
+            "first_seen": now_iso,
+            "last_seen": now_iso,
+            "max_duration_sec": 0,
+            "events_count": 0,
+            "device": ping.device
+        }
+        entry["total_visits"] += 1
+    
+    sess = entry["sessions"][sess_id]
+    sess["last_seen"] = now_iso
+    sess["events_count"] += 1
+    if ping.duration_sec > sess["max_duration_sec"]:
+        diff = ping.duration_sec - sess["max_duration_sec"]
+        sess["max_duration_sec"] = ping.duration_sec
+        entry["total_time_seconds"] += diff
+    
+    save_telemetry(data)
+    return {"ok": True}
+
+@app.get("/api/telemetry/stats")
+async def telemetry_stats():
+    data = load_telemetry()
+    summary = {}
+    for slug, info in data.items():
+        summary[slug] = {
+            "total_visits": info.get("total_visits", 0),
+            "unique_visitors": len(info.get("ips", [])),
+            "total_time_seconds": info.get("total_time_seconds", 0),
+            "last_visit_at": info.get("last_visit_at"),
+            "first_visit_at": info.get("first_visit_at"),
+            "sessions_count": len(info.get("sessions", {}))
+        }
+    return {"status": "ok", "stats": summary, "raw": data}
+
 
 async def autopilot():
     """Runs inside Render: self-heartbeat + discovery + SEO report generation + IndexNow. No PC required."""
