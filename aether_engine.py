@@ -319,4 +319,14 @@ async def _start():
     asyncio.create_task(autopilot())
 
 PUBLIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "public")
+
+@app.get("/preview", response_class=HTMLResponse)
+@app.get("/preview/", response_class=HTMLResponse)
+async def preview_directory():
+    idx = os.path.join(PUBLIC_DIR, "preview", "index.html")
+    if os.path.exists(idx):
+        with open(idx, "r", encoding="utf-8") as f:
+            return HTMLResponse(content=f.read())
+    return HTMLResponse("<h1>Prototypes Directory</h1>")
+
 app.mount("/", StaticFiles(directory=PUBLIC_DIR, html=True), name="static")
