@@ -49,6 +49,14 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+      @keyframes slowZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .animate-slow-zoom {
+      animation: slowZoom 24s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-alabaster text-deepCarbon dark:bg-darkBg dark:text-alabaster transition-colors duration-300 font-sans antialiased">
@@ -108,7 +116,9 @@
   <!-- HERO SECTION -->
   <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="images/hero.jpg" alt="The Barber House Dubai Marina" class="w-full h-full object-cover">
+      <video autoplay muted loop playsinline poster="images/hero.jpg" class="w-full h-full object-cover animate-slow-zoom">
+        <source src="videos/barber_hero.mp4" type="video/mp4">
+      </video>
       <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30"></div>
     </div>
 
