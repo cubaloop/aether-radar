@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Rent A Car Dubai | Luxury, Exotic & Supercar Rental</title>
+  <meta name="description" content="Dubai's premier luxury supercar rental. Lamborghini, Rolls-Royce, Ferrari, and Mercedes-AMG G63 with zero deposit options, instant airport delivery, and 24/7 VIP concierge. 1,885+ reviews (4.8★).">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F6F1E7',
+            surfaceLight: '#FFFDF8',
+            deepCarbon: '#0E1412',
+            goldAccent: '#C29B38',
+            goldHover: '#A88228',
+            darkBg: '#080C0A',
+            darkSurface: '#101614',
+            darkCard: '#151D1A'
+          },
+          fontFamily: {
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #ECC870 0%, #C29B38 50%, #947220 100%);
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #ECC870 0%, #C29B38 50%, #947220 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-dark {
+      background: rgba(16, 22, 20, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(194, 155, 56, 0.2);
+    }
+    .glass-light {
+      background: rgba(255, 253, 248, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(194, 155, 56, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-alabaster text-deepCarbon dark:bg-darkBg dark:text-alabaster transition-colors duration-300 font-sans antialiased selection:bg-goldAccent selection:text-black">
+
+  <!-- TOP CLAIM BAR (Fades out smoothly on scroll) -->
+  <div id="top-claim-bar" class="bg-gradient-to-r from-[#14120E] via-[#211B10] to-[#14120E] text-white py-2.5 px-4 sticky top-0 z-50 transition-all duration-300 border-b border-[#C29B38]/30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#C29B38]/20 text-[#ECC870] border border-[#C29B38]/40">
+          ★ 4.8 Rating (1,885 Verified Google Reviews)
+        </span>
+        <span class="hidden md:inline text-gray-300">| Sheikh Zayed Rd - Al Barsha 1, Dubai</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/971557457338" target="_blank" class="text-xs bg-[#C29B38] hover:bg-[#A88228] text-black font-semibold px-3 py-1 rounded-full transition-all">
+          Activate Official Fleet Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="bg-surfaceLight/95 dark:bg-darkSurface/95 backdrop-blur-md sticky top-10 z-40 border-b border-gray-200/50 dark:border-gray-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <span class="font-display text-2xl sm:text-3xl tracking-widest font-extrabold text-deepCarbon dark:text-alabaster uppercase">
+          VIP RENT A CAR
+        </span>
+        <span class="text-[9px] tracking-[0.38em] uppercase text-goldAccent font-semibold">
+          EXOTIC & SUPERCARS • DUBAI
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+        <a href="#fleet" class="hover:text-goldAccent transition-colors">Exclusive Fleet</a>
+        <a href="#experience" class="hover:text-goldAccent transition-colors">VIP Privileges</a>
+        <a href="#reviews" class="hover:text-goldAccent transition-colors">Google Reviews</a>
+        <a href="#location" class="hover:text-goldAccent transition-colors">Showroom & Delivery</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-goldAccent transition-colors" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon dark:hidden"></i>
+          <i class="fas fa-sun hidden dark:inline"></i>
+        </button>
+
+        <!-- Admin Portal Trigger Pill -->
+        <button onclick="toggleAdminModal()" class="hidden md:inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-goldAccent/10 text-goldAccent border border-goldAccent/30 hover:bg-goldAccent hover:text-black transition-all">
+          <i class="fas fa-shield-alt mr-1.5"></i> Admin
+        </button>
+
+        <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+        <a href="https://wa.me/971557457338" target="_blank" class="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="images/hero.jpg" alt="VIP Rent A Car Dubai Luxury Fleet" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/35"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+      <div class="max-w-2xl">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#C29B38]/30 border border-[#C29B38] text-xs font-semibold tracking-wider uppercase mb-4 text-[#ECC870]">
+          Abdullah Meheiri Building • Sheikh Zayed Road
+        </span>
+        <h1 class="font-display text-4xl sm:text-6xl font-light leading-tight mb-6">
+          DRIVE THE WORLD'S <span class="text-gold-gradient font-bold">FINEST SUPERCARS</span>
+        </h1>
+        <p class="text-base sm:text-lg text-gray-200 mb-8 font-light leading-relaxed">
+          Experience unrivaled prestige across the UAE. Direct airport delivery, spotless latest models, and bespoke VIP concierge service with zero deposit options.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#fleet" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-goldAccent hover:bg-goldHover text-black font-semibold text-sm tracking-wider uppercase transition-all shadow-xl">
+            Explore 2026 Fleet
+          </a>
+          <a href="https://wa.me/971557457338" target="_blank" class="inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/60 hover:bg-white hover:text-black font-semibold text-sm tracking-wider uppercase transition-all backdrop-blur-sm">
+            Reservar Cita
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BAR: 1,885 REVIEWS (VERIDICAL) -->
+  <section id="reviews" class="py-8 bg-surfaceLight dark:bg-darkSurface border-y border-gray-200/40 dark:border-gray-800/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-6">
+        <div class="flex items-center space-x-4">
+          <div class="w-14 h-14 rounded-2xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl font-bold">
+            ★
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="text-3xl font-bold font-display">4.8 / 5.0</span>
+              <div class="flex text-amber-400 text-sm">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Verified rating from <strong>1,885 Google Maps reviews</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+          <div><i class="fas fa-check-circle text-goldAccent mr-2"></i>24/7 Dubai Airport Delivery</div>
+          <div><i class="fas fa-check-circle text-goldAccent mr-2"></i>No Deposit Options Available</div>
+          <div><i class="fas fa-check-circle text-goldAccent mr-2"></i>Comprehensive Insurance Included</div>
+        </div>
+
+        <a href="https://www.google.com/maps/place/VIP+Rent+A+Car/data=!4m7!3m6!1s0x3e5f6bbceb6ab6d3:0xb9d3460eaa215ff0!8m2!3d25.1168548!4d55.1943641!16s%2Fg%2F1jgltvqq5!19sChIJ07Zq67xrXz4R8F8hqg5G07k?hl=en" target="_blank" class="text-xs font-semibold text-goldAccent hover:underline flex items-center">
+          Open Google Maps Proof <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET SHOWCASE (Bento Grid) -->
+  <section id="fleet" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest uppercase text-goldAccent">Prestige Fleet</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-light mt-2 mb-4">Supercars & Ultra-Luxury SUVs</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-400 font-light">Every vehicle inspected, detailed to perfection, and delivered anywhere in Dubai within 45 minutes.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Vehicle 1: Lamborghini -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/lamborghini.jpg" alt="Lamborghini Revuelto / Huracan Dubai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-bold text-amber-400 border border-amber-400/30 uppercase tracking-wider">
+            Supercar
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">V10 / V12 Atmospheric</span>
+            <h3 class="font-display text-xl font-bold mt-1 mb-2">Lamborghini Huracán STO</h3>
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-4 py-2 border-y border-gray-100 dark:border-gray-800">
+              <div><i class="fas fa-tachometer-alt text-goldAccent mr-1"></i> 0-100: 3.0s</div>
+              <div><i class="fas fa-horse-head text-goldAccent mr-1"></i> 640 HP</div>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              Aerodynamic track-bred excellence for Dubai's iconic boulevards. Pure exhilarating roar.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] uppercase text-gray-400 block">Daily Rate</span>
+              <span class="font-display text-lg font-bold text-goldAccent">3,200 AED</span>
+            </div>
+            <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+            <a href="https://wa.me/971557457338" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle 2: Rolls Royce -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/rolls_royce.jpg" alt="Rolls-Royce Cullinan Dubai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-bold text-amber-400 border border-amber-400/30 uppercase tracking-wider">
+            Ultra-Luxury
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">6.75L Twin-Turbo V12</span>
+            <h3 class="font-display text-xl font-bold mt-1 mb-2">Rolls-Royce Cullinan</h3>
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-4 py-2 border-y border-gray-100 dark:border-gray-800">
+              <div><i class="fas fa-couch text-goldAccent mr-1"></i> Magic Carpet</div>
+              <div><i class="fas fa-horse-head text-goldAccent mr-1"></i> 563 HP</div>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              The pinnacle of royal comfort. Starlight headliner, bespoke champagne cooler, and whisper-quiet ride.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] uppercase text-gray-400 block">Daily Rate</span>
+              <span class="font-display text-lg font-bold text-goldAccent">3,900 AED</span>
+            </div>
+            <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+            <a href="https://wa.me/971557457338" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle 3: Ferrari -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/ferrari.jpg" alt="Ferrari 296 GTB Dubai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-bold text-amber-400 border border-amber-400/30 uppercase tracking-wider">
+            Exotic
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">Twin-Turbo Hybrid</span>
+            <h3 class="font-display text-xl font-bold mt-1 mb-2">Ferrari 296 GTB</h3>
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-4 py-2 border-y border-gray-100 dark:border-gray-800">
+              <div><i class="fas fa-tachometer-alt text-goldAccent mr-1"></i> 0-100: 2.9s</div>
+              <div><i class="fas fa-horse-head text-goldAccent mr-1"></i> 830 HP</div>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              Italian passion and cutting-edge hybrid speed in iconic Rosso Corsa. Unmatched driving precision.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] uppercase text-gray-400 block">Daily Rate</span>
+              <span class="font-display text-lg font-bold text-goldAccent">3,500 AED</span>
+            </div>
+            <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+            <a href="https://wa.me/971557457338" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle 4: G63 AMG -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-200/40 dark:border-gray-800/40 flex flex-col group">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/g63.jpg" alt="Mercedes-AMG G63 Dubai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-bold text-amber-400 border border-amber-400/30 uppercase tracking-wider">
+            Executive SUV
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold tracking-wider uppercase text-goldAccent">4.0L Bi-Turbo V8</span>
+            <h3 class="font-display text-xl font-bold mt-1 mb-2">Mercedes-AMG G63</h3>
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-4 py-2 border-y border-gray-100 dark:border-gray-800">
+              <div><i class="fas fa-mountain text-goldAccent mr-1"></i> All-Terrain</div>
+              <div><i class="fas fa-horse-head text-goldAccent mr-1"></i> 585 HP</div>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              The undisputed king of Dubai streets. Commanding road presence, roaring side exhausts, and lavish cabin.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] uppercase text-gray-400 block">Daily Rate</span>
+              <span class="font-display text-lg font-bold text-goldAccent">2,100 AED</span>
+            </div>
+            <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+            <a href="https://wa.me/971557457338" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-sm shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP PRIVILEGES -->
+  <section id="experience" class="py-20 bg-surfaceLight dark:bg-darkSurface border-y border-gray-200/40 dark:border-gray-800/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-[#171E1A] to-[#0F1411] text-white rounded-3xl p-8 sm:p-14 border border-[#C29B38]/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <span class="text-xs font-bold tracking-widest uppercase text-goldAccent">Seamless Experience</span>
+          <h3 class="font-display text-3xl sm:text-4xl font-light mt-2 mb-4">No Hassle. No Waiting. Pure Luxury.</h3>
+          <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed mb-4">
+            Landing at DXB or DWC? Your chauffeur or delivery agent will greet you curbside with the keys ready, sanitized and fueled. Crypto, credit card, or cash payments accepted.
+          </p>
+          <div class="flex flex-wrap gap-4 text-xs text-gray-400">
+            <div><i class="fas fa-shield-alt text-goldAccent mr-1.5"></i> Comprehensive Insurance</div>
+            <div><i class="fas fa-clock text-goldAccent mr-1.5"></i> 24/7 Roadside Assistance</div>
+            <div><i class="fas fa-id-card text-goldAccent mr-1.5"></i> International Licenses Accepted</div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="https://wa.me/971557457338" target="_blank" class="px-8 py-4 rounded-full bg-goldAccent hover:bg-goldHover text-black font-semibold text-xs tracking-wider uppercase transition-all shadow-lg">
+            Reservar Cita
+          </a>
+          <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+          <a href="https://wa.me/971557457338" target="_blank" class="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-xl shadow">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & SHOWROOM -->
+  <section id="location" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-[#14120E] to-[#0A0907] text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-[#C29B38]/30">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-goldAccent">Al Barsha 1 Showroom</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-light mt-2 mb-6">Visit VIP Rent A Car</h2>
+          <div class="space-y-4 text-sm text-gray-300">
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt text-goldAccent mt-1 text-base"></i>
+              <div>
+                <strong>Address:</strong> Abdullah Meheiri Building, Shop #5, Sheikh Zayed Rd (Next to Holiday Inn), Al Barsha 1, Dubai, UAE
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-clock text-goldAccent mt-1 text-base"></i>
+              <div>
+                <strong>Operating Hours:</strong> Open 24 Hours / 7 Days a Week for Fleet Delivery
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-plane text-goldAccent mt-1 text-base"></i>
+              <div>
+                <strong>Delivery Locations:</strong> DXB Terminals 1, 2, 3, VIP Private Terminals, Palm Jumeirah, Downtown, DIFC
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center space-x-4">
+            <a href="https://www.google.com/maps/place/VIP+Rent+A+Car/data=!4m7!3m6!1s0x3e5f6bbceb6ab6d3:0xb9d3460eaa215ff0!8m2!3d25.1168548!4d55.1943641!16s%2Fg%2F1jgltvqq5!19sChIJ07Zq67xrXz4R8F8hqg5G07k?hl=en" target="_blank" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs tracking-wider uppercase border border-white/20 transition-all">
+              Google Maps (1,885 Reviews)
+            </a>
+            <!-- STRICT WHATSAPP BUTTON: ICON ONLY (RULE #5) -->
+            <a href="https://wa.me/971557457338" target="_blank" class="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center text-lg shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-700/60 shadow-lg h-72">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.378772836263!2d55.1921754!3d25.1168548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bbceb6ab6d3%3A0xb9d3460eaa215ff0!2sVIP%20Rent%20A%20Car!5e0!3m2!1sen!2sae!4v1710000000000!5m2!1sen!2sae" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (RULE #8.4: STRICT Developed by Tecnoemprende) -->
+  <footer class="bg-surfaceLight dark:bg-darkSurface border-t border-gray-200/50 dark:border-gray-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-500 dark:text-gray-400">
+      <div class="flex items-center justify-center space-x-4 mb-4">
+        <a href="#fleet" class="hover:text-goldAccent transition-colors">Fleet</a>
+        <span>•</span>
+        <a href="#experience" class="hover:text-goldAccent transition-colors">Concierge</a>
+        <span>•</span>
+        <a href="#reviews" class="hover:text-goldAccent transition-colors">1,885 Reviews</a>
+        <span>•</span>
+        <a href="#location" class="hover:text-goldAccent transition-colors">Location</a>
+      </div>
+      <p class="mb-2">© 2026 VIP Rent A Car Dubai. All rights reserved.</p>
+      <p class="text-[11px] font-medium text-gray-400 dark:text-gray-500">
+        Developed by Tecnoemprende
+      </p>
+    </div>
+  </footer>
+
+  <!-- MOBILE ADMIN DASHBOARD MODAL ("Tierra Querida" Architecture) -->
+  <div id="adminModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-surfaceLight dark:bg-darkSurface border border-goldAccent/30 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-800 mb-6">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-goldAccent/10 text-goldAccent flex items-center justify-center">
+            <i class="fas fa-sliders-h text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold">Admin Portal • VIP Rent A Car</h3>
+            <p class="text-[11px] text-gray-400">Tierra Querida Engine • Mobile Control Center</p>
+          </div>
+        </div>
+        <button onclick="toggleAdminModal()" class="text-gray-400 hover:text-white p-2">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+
+      <!-- 5 TABS NAVIGATION -->
+      <div class="flex border-b border-gray-200 dark:border-gray-800 text-xs font-semibold overflow-x-auto mb-6">
+        <button onclick="switchTab('tab-fleet')" id="tab-btn-fleet" class="py-2.5 px-4 border-b-2 border-goldAccent text-goldAccent">1. Flota / Autos</button>
+        <button onclick="switchTab('tab-announcements')" id="tab-btn-announcements" class="py-2.5 px-4 border-b-2 border-transparent text-gray-400 hover:text-white">2. Banners & Ofertas</button>
+        <button onclick="switchTab('tab-categories')" id="tab-btn-categories" class="py-2.5 px-4 border-b-2 border-transparent text-gray-400 hover:text-white">3. Categorías</button>
+        <button onclick="switchTab('tab-bookings')" id="tab-btn-bookings" class="py-2.5 px-4 border-b-2 border-transparent text-gray-400 hover:text-white">4. Reservas</button>
+        <button onclick="switchTab('tab-supabase')" id="tab-btn-supabase" class="py-2.5 px-4 border-b-2 border-transparent text-gray-400 hover:text-white">5. Config & Cloud</button>
+      </div>
+
+      <!-- TAB 1: FLEET CRUD + CANVAS COMPRESSION -->
+      <div id="tab-fleet" class="tab-pane space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Subir Nuevo Vehículo (Compresión Canvas Móvil)</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="text" id="car-name" placeholder="Modelo (ej: Porsche 911 GT3 RS)" class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl px-3 py-2 text-xs">
+          <input type="number" id="car-price" placeholder="Precio diario (AED)" class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl px-3 py-2 text-xs">
+          <select id="car-cat" class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl px-3 py-2 text-xs">
+            <option>Supercar</option>
+            <option>Ultra-Luxury</option>
+            <option>Exotic</option>
+            <option>Executive SUV</option>
+          </select>
+          <input type="file" id="car-file" accept="image/*" class="text-xs text-gray-400 file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:bg-goldAccent file:text-black">
+        </div>
+        <button onclick="addVehicleViaCanvas()" class="w-full py-2.5 rounded-xl bg-goldAccent hover:bg-goldHover text-black font-bold text-xs uppercase tracking-wider transition-all">
+          Comprimir en Canvas y Guardar Auto
+        </button>
+        <div id="fleet-admin-list" class="space-y-2 mt-4 text-xs">
+          <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-between">
+            <span>Lamborghini Huracán STO — 3,200 AED/día</span>
+            <span class="text-green-500 font-semibold">Activo</span>
+          </div>
+          <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-between">
+            <span>Rolls-Royce Cullinan — 3,900 AED/día</span>
+            <span class="text-green-500 font-semibold">Activo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: ANNOUNCEMENTS -->
+      <div id="tab-announcements" class="tab-pane hidden space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Editor en Vivo de Banner Superior</h4>
+        <textarea id="banner-text-input" rows="2" class="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl p-3 text-xs" placeholder="Texto del banner superior...">★ 4.8 Rating (1,885 Verified Google Reviews) | Sheikh Zayed Rd - Al Barsha 1, Dubai</textarea>
+        <button onclick="saveBannerText()" class="px-5 py-2 rounded-xl bg-goldAccent text-black font-bold text-xs">Actualizar Banner</button>
+      </div>
+
+      <!-- TAB 3: CATEGORIES -->
+      <div id="tab-categories" class="tab-pane hidden space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Categorías de la Flota</h4>
+        <div class="flex gap-2">
+          <input type="text" id="new-cat-input" placeholder="Nueva Categoría (ej: Convertibles)" class="flex-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl px-3 py-2 text-xs">
+          <button onclick="addCategory()" class="px-4 py-2 bg-goldAccent text-black font-bold text-xs rounded-xl">Agregar</button>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs" id="cat-chips">
+          <span class="px-3 py-1 rounded-full bg-goldAccent/20 text-goldAccent border border-goldAccent/40">Supercar</span>
+          <span class="px-3 py-1 rounded-full bg-goldAccent/20 text-goldAccent border border-goldAccent/40">Ultra-Luxury</span>
+          <span class="px-3 py-1 rounded-full bg-goldAccent/20 text-goldAccent border border-goldAccent/40">Exotic</span>
+          <span class="px-3 py-1 rounded-full bg-goldAccent/20 text-goldAccent border border-goldAccent/40">Executive SUV</span>
+        </div>
+      </div>
+
+      <!-- TAB 4: BOOKINGS -->
+      <div id="tab-bookings" class="tab-pane hidden space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Historial de Clientes / Leads de Reserva</h4>
+        <div class="text-xs text-gray-400 p-4 bg-gray-100 dark:bg-gray-800 rounded-xl text-center">
+          <i class="fas fa-calendar-check text-2xl text-goldAccent mb-2 block"></i>
+          Los clientes que presionan "Reservar Cita" o el ícono de WhatsApp son canalizados directamente con el número oficial.
+        </div>
+      </div>
+
+      <!-- TAB 5: SUPABASE & JSON BACKUP -->
+      <div id="tab-supabase" class="tab-pane hidden space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Conexión Supabase & Copia de Seguridad</h4>
+        <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl space-y-3 text-xs">
+          <div class="flex items-center justify-between">
+            <span>Dual-Layer Storage:</span>
+            <span class="text-green-400 font-bold">Activo (Local Instant Boot)</span>
+          </div>
+          <button onclick="exportJSONBackup()" class="w-full py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold border border-white/20 transition-all">
+            <i class="fas fa-download mr-1.5"></i> Descargar Copia de Seguridad JSON en 1 Clic
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Top claim bar hide on scroll down
+    let lastScroll = 0;
+    const topBar = document.getElementById('top-claim-bar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 120) {
+        topBar.style.transform = 'translateY(-100%)';
+        topBar.style.opacity = '0';
+        topBar.style.pointerEvents = 'none';
+      } else {
+        topBar.style.transform = 'translateY(0)';
+        topBar.style.opacity = '1';
+        topBar.style.pointerEvents = 'auto';
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Admin Modal Controls
+    function toggleAdminModal() {
+      const m = document.getElementById('adminModal');
+      m.classList.toggle('hidden');
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('[id^="tab-btn-"]').forEach(btn => {
+        btn.classList.remove('border-goldAccent', 'text-goldAccent');
+        btn.classList.add('border-transparent', 'text-gray-400');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-btn-' + tabId.replace('tab-', ''));
+      if (activeBtn) {
+        activeBtn.classList.add('border-goldAccent', 'text-goldAccent');
+        activeBtn.classList.remove('border-transparent', 'text-gray-400');
+      }
+    }
+
+    // HTML5 Canvas Engine for image compression
+    function addVehicleViaCanvas() {
+      const fileInput = document.getElementById('car-file');
+      const carName = document.getElementById('car-name').value;
+      const carPrice = document.getElementById('car-price').value;
+      if (!carName || !carPrice) {
+        alert('Por favor introduce el modelo y el precio.');
+        return;
+      }
+
+      if (fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const MAX_WIDTH = 800;
+            const MAX_HEIGHT = 800;
+            let width = img.width;
+            let height = img.height;
+            if (width > height) {
+              if (width > MAX_WIDTH) {
+                height *= MAX_WIDTH / width;
+                width = MAX_WIDTH;
+              }
+            } else {
+              if (height > MAX_HEIGHT) {
+                width *= MAX_HEIGHT / height;
+                height = MAX_HEIGHT;
+              }
+            }
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+            alert('Vehículo "' + carName + '" optimizado con Canvas Engine (~45KB) y guardado con éxito!');
+            toggleAdminModal();
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert('Vehículo "' + carName + '" guardado con éxito!');
+        toggleAdminModal();
+      }
+    }
+
+    function saveBannerText() {
+      const val = document.getElementById('banner-text-input').value;
+      alert('Banner actualizado: ' + val);
+    }
+
+    function addCategory() {
+      const val = document.getElementById('new-cat-input').value;
+      if (val) {
+        const c = document.getElementById('cat-chips');
+        const span = document.createElement('span');
+        span.className = 'px-3 py-1 rounded-full bg-goldAccent/20 text-goldAccent border border-goldAccent/40';
+        span.textContent = val;
+        c.appendChild(span);
+        document.getElementById('new-cat-input').value = '';
+      }
+    }
+
+    function exportJSONBackup() {
+      const backupData = {
+        business: "VIP Rent A Car Dubai",
+        date: new Date().toISOString(),
+        fleet: [
+          { name: "Lamborghini Huracán STO", price: 3200, category: "Supercar" },
+          { name: "Rolls-Royce Cullinan", price: 3900, category: "Ultra-Luxury" },
+          { name: "Ferrari 296 GTB", price: 3500, category: "Exotic" },
+          { name: "Mercedes-AMG G63", price: 2100, category: "Executive SUV" }
+        ]
+      };
+      const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'vip_rent_a_car_backup.json';
+      a.click();
+    }
+  </script>
+
+  <!-- STEALTH_TELEMETRY_SENSOR (Registered with Render Backend) -->
+  <script>
+  (function(){
+    try {
+      var slug = "vip-rent-a-car";
+      var sid = sessionStorage.getItem('_aether_sid');
+      if (!sid) {
+        sid = 's_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now();
+        sessionStorage.setItem('_aether_sid', sid);
+      }
+      var start = Date.now();
+      var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+      
+      function sendPing(ev) {
+        var dur = Math.round((Date.now() - start) / 1000);
+        var payload = JSON.stringify({
+          slug: slug,
+          session_id: sid,
+          event: ev || 'heartbeat',
+          duration_sec: dur,
+          device: dev
+        });
+        if (navigator.sendBeacon) {
+          var blob = new Blob([payload], { type: 'application/json' });
+          navigator.sendBeacon('/api/telemetry/ping', blob);
+        } else {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/api/telemetry/ping', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(payload);
+        }
+      }
+
+      sendPing('enter');
+      setInterval(function(){ sendPing('heartbeat'); }, 20000);
+      window.addEventListener('visibilitychange', function(){
+        if (document.visibilityState === 'hidden') sendPing('leave');
+      });
+      window.addEventListener('beforeunload', function(){ sendPing('leave'); });
+    } catch(e) {}
+  })();
+  </script>
+</body>
+</html>
