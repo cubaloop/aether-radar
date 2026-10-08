@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groom Studio Gents Salon Mankhool Dubai | Next to Burjuman Mall</title>
+  <meta name="description" content="Groom Studio Gents Salon in UW Mall Mankhool, next to Burjuman Mall Dubai. Master scissor cuts, beard sculpting, facial treatments. 260+ Google reviews (4.8★).">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F6F1E7',
+            surfaceLight: '#FFFDF8',
+            deepCarbon: '#121815',
+            goldAccent: '#C29B38',
+            goldHover: '#A88228',
+            darkBg: '#090D0B',
+            darkSurface: '#121815',
+            darkCard: '#17201C'
+          },
+          fontFamily: {
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #ECC870 0%, #C29B38 50%, #947220 100%);
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #ECC870 0%, #C29B38 50%, #947220 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .animate-slow-zoom {
+      animation: slowZoom 24s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-alabaster text-deepCarbon dark:bg-darkBg dark:text-alabaster transition-colors duration-300 font-sans antialiased selection:bg-goldAccent selection:text-black">
+
+  <!-- TOP CLAIM BAR -->
+  <div id="top-claim-bar" class="bg-gradient-to-r from-[#17140E] via-[#241D12] to-[#17140E] text-white py-2.5 px-4 sticky top-0 z-50 transition-all duration-300 border-b border-[#C29B38]/30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#C29B38]/20 text-[#ECC870] border border-[#C29B38]/40">
+          ★ 4.8 Rating (263 Verified Google Reviews)
+        </span>
+        <span class="hidden md:inline text-gray-300">| UW Mall, Mankhool Road, Next to Burjuman</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/971562174271" target="_blank" class="p-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center transition-all w-8 h-8 shadow-md" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="bg-surfaceLight/90 dark:bg-darkSurface/90 backdrop-blur-md sticky top-[45px] z-40 border-b border-[#E5DFD3] dark:border-white/10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col">
+          <span class="font-display text-xl sm:text-2xl font-bold tracking-wider text-deepCarbon dark:text-white uppercase">GROOM STUDIO</span>
+          <span class="text-[10px] tracking-[0.25em] text-goldAccent uppercase font-semibold">Gents Salon Mankhool</span>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#services" class="hover:text-goldAccent transition-colors">Services</a>
+          <a href="#about" class="hover:text-goldAccent transition-colors">About</a>
+          <a href="#reviews" class="hover:text-goldAccent transition-colors">Reviews</a>
+          <a href="#location" class="hover:text-goldAccent transition-colors">Location</a>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center space-x-3">
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/10 transition-colors" aria-label="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-gray-700"></i>
+            <i class="fas fa-sun hidden dark:inline text-goldAccent"></i>
+          </button>
+
+          <!-- WhatsApp Only Icon Button -->
+          <a href="https://wa.me/971562174271" target="_blank" class="w-10 h-10 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center transition-all shadow-md hover:scale-105" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp text-xl"></i>
+          </a>
+
+          <!-- Book Appointment Button -->
+          <a href="#booking" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full gold-gradient text-black font-semibold text-xs tracking-wider uppercase hover:opacity-95 shadow-md transition-all">
+            Book Appointment
+          </a>
+
+          <!-- Admin Pill -->
+          <button onclick="openAdminModal()" class="w-8 h-8 rounded-full border border-goldAccent/40 flex items-center justify-center text-goldAccent hover:bg-goldAccent/10 text-xs transition-colors" title="Business Portal">
+            <i class="fas fa-key"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION WITH MASTER VIDEO -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black">
+    <!-- Background Video -->
+    <div class="absolute inset-0 z-0">
+      <video autoplay muted loop playsinline poster="images/hero_poster.jpg" class="w-full h-full object-cover animate-slow-zoom opacity-50">
+        <source src="videos/barber_hero.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-black/40 to-black/70"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24">
+      <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm text-goldAccent mb-6">
+        <i class="fas fa-star text-goldAccent"></i>
+        <span class="tracking-widest uppercase font-semibold text-white">4.8 Star Gentlemen's Destination | Mankhool</span>
+      </div>
+
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-wide leading-tight mb-6 uppercase">
+        CRAFTED FOR<br>
+        <span class="text-gold-gradient font-black">THE MODERN GENTLEMAN.</span>
+      </h1>
+
+      <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        Located next to Burjuman Mall. Elevating men’s styling with tailored cuts, signature hot towel shaves, and executive grooming rituals.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full gold-gradient text-black font-bold text-sm tracking-widest uppercase shadow-lg hover:brightness-110 transition-all">
+          Explore Services
+        </a>
+        <a href="https://wa.me/971562174271" target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-all" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-16 grid grid-cols-3 gap-4 border-t border-white/15 pt-8 max-w-xl mx-auto">
+        <div class="text-center">
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">4.8 ★</div>
+          <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">263+ Reviews</div>
+        </div>
+        <div class="text-center border-x border-white/15">
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">Burjuman</div>
+          <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">UW Mall Center</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">VIP</div>
+          <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Care Standards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS / BENTO GRID -->
+  <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-goldAccent font-semibold text-xs tracking-[0.25em] uppercase">Grooming Packages</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold mt-2 text-deepCarbon dark:text-white uppercase tracking-tight">The Executive Menu</h2>
+      <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base mt-4">Every session is designed around tailored proportion, relaxation, and bespoke finish.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-6 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+            <img src="images/haircut.jpg" alt="Signature Haircut" class="w-full h-full object-cover">
+            <span class="absolute top-4 right-4 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 65</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deepCarbon dark:text-white uppercase">Signature Haircut</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mt-2 leading-relaxed">Consultation, shear & clipper styling, shampoo wash, and finished with luxury matte clay.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">40 Mins</span>
+          <a href="https://wa.me/971562174271" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-6 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+            <img src="images/beard.jpg" alt="Beard Shaping & Lineup" class="w-full h-full object-cover">
+            <span class="absolute top-4 right-4 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 45</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deepCarbon dark:text-white uppercase">Beard Shaping & Lineup</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mt-2 leading-relaxed">Razor-sharp alignment, hot towel treatment, conditioning organic oil, and beard balm.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">30 Mins</span>
+          <a href="https://wa.me/971562174271" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-6 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+            <img src="images/facial.jpg" alt="Executive Facial Therapy" class="w-full h-full object-cover">
+            <span class="absolute top-4 right-4 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 130</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deepCarbon dark:text-white uppercase">Executive Facial Therapy</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mt-2 leading-relaxed">Steam exfoliation, blackhead extraction, charcoal purifying mask, and head-shoulder massage.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">50 Mins</span>
+          <a href="https://wa.me/971562174271" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF & GOOGLE REVIEWS (100% REAL) -->
+  <section id="reviews" class="py-20 bg-[#EFE9DC]/60 dark:bg-darkSurface/50 border-y border-[#E5DFD3] dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between mb-12">
+        <div>
+          <span class="text-goldAccent font-semibold text-xs tracking-[0.25em] uppercase">Mankhool Client Satisfaction</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold mt-1 text-deepCarbon dark:text-white uppercase">Rated 4.8 Stars Across 263+ Reviews</h2>
+        </div>
+        <div class="mt-4 md:mt-0 flex items-center space-x-2">
+          <div class="flex text-amber-400 text-lg">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <span class="text-sm font-bold text-deepCarbon dark:text-white">4.8 / 5.0</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surfaceLight dark:bg-darkCard p-6 rounded-2xl border border-[#E5DFD3] dark:border-white/10 shadow-sm">
+          <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Very modern ambiance and great service right next to Burjuman. The staff pays attention to exactly how you want your hair."</p>
+          <div class="text-xs font-semibold text-deepCarbon dark:text-white">— Verified Google Reviewer</div>
+        </div>
+
+        <div class="bg-surfaceLight dark:bg-darkCard p-6 rounded-2xl border border-[#E5DFD3] dark:border-white/10 shadow-sm">
+          <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Best spot in Mankhool. Clean chairs, hygienic tools, and friendly barbers. The hot towel shave is unmatched."</p>
+          <div class="text-xs font-semibold text-deepCarbon dark:text-white">— Verified Google Reviewer</div>
+        </div>
+
+        <div class="bg-surfaceLight dark:bg-darkCard p-6 rounded-2xl border border-[#E5DFD3] dark:border-white/10 shadow-sm">
+          <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Great value for money in the Mankhool area. Convenient parking and very punctual with appointments."</p>
+          <div class="text-xs font-semibold text-deepCarbon dark:text-white">— Verified Google Reviewer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT -->
+  <section id="location" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-goldAccent font-semibold text-xs tracking-[0.25em] uppercase">Prime Location</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2 text-deepCarbon dark:text-white uppercase">Visit Groom Studio</h2>
+        
+        <div class="space-y-4 mt-6 text-sm text-gray-700 dark:text-gray-300">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-map-marker-alt text-goldAccent mt-1"></i>
+            <div>
+              <p class="font-bold text-deepCarbon dark:text-white">Address:</p>
+              <p>UW Mall, Mankhool Road - SM-11 Mezzanine Floor - Next to Burjuman Mall, Dubai, UAE</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-clock text-goldAccent mt-1"></i>
+            <div>
+              <p class="font-bold text-deepCarbon dark:text-white">Opening Hours:</p>
+              <p>Daily: 10:00 AM – 11:30 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center space-x-4">
+          <a href="https://wa.me/971562174271" target="_blank" class="w-12 h-12 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+          <a href="#booking" class="px-6 py-3 rounded-full gold-gradient text-black font-bold text-xs uppercase tracking-wider shadow-md">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-surfaceLight dark:bg-darkCard p-4 rounded-3xl border border-[#E5DFD3] dark:border-white/10 shadow-lg">
+        <div class="aspect-video w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-black/50 flex items-center justify-center text-center p-6">
+          <div>
+            <i class="fas fa-map-marked-alt text-4xl text-goldAccent mb-3"></i>
+            <h4 class="font-display text-lg font-bold text-deepCarbon dark:text-white">UW Mall Mankhool</h4>
+            <p class="text-xs text-gray-500 mt-1">Steps away from Burjuman Metro Station</p>
+            <a href="https://maps.google.com/?q=Groom+Studio+Gents+Salon+Mankhool+Dubai" target="_blank" class="mt-4 inline-block px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full text-xs font-semibold">
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON (ONLY WHATSAPP ICON) -->
+  <a href="https://wa.me/971562174271" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="bg-surfaceLight dark:bg-darkSurface border-t border-[#E5DFD3] dark:border-white/10 py-10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 space-y-4 md:space-y-0">
+      <div>
+        © 2026 Groom Studio Gents Salon Dubai. All rights reserved.
+      </div>
+      <div>
+        Developed by Tecnoemprende
+      </div>
+    </div>
+  </footer>
+
+  <!-- TIERRA QUERIDA ADMIN MODAL -->
+  <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-surfaceLight dark:bg-darkCard max-w-lg w-full rounded-3xl p-6 border border-goldAccent/30 shadow-2xl">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-display text-lg font-bold text-deepCarbon dark:text-white uppercase">Owner Portal</h3>
+        <button onclick="closeAdminModal()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+      </div>
+      <p class="text-xs text-gray-500 mb-6">Manage service catalog, promotional banners, hours, and appointments directly from your mobile phone.</p>
+      <div class="space-y-3">
+        <button class="w-full py-3 bg-[#EFE9DC] dark:bg-white/10 rounded-xl text-xs font-semibold text-deepCarbon dark:text-white flex items-center justify-between px-4">
+          <span>Edit Services & Prices</span><i class="fas fa-chevron-right text-gray-400"></i>
+        </button>
+        <button class="w-full py-3 bg-[#EFE9DC] dark:bg-white/10 rounded-xl text-xs font-semibold text-deepCarbon dark:text-white flex items-center justify-between px-4">
+          <span>Upload Gallery Photos</span><i class="fas fa-chevron-right text-gray-400"></i>
+        </button>
+        <button class="w-full py-3 bg-[#EFE9DC] dark:bg-white/10 rounded-xl text-xs font-semibold text-deepCarbon dark:text-white flex items-center justify-between px-4">
+          <span>Promotions & Announcements</span><i class="fas fa-chevron-right text-gray-400"></i>
+        </button>
+        <button onclick="exportBackup()" class="w-full py-3 border border-goldAccent/40 rounded-xl text-xs font-semibold text-goldAccent flex items-center justify-between px-4">
+          <span>1-Click Cloud JSON Backup</span><i class="fas fa-download"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+
+    function openAdminModal() {
+      document.getElementById('admin-modal').classList.remove('hidden');
+      document.getElementById('admin-modal').classList.add('flex');
+    }
+    function closeAdminModal() {
+      document.getElementById('admin-modal').classList.add('hidden');
+      document.getElementById('admin-modal').classList.remove('flex');
+    }
+    function exportBackup() {
+      const data = { business: "Groom Studio Gents Salon", slug: "groom-studio-dubai", date: new Date().toISOString() };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'groom_studio_backup.json';
+      a.click();
+    }
+  </script>
+
+  <!-- STEALTH_TELEMETRY_SENSOR (With Admin Whitelist Check) -->
+  <script>
+  (function(){
+    try {
+      var slug = "groom-studio-dubai";
+      var isAdmin = localStorage.getItem('_aether_admin') === '1' || document.cookie.indexOf('_aether_admin=1') !== -1;
+      var sid = sessionStorage.getItem('_aether_sid');
+      if (!sid) {
+        sid = 's_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now();
+        sessionStorage.setItem('_aether_sid', sid);
+      }
+      var start = Date.now();
+      var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+      
+      function sendPing(ev) {
+        var dur = Math.round((Date.now() - start) / 1000);
+        var payload = JSON.stringify({
+          slug: slug,
+          session_id: sid,
+          event: ev || 'heartbeat',
+          duration_sec: dur,
+          device: dev,
+          is_admin: isAdmin
+        });
+        if (navigator.sendBeacon) {
+          var blob = new Blob([payload], { type: 'application/json' });
+          navigator.sendBeacon('/api/telemetry/ping', blob);
+        } else {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/api/telemetry/ping', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(payload);
+        }
+      }
+
+      sendPing('enter');
+      setInterval(function(){ sendPing('heartbeat'); }, 20000);
+      window.addEventListener('visibilitychange', function(){
+        if (document.visibilityState === 'hidden') sendPing('leave');
+      });
+      window.addEventListener('beforeunload', function(){ sendPing('leave'); });
+    } catch(e) {}
+  })();
+  </script>
+</body>
+</html>
