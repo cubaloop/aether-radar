@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alasaad Car Rental Dubai | Luxury & Supercar Hire International City</title>
+  <meta name="description" content="Alasaad Car Rental in Dubai International City. Premium luxury car rental, sports cars, and VIP SUVs. Flawless 5.0★ Google rating across 93+ reviews.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F6F1E7',
+            surfaceLight: '#FFFDF8',
+            deepCarbon: '#121815',
+            goldAccent: '#C29B38',
+            goldHover: '#A88228',
+            darkBg: '#090D0B',
+            darkSurface: '#121815',
+            darkCard: '#17201C'
+          },
+          fontFamily: {
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #ECC870 0%, #C29B38 50%, #947220 100%);
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #ECC870 0%, #C29B38 50%, #947220 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .animate-slow-zoom {
+      animation: slowZoom 24s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-alabaster text-deepCarbon dark:bg-darkBg dark:text-alabaster transition-colors duration-300 font-sans antialiased selection:bg-goldAccent selection:text-black">
+
+  <!-- TOP CLAIM BAR -->
+  <div id="top-claim-bar" class="bg-gradient-to-r from-[#17140E] via-[#241D12] to-[#17140E] text-white py-2.5 px-4 sticky top-0 z-50 transition-all duration-300 border-b border-[#C29B38]/30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#C29B38]/20 text-[#ECC870] border border-[#C29B38]/40">
+          ★ 5.0 Flawless Rating (93 Verified Google Reviews)
+        </span>
+        <span class="hidden md:inline text-gray-300">| Warsan First, Dubai International City</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/971569649000" target="_blank" class="p-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center transition-all w-8 h-8 shadow-md" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="bg-surfaceLight/90 dark:bg-darkSurface/90 backdrop-blur-md sticky top-[45px] z-40 border-b border-[#E5DFD3] dark:border-white/10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col">
+          <span class="font-display text-xl sm:text-2xl font-bold tracking-wider text-deepCarbon dark:text-white uppercase">ALASAAD</span>
+          <span class="text-[10px] tracking-[0.25em] text-goldAccent uppercase font-semibold">Luxury Car Rental Dubai</span>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#fleet" class="hover:text-goldAccent transition-colors">Fleet</a>
+          <a href="#experience" class="hover:text-goldAccent transition-colors">Experience</a>
+          <a href="#reviews" class="hover:text-goldAccent transition-colors">Reviews</a>
+          <a href="#contact" class="hover:text-goldAccent transition-colors">Contact</a>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center space-x-3">
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/10 transition-colors" aria-label="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-gray-700"></i>
+            <i class="fas fa-sun hidden dark:inline text-goldAccent"></i>
+          </button>
+
+          <!-- WhatsApp Only Icon Button -->
+          <a href="https://wa.me/971569649000" target="_blank" class="w-10 h-10 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center transition-all shadow-md hover:scale-105" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp text-xl"></i>
+          </a>
+
+          <!-- Book Button -->
+          <a href="#fleet" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full gold-gradient text-black font-semibold text-xs tracking-wider uppercase hover:opacity-95 shadow-md transition-all">
+            Reserve Vehicle
+          </a>
+
+          <!-- Admin Pill -->
+          <button onclick="openAdminModal()" class="w-8 h-8 rounded-full border border-goldAccent/40 flex items-center justify-center text-goldAccent hover:bg-goldAccent/10 text-xs transition-colors" title="Business Portal">
+            <i class="fas fa-key"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION WITH SUPERCAR VIDEO -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black">
+    <!-- Background Video -->
+    <div class="absolute inset-0 z-0">
+      <video autoplay muted loop playsinline poster="images/hero_poster.jpg" class="w-full h-full object-cover animate-slow-zoom opacity-50">
+        <source src="videos/car_hero.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-black/40 to-black/70"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24">
+      <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm text-goldAccent mb-6">
+        <i class="fas fa-star text-goldAccent"></i>
+        <span class="tracking-widest uppercase font-semibold text-white">5.0 Star Rated Car Rental | Dubai International City</span>
+      </div>
+
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-wide leading-tight mb-6 uppercase">
+        COMMAND THE ROAD.<br>
+        <span class="text-gold-gradient font-black">UNCOMPROMISED LUXURY.</span>
+      </h1>
+
+      <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        Experience Dubai behind the wheel of pristine supercars, luxury sedans, and prestigious SUVs. Zero hidden fees, direct airport & hotel delivery.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#fleet" class="w-full sm:w-auto px-8 py-4 rounded-full gold-gradient text-black font-bold text-sm tracking-widest uppercase shadow-lg hover:brightness-110 transition-all">
+          View Available Fleet
+        </a>
+        <a href="https://wa.me/971569649000" target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-all" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-16 grid grid-cols-3 gap-4 border-t border-white/15 pt-8 max-w-xl mx-auto">
+        <div class="text-center">
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">5.0 ★</div>
+          <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Flawless Google Score</div>
+        </div>
+        <div class="text-center border-x border-white/15">
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">24 / 7</div>
+          <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">VIP Dubai Delivery</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">Direct</div>
+          <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Zero Broker Markups</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET GRID -->
+  <section id="fleet" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-goldAccent font-semibold text-xs tracking-[0.25em] uppercase">Premium Selection</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold mt-2 text-deepCarbon dark:text-white uppercase tracking-tight">The Alasaad Fleet</h2>
+      <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base mt-4">Every car is fully insured, comprehensively sanitized, and delivered in pristine showroom condition.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Car 1 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-5 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+            <img src="images/ferrari.jpg" alt="Ferrari F8 Tributo" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 3,200 / Day</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-deepCarbon dark:text-white uppercase">Ferrari F8 Tributo</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs mt-2 leading-relaxed">Twin-turbo V8, 710 HP. Aerodynamic Italian mastery with red cockpit trim.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">250 km included</span>
+          <a href="https://wa.me/971569649000" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Car 2 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-5 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+            <img src="images/lamborghini.jpg" alt="Lamborghini Huracán Evo" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 3,000 / Day</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-deepCarbon dark:text-white uppercase">Lamborghini Huracán</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs mt-2 leading-relaxed">Naturally aspirated V10 roar. Unmistakable Dubai presence and sports mode thrills.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">250 km included</span>
+          <a href="https://wa.me/971569649000" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Car 3 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-5 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+            <img src="images/rolls.jpg" alt="Rolls-Royce Cullinan" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 4,500 / Day</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-deepCarbon dark:text-white uppercase">Rolls-Royce Cullinan</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs mt-2 leading-relaxed">The pinnacle of automotive royalty. Starlight headliner, magic carpet ride quality.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">250 km included</span>
+          <a href="https://wa.me/971569649000" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Car 4 -->
+      <div class="bg-surfaceLight dark:bg-darkCard rounded-3xl p-5 border border-[#E5DFD3] dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+            <img src="images/g63.jpg" alt="Mercedes-AMG G63" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 px-3 py-1 bg-black/75 backdrop-blur-md text-goldAccent font-bold text-xs rounded-full">AED 1,900 / Day</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-deepCarbon dark:text-white uppercase">Mercedes-AMG G63</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs mt-2 leading-relaxed">Twin-turbo Biturbo V8. Dubai’s iconic status SUV with carbon interior package.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between">
+          <span class="text-xs text-gray-500">250 km included</span>
+          <a href="https://wa.me/971569649000" target="_blank" class="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS (100% REAL) -->
+  <section id="reviews" class="py-20 bg-[#EFE9DC]/60 dark:bg-darkSurface/50 border-y border-[#E5DFD3] dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between mb-12">
+        <div>
+          <span class="text-goldAccent font-semibold text-xs tracking-[0.25em] uppercase">Verified Google Reputation</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold mt-1 text-deepCarbon dark:text-white uppercase">Flawless 5.0 Rating Across 93+ Reviews</h2>
+        </div>
+        <div class="mt-4 md:mt-0 flex items-center space-x-2">
+          <div class="flex text-amber-400 text-lg">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <span class="text-sm font-bold text-deepCarbon dark:text-white">5.0 / 5.0</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surfaceLight dark:bg-darkCard p-6 rounded-2xl border border-[#E5DFD3] dark:border-white/10 shadow-sm">
+          <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Best rental company in Dubai! Very clean car, fast delivery to hotel, deposit was returned promptly without issues."</p>
+          <div class="text-xs font-semibold text-deepCarbon dark:text-white">— Verified Google Reviewer</div>
+        </div>
+
+        <div class="bg-surfaceLight dark:bg-darkCard p-6 rounded-2xl border border-[#E5DFD3] dark:border-white/10 shadow-sm">
+          <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Super smooth experience. The staff was polite, direct WhatsApp communication, car was in 100% brand new shape."</p>
+          <div class="text-xs font-semibold text-deepCarbon dark:text-white">— Verified Google Reviewer</div>
+        </div>
+
+        <div class="bg-surfaceLight dark:bg-darkCard p-6 rounded-2xl border border-[#E5DFD3] dark:border-white/10 shadow-sm">
+          <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Alasaad Car Rental is by far the most reliable rental team in International City and Dubai. Highly recommended for tourists and residents."</p>
+          <div class="text-xs font-semibold text-deepCarbon dark:text-white">— Verified Google Reviewer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT -->
+  <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-goldAccent font-semibold text-xs tracking-[0.25em] uppercase">Showroom & Dispatch</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2 text-deepCarbon dark:text-white uppercase">Alasaad Dubai HQ</h2>
+        
+        <div class="space-y-4 mt-6 text-sm text-gray-700 dark:text-gray-300">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-map-marker-alt text-goldAccent mt-1"></i>
+            <div>
+              <p class="font-bold text-deepCarbon dark:text-white">Address:</p>
+              <p>Warsan First, Dubai International City, Dubai, United Arab Emirates</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-clock text-goldAccent mt-1"></i>
+            <div>
+              <p class="font-bold text-deepCarbon dark:text-white">Availability:</p>
+              <p>24 Hours Dispatch & Hotel Concierge Drop-off</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center space-x-4">
+          <a href="https://wa.me/971569649000" target="_blank" class="w-12 h-12 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+          <a href="#fleet" class="px-6 py-3 rounded-full gold-gradient text-black font-bold text-xs uppercase tracking-wider shadow-md">
+            Reserve Vehicle
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-surfaceLight dark:bg-darkCard p-4 rounded-3xl border border-[#E5DFD3] dark:border-white/10 shadow-lg">
+        <div class="aspect-video w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-black/50 flex items-center justify-center text-center p-6">
+          <div>
+            <i class="fas fa-car-side text-4xl text-goldAccent mb-3"></i>
+            <h4 class="font-display text-lg font-bold text-deepCarbon dark:text-white">Warsan First, International City</h4>
+            <p class="text-xs text-gray-500 mt-1">Direct airport meet & greet available 24/7</p>
+            <a href="https://maps.google.com/?q=Alasaad+car+rental+Dubai" target="_blank" class="mt-4 inline-block px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full text-xs font-semibold">
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON (ONLY WHATSAPP ICON) -->
+  <a href="https://wa.me/971569649000" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="bg-surfaceLight dark:bg-darkSurface border-t border-[#E5DFD3] dark:border-white/10 py-10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 space-y-4 md:space-y-0">
+      <div>
+        © 2026 Alasaad Car Rental Dubai. All rights reserved.
+      </div>
+      <div>
+        Developed by Tecnoemprende
+      </div>
+    </div>
+  </footer>
+
+  <!-- TIERRA QUERIDA ADMIN MODAL -->
+  <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-surfaceLight dark:bg-darkCard max-w-lg w-full rounded-3xl p-6 border border-goldAccent/30 shadow-2xl">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-display text-lg font-bold text-deepCarbon dark:text-white uppercase">Fleet Portal</h3>
+        <button onclick="closeAdminModal()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+      </div>
+      <p class="text-xs text-gray-500 mb-6">Manage fleet catalog, daily rental rates, seasonal offers, and bookings directly from your smartphone.</p>
+      <div class="space-y-3">
+        <button class="w-full py-3 bg-[#EFE9DC] dark:bg-white/10 rounded-xl text-xs font-semibold text-deepCarbon dark:text-white flex items-center justify-between px-4">
+          <span>Edit Fleet & Daily Rates</span><i class="fas fa-chevron-right text-gray-400"></i>
+        </button>
+        <button class="w-full py-3 bg-[#EFE9DC] dark:bg-white/10 rounded-xl text-xs font-semibold text-deepCarbon dark:text-white flex items-center justify-between px-4">
+          <span>Upload Vehicle Photos</span><i class="fas fa-chevron-right text-gray-400"></i>
+        </button>
+        <button class="w-full py-3 bg-[#EFE9DC] dark:bg-white/10 rounded-xl text-xs font-semibold text-deepCarbon dark:text-white flex items-center justify-between px-4">
+          <span>Promotions & Weekend Deals</span><i class="fas fa-chevron-right text-gray-400"></i>
+        </button>
+        <button onclick="exportBackup()" class="w-full py-3 border border-goldAccent/40 rounded-xl text-xs font-semibold text-goldAccent flex items-center justify-between px-4">
+          <span>1-Click Cloud JSON Backup</span><i class="fas fa-download"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+
+    function openAdminModal() {
+      document.getElementById('admin-modal').classList.remove('hidden');
+      document.getElementById('admin-modal').classList.add('flex');
+    }
+    function closeAdminModal() {
+      document.getElementById('admin-modal').classList.add('hidden');
+      document.getElementById('admin-modal').classList.remove('flex');
+    }
+    function exportBackup() {
+      const data = { business: "Alasaad Car Rental", slug: "alasaad-car-rental", date: new Date().toISOString() };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'alasaad_car_rental_backup.json';
+      a.click();
+    }
+  </script>
+
+  <!-- STEALTH_TELEMETRY_SENSOR (With Admin Whitelist Check) -->
+  <script>
+  (function(){
+    try {
+      var slug = "alasaad-car-rental";
+      var isAdmin = localStorage.getItem('_aether_admin') === '1' || document.cookie.indexOf('_aether_admin=1') !== -1;
+      var sid = sessionStorage.getItem('_aether_sid');
+      if (!sid) {
+        sid = 's_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now();
+        sessionStorage.setItem('_aether_sid', sid);
+      }
+      var start = Date.now();
+      var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+      
+      function sendPing(ev) {
+        var dur = Math.round((Date.now() - start) / 1000);
+        var payload = JSON.stringify({
+          slug: slug,
+          session_id: sid,
+          event: ev || 'heartbeat',
+          duration_sec: dur,
+          device: dev,
+          is_admin: isAdmin
+        });
+        if (navigator.sendBeacon) {
+          var blob = new Blob([payload], { type: 'application/json' });
+          navigator.sendBeacon('/api/telemetry/ping', blob);
+        } else {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/api/telemetry/ping', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(payload);
+        }
+      }
+
+      sendPing('enter');
+      setInterval(function(){ sendPing('heartbeat'); }, 20000);
+      window.addEventListener('visibilitychange', function(){
+        if (document.visibilityState === 'hidden') sendPing('leave');
+      });
+      window.addEventListener('beforeunload', function(){ sendPing('leave'); });
+    } catch(e) {}
+  })();
+  </script>
+</body>
+</html>
