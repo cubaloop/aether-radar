@@ -110,6 +110,24 @@ async def status():
 # ─── Stealth Telemetry Sensor (Client Site Previews) ─────────────────────────
 import json
 TELEMETRY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "telemetry.json")
+ADMIN_WHITELIST_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "admin_whitelist.json")
+
+def load_whitelist():
+    if os.path.exists(ADMIN_WHITELIST_FILE):
+        try:
+            with open(ADMIN_WHITELIST_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"ips": ["176.205.16.195"], "updated_at": None}
+
+def save_whitelist(data):
+    try:
+        os.makedirs(os.path.dirname(ADMIN_WHITELIST_FILE), exist_ok=True)
+        with open(ADMIN_WHITELIST_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+    except Exception as e:
+        log.warning("whitelist save error: %s", e)
 
 def load_telemetry():
     if os.path.exists(TELEMETRY_FILE):
@@ -134,10 +152,74 @@ class TelemetryPing(BaseModel):
     event: str = "ping"  # 'enter', 'heartbeat', 'leave'
     duration_sec: int = 0
     device: str = ""
+    is_admin: bool = False
+
+@app.get("/admin/me", response_class=HTMLResponse)
+async def admin_register_device(request: Request):
+    ip = (request.headers.get("x-forwarded-for") or request.client.host).split(",")[0].strip()
+    wl = load_whitelist()
+    if ip not in wl["ips"]:
+        wl["ips"].append(ip)
+    wl["updated_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+    save_whitelist(wl)
+    
+    html = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Whitelist | Aether Telemetry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {{ background: #080C0A; color: #F6F1E7; font-family: system-ui, sans-serif; }}
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-md w-full bg-[#121815] border border-[#C29B38]/40 rounded-3xl p-8 text-center shadow-2xl">
+    <div class="w-16 h-16 rounded-2xl bg-[#C29B38]/20 border border-[#C29B38] text-[#ECC870] flex items-center justify-center mx-auto mb-6 text-3xl">
+      🛡️
+    </div>
+    <h1 class="text-2xl font-bold mb-2 text-[#ECC870]">Administrador Registrado</h1>
+    <p class="text-xs text-gray-300 mb-6">Tu IP y dispositivo han sido excluidos permanentemente del sensor espía.</p>
+    
+    <div class="bg-black/50 border border-gray-800 rounded-2xl p-4 text-left text-xs space-y-2 mb-6">
+      <div class="flex justify-between">
+        <span class="text-gray-400">IP Reconocida:</span>
+        <span class="font-mono text-[#ECC870] font-semibold">{ip}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-gray-400">Estado:</span>
+        <span class="text-green-400 font-semibold">Excluido de Reportes</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-gray-400">IPs en Whitelist:</span>
+        <span class="text-gray-300">{len(wl['ips'])} registradas</span>
+      </div>
+    </div>
+    
+    <p class="text-[11px] text-gray-400 leading-relaxed mb-6">
+      A partir de este momento puedes navegar por cualquier sitio de prueba sin que tus aperturas ni tiempo se sumen a las estadísticas de los clientes.
+    </p>
+    
+    <a href="/" class="inline-block px-6 py-3 rounded-full bg-[#C29B38] hover:bg-[#A88228] text-black font-semibold text-xs tracking-wider uppercase transition-all">
+      Volver al Sistema
+    </a>
+  </div>
+  <script>
+    localStorage.setItem('_aether_admin', '1');
+    document.cookie = "_aether_admin=1; path=/; max-age=31536000";
+  </script>
+</body>
+</html>"""
+    response = HTMLResponse(content=html)
+    response.set_cookie(key="_aether_admin", value="1", max_age=31536000, path="/")
+    return response
 
 @app.post("/api/telemetry/ping")
 async def telemetry_ping(ping: TelemetryPing, request: Request):
     ip = (request.headers.get("x-forwarded-for") or request.client.host).split(",")[0].strip()
+    wl = load_whitelist()
+    is_admin = ping.is_admin or (ip in wl.get("ips", [])) or (request.cookies.get("_aether_admin") == "1")
+    
     data = load_telemetry()
     slug = ping.slug.strip().lower()
     if slug not in data:
@@ -153,11 +235,12 @@ async def telemetry_ping(ping: TelemetryPing, request: Request):
     
     entry = data[slug]
     now_iso = time.strftime("%Y-%m-%d %H:%M:%S")
-    if not entry.get("first_visit_at"):
-        entry["first_visit_at"] = now_iso
-    entry["last_visit_at"] = now_iso
-    if ip not in entry["ips"]:
-        entry["ips"].append(ip)
+    if not is_admin:
+        if not entry.get("first_visit_at"):
+            entry["first_visit_at"] = now_iso
+        entry["last_visit_at"] = now_iso
+        if ip not in entry["ips"]:
+            entry["ips"].append(ip)
 
     sess_id = ping.session_id or f"{ip}_{int(time.time() // 3600)}"
     if sess_id not in entry["sessions"]:
@@ -166,35 +249,44 @@ async def telemetry_ping(ping: TelemetryPing, request: Request):
             "last_seen": now_iso,
             "max_duration_sec": 0,
             "events_count": 0,
-            "device": ping.device
+            "device": ping.device,
+            "is_admin": is_admin
         }
-        entry["total_visits"] += 1
+        if not is_admin:
+            entry["total_visits"] += 1
     
     sess = entry["sessions"][sess_id]
     sess["last_seen"] = now_iso
     sess["events_count"] += 1
+    if is_admin:
+        sess["is_admin"] = True
+        
     if ping.duration_sec > sess["max_duration_sec"]:
         diff = ping.duration_sec - sess["max_duration_sec"]
         sess["max_duration_sec"] = ping.duration_sec
-        entry["total_time_seconds"] += diff
+        if not is_admin:
+            entry["total_time_seconds"] += diff
     
     save_telemetry(data)
-    return {"ok": True}
+    return {"ok": True, "admin": is_admin}
 
 @app.get("/api/telemetry/stats")
-async def telemetry_stats():
+async def telemetry_stats(include_admin: bool = False):
     data = load_telemetry()
     summary = {}
     for slug, info in data.items():
+        client_sessions = [s for s in info.get("sessions", {}).values() if not s.get("is_admin", False)]
+        client_time = sum(s.get("max_duration_sec", 0) for s in client_sessions)
         summary[slug] = {
-            "total_visits": info.get("total_visits", 0),
-            "unique_visitors": len(info.get("ips", [])),
-            "total_time_seconds": info.get("total_time_seconds", 0),
+            "total_visits": len(client_sessions),
+            "unique_visitors": len([ip for ip in info.get("ips", []) if ip not in load_whitelist().get("ips", [])]),
+            "total_time_seconds": client_time,
             "last_visit_at": info.get("last_visit_at"),
             "first_visit_at": info.get("first_visit_at"),
-            "sessions_count": len(info.get("sessions", {}))
+            "sessions_count": len(client_sessions),
+            "admin_excluded_visits": len(info.get("sessions", {})) - len(client_sessions)
         }
-    return {"status": "ok", "stats": summary, "raw": data}
+    return {"status": "ok", "stats": summary, "raw": data if include_admin else {}}
 
 
 async def autopilot():
